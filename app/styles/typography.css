@@ -1,13 +1,12 @@
 :global body {
-  font-family: 'ScandiaWeb', system-ui !important;
+  font-family: 'Teko', system-ui !important;
 }
 
 :global h1{
-  font-family: 'WhitneySSm', system-ui;
-  text-transform: uppercase;
+  font-family: 'Teko', system-ui;
 }
 
 :global button{
-  font-family: 'WhitneySSm' !important;
+  font-family: 'Teko' !important;
   font-weight: 400 !important;
 }

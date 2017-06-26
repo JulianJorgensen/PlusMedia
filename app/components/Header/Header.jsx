@@ -1,55 +1,51 @@
 import React from 'react';
 let {connect} = require('react-redux');
 import {Link} from 'react-router-dom';
-
-import Logo from '../Logo';
+import Headroom from 'react-headroom';
+import AppBar from 'react-toolbox/lib/app_bar';
+import Navigation from 'react-toolbox/lib/navigation';
 import Drawer from 'react-toolbox/lib/drawer';
-import Button from 'react-toolbox/lib/button';
-import headerStyles from './Header.css';
-import navStyles from './Nav.css';
-import theme from '../../styles/theme/topDrawer.css';
+import styles from './Header.css';
 
 class Header extends React.Component {
   constructor(){
     super();
 
     this.state = {
-      contactActive: false
+      active: false
     };
   }
 
-  handleContactToggle = () => {
-    this.setState({contactActive: !this.state.contactActive});
+  handleToggle = () => {
+    this.setState({active: !this.state.active});
   };
 
   render() {
     let {dispatch, pageName, scroll} = this.props;
 
-    let navStyle;
-    switch(pageName) {
-      case 'design':
-      case 'frontend':
-        navStyle = navStyles.navDark
-        break;
-    }
-
-    let headerOpacity = 0+(scroll.y/100);
-
     return (
-      <header className={headerStyles.header}>
-        <nav className={`${navStyles.nav} ${navStyle}`}>
-          <li><Link to='/' className={`${navStyles.link} ${navStyles.logo}`}><Logo fill='#ffffff' width={24} /></Link></li>
-          <li><Link to='/design' className={navStyles.link} activeClassName={navStyles.linkActive}>Design</Link></li>
-          <li><Link to='/frontend' className={navStyles.link} activeClassName={navStyles.linkActive}>Front-end</Link></li>
-          <li><Link to='/automation' className={navStyles.link} activeClassName={navStyles.linkActive}>Automation</Link></li>
-          <li><Link to='/portfolio' className={navStyles.link} activeClassName={navStyles.linkActive}>Portfolio</Link></li>
-          <li><Link to='#' className={`${navStyles.link} ${navStyles.contact}`} onClick={this.handleContactToggle}>Contact</Link></li>
-        </nav>
-
-        <Drawer theme={theme} active={this.state.contactActive} onOverlayClick={this.handleContactToggle} className={theme.contact}>
-          <h4>me@julianjorgensen.com</h4>
+      <Headroom>
+        <AppBar
+          className={styles.bar}
+          leftIcon={<img src="/images/logo.png" />}
+          rightIcon={<i className={`fa fa-bars ${styles.navIcon}`} />}
+          onRightIconClick={this.handleToggle}
+         />
+        <Drawer
+          active={this.state.active}
+          onOverlayClick={this.handleToggle}
+          type="right"
+          theme={styles}
+        >
+          <nav className={styles.nav}>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/about'>About</Link></li>
+            <li><Link to='/capabilities'>Capabilities</Link></li>
+            <li><Link to='/clients'>Clients</Link></li>
+            <li><Link to='/contact'>Contact</Link></li>
+          </nav>
         </Drawer>
-      </header>
+      </Headroom>
     )
   }
 }

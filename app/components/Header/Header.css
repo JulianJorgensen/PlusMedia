@@ -1,3 +1,5 @@
+@import "../../styles/variables.css";
+
 .header{
   position: fixed;
   z-index: 2;
@@ -6,4 +8,54 @@
   display: flex;
   padding: 25px 30px;
   box-sizing: border-box;
+}
+
+
+.bar,
+.drawer{
+  background-color: rgba(var(--spruce), 0.9);
+
+  & .navIcon{
+    font-size: 35px;
+  }
+}
+
+.drawer{
+  &.active{
+    border-left: 0;
+  }
+}
+
+.nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+
+  & li{
+    margin-bottom: 10px;
+  }
+
+  & a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+.link{
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Teko', system-ui;
+  opacity: 0.7;
+
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.linkActive{
+  font-weight: 500;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid currentColor;
+  opacity: 1;
 }

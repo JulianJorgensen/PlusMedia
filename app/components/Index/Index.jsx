@@ -13,9 +13,28 @@ class Index extends React.Component {
   render() {
     return (
       <div className="page-content">
-        <div className={styles.container}>
-          Content here
-        </div>
+        <section className={styles.landing}>
+          <img src="/images/logo-big.png" />
+          <h1>a dynamic media agency that anticipates your<br />changing needs and evolves to meet them.</h1>
+        </section>
+
+        <section className="double-col">
+          <div>
+            <h2 className="section-header">About</h2>
+            <p>PlusMedia is an independent, full-service media agency specializing in omnichannel</p>
+          </div>
+          <div style={{backgroundImage: 'url(/images/about-bg.jpg)'}}>
+          </div>
+        </section>
+
+        <section className="double-col">
+          <div style={{backgroundImage: 'url(/images/about-bg.jpg)'}}>
+          </div>
+          <div>
+            <h2 className="section-header">About</h2>
+            <p>PlusMedia is an independent, full-service media agency specializing in omnichannel</p>
+          </div>
+        </section>
       </div>
     )
   }
