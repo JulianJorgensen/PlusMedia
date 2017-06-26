@@ -1,7 +1,7 @@
 {
-  "name": "Jorgensen",
+  "name": "plus-media",
   "version": "0.2.0",
-  "description": "Julian Jorgensen",
+  "description": "PlusMedia",
   "main": "index.js",
   "scripts": {
     "test": "karma start",

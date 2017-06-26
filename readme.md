@@ -1,2 +1,2 @@
-# Julian Jorgensen Official Site
+# PlusMedia
 ## React + Redux + Webpack 2
