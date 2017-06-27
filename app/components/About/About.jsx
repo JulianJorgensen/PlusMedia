@@ -1,6 +1,5 @@
 import React from 'react';
-import DocumentMeta from 'react-document-meta';
-import Marquee from 'Marquee/Marquee';
+import Marquee from '../Marquee/Marquee';
 
 class About extends React.Component{
   constructor(){
@@ -9,9 +8,10 @@ class About extends React.Component{
 
   render() {
     return (
-      <section className="section">
+      <div>
         <Marquee title="About" />
-      </section>
+        <p>About page</p>
+      </div>
     )
   }
 }

@@ -12,28 +12,40 @@ class Header extends React.Component {
     super();
 
     this.state = {
-      active: false
-    };
+      navStatic: true
+    }
   }
 
-  handleToggle = () => {
-    this.setState({active: !this.state.active});
-  };
+  handleNavUnpin() {
+    this.setState({
+      navStatic: false
+    })
+  }
+
+  handleNavUnfix() {
+    this.setState({
+      navStatic: true
+    })
+  }
 
   render() {
-    let {dispatch, pageName, scroll} = this.props;
+    let {dispatch, pageName, scroll, navActive, handleNavToggle} = this.props;
 
     return (
-      <Headroom>
+      <Headroom
+        onUnpin={this.handleNavUnpin.bind(this)}
+        onUnfix={this.handleNavUnfix.bind(this)}
+        wrapperStyle={{backgroundColor: 'transparent', position: 'absolute', width: '100%'}}
+      >
         <AppBar
-          className={styles.bar}
+          className={`${styles.bar} ${this.state.navStatic ? styles.navStatic : ''}`}
           leftIcon={<img src="/images/logo.png" />}
           rightIcon={<i className={`fa fa-bars ${styles.navIcon}`} />}
-          onRightIconClick={this.handleToggle}
+          onRightIconClick={handleNavToggle}
          />
         <Drawer
-          active={this.state.active}
-          onOverlayClick={this.handleToggle}
+          active={navActive}
+          onOverlayClick={handleNavToggle}
           type="right"
           theme={styles}
         >

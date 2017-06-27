@@ -1,12 +1,19 @@
-:global body {
-  font-family: 'Teko', system-ui !important;
-}
-
-:global h1{
-  font-family: 'Teko', system-ui;
+:global{
+  & body,
+  & div,
+  & button,
+  & p,
+  & li,
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    font-family: 'Teko', system-ui !important;
+  }
 }
 
 :global button{
-  font-family: 'Teko' !important;
   font-weight: 400 !important;
 }

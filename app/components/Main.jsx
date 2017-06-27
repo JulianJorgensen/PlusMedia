@@ -1,9 +1,9 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, HashRouter, Link} from 'react-router-dom';
+import {Route, HashRouter, Link, withRouter} from 'react-router-dom';
 
 import DocumentMeta from 'react-document-meta';
-import Main from 'Main';
 import Index from 'Index/Index';
+import About from 'About/About';
 import Header from 'Header/Header';
 import Footer from 'Footer/Footer';
 
@@ -15,13 +15,6 @@ function logPageView(location) {
   // ReactGA.set({ page: location.pathname });
   // ReactGA.pageview(location.pathname);
 }
-
-// browserHistory.listen((location) => {
-//   logPageView(location);
-//
-//   // scroll to top when changing page
-//   window.scrollTo(0, 0);
-// });
 
 // site meta data
 const meta = {
@@ -35,17 +28,53 @@ const meta = {
   }
 };
 
-export default (
-  <Router>
-    <div id="main" className={`page-name-here`}>
-      <DocumentMeta {...meta} />
-      <Header />
-      <Route path="/" component={Main} />
-      <Layout>
-        <Route exact path="/" component={Index} />
-        {/* <Route path="/about" component={About} /> */}
-        <Footer />
-      </Layout>
-    </div>
-  </Router>
-);
+@withRouter
+export default class Main extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      navActive: false
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      this.onRouteChanged();
+    }
+  }
+
+  onRouteChanged() {
+    // log page view to Google Analytics
+    logPageView(location);
+
+    // scroll to top when changing page
+    window.scrollTo(0, 0);
+
+    // close navigation drawer
+    this.handleNavClose();
+  }
+
+  handleNavToggle = () => {
+    this.setState({navActive: !this.state.navActive});
+  };
+
+  handleNavClose = () => {
+    this.setState({navActive: false});
+  };
+
+  render() {
+    return (
+      <div id="main" className={`page-name-here`}>
+        <DocumentMeta {...meta} />
+        <Header handleNavToggle={this.handleNavToggle.bind(this)} navActive={this.state.navActive} />
+
+        <Layout>
+          <Route exact path="/" component={Index} />
+          <Route path="/about" component={About} />
+          <Footer />
+        </Layout>
+      </div>
+    )
+  }
+}

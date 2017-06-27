@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+.headroom{
+  background-color: transparent;
+  width: 100%;
+}
 
 .bar,
 .drawer{
@@ -20,16 +24,22 @@
   }
 }
 
-.drawer{
-  &.active{
-    border-left: 0;
+.bar{
+  &.navStatic{
+    background-color: transparent !important;
+    box-shadow: none;
   }
+}
+
+.drawer{
+  border-left: 0 !important;
 }
 
 .nav{
   list-style-type: none;
   margin: 0;
-  padding: 20px;
+  padding: 100px 40px 0;
+  font-size: 24px;
 
   & li{
     margin-bottom: 10px;

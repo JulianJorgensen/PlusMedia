@@ -183,7 +183,6 @@ const PROD_CONFIG = {
 };
 
 
-
 // Webpack plugins unique to the development build:
 const DEV_PLUGINS = [
   new ExtractTextPlugin('[name].[contenthash].css'),
