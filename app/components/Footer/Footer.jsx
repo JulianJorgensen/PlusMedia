@@ -1,7 +1,6 @@
 import React from 'react';
 let {connect} = require('react-redux');
 import {Link} from 'react-router-dom';
-import Logo from '../Logo';
 
 import styles from './Footer.css';
 

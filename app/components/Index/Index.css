@@ -10,10 +10,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  color: white;
-
   & .header{
+    color: white;
     font-size: 40px;
+    line-height: 40px;
+    margin-top: 15px;
     text-align: center;
     font-weight: 400;
   }

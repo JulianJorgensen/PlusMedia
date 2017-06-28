@@ -7,11 +7,14 @@ export default class Marquee extends React.Component {
   }
 
   render() {
-    let {title, bgColor} = this.props;
+    let {title, intro, bgImage} = this.props;
 
     return (
-      <div className={`${styles.marquee}`}>
-        <h1 className={styles.header}>{title}</h1>
+      <div className={`${styles.marquee}`} style={{backgroundImage: `url(${bgImage})`}}>
+        <div className={styles.container}>
+          <h1 className={styles.header}>{title}</h1>
+          <h2 className={styles.intro}>{intro}</h2>
+        </div>
       </div>
     )
   }

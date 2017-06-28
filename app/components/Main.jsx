@@ -4,8 +4,12 @@ import {Route, HashRouter, Link, withRouter} from 'react-router-dom';
 import DocumentMeta from 'react-document-meta';
 import Index from 'Index/Index';
 import About from 'About/About';
+import Capabilities from 'Capabilities';
+import Clients from 'Clients';
+import Contact from 'Contact';
 import Header from 'Header/Header';
 import Footer from 'Footer/Footer';
+import Modal from 'components/Modal';
 
 import { Layout } from 'react-toolbox/lib/layout';
 import ReactGA from 'react-ga';
@@ -72,8 +76,12 @@ export default class Main extends React.Component {
         <Layout>
           <Route exact path="/" component={Index} />
           <Route path="/about" component={About} />
+          <Route path="/capabilities" component={Capabilities} />
+          <Route path="/clients" component={Clients} />
+          <Route path="/contact" component={Contact} />
           <Footer />
         </Layout>
+        <Modal />
       </div>
     )
   }

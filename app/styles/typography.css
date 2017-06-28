@@ -1,16 +1,21 @@
+@import "variables.css";
+
+@custom-selector :--headings h1, h2, h3, h4, h5, h6;
+
 :global{
   & body,
   & div,
   & button,
   & p,
   & li,
-  & h1,
-  & h2,
-  & h3,
-  & h4,
-  & h5,
-  & h6 {
+  & :--headings{
     font-family: 'Teko', system-ui !important;
+    margin: 0;
+    line-height: auto;
+  }
+
+  & :--headings{
+    color: rgba(var(--gray));
   }
 }
 

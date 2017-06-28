@@ -1,12 +1,13 @@
 import React from 'react';
 let {connect} = require('react-redux');
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import Headroom from 'react-headroom';
 import AppBar from 'react-toolbox/lib/app_bar';
 import Navigation from 'react-toolbox/lib/navigation';
 import Drawer from 'react-toolbox/lib/drawer';
 import styles from './Header.css';
 
+@withRouter
 class Header extends React.Component {
   constructor(){
     super();
@@ -29,7 +30,7 @@ class Header extends React.Component {
   }
 
   render() {
-    let {dispatch, pageName, scroll, navActive, handleNavToggle} = this.props;
+    let {dispatch, pageName, scroll, navActive, handleNavToggle, history} = this.props;
 
     return (
       <Headroom
@@ -41,6 +42,7 @@ class Header extends React.Component {
           className={`${styles.bar} ${this.state.navStatic ? styles.navStatic : ''}`}
           leftIcon={<img src="/images/logo.png" />}
           rightIcon={<i className={`fa fa-bars ${styles.navIcon}`} />}
+          onLeftIconClick={() => history.push('/')}
           onRightIconClick={handleNavToggle}
          />
         <Drawer
@@ -65,7 +67,7 @@ class Header extends React.Component {
 export default connect(
   (state) => {
     return {
-      scroll: state.scrollPosition
+      modal: state.modal
     }
   }
 )(Header);

@@ -27,17 +27,25 @@
 
       & .section-header{
         font-size: 100px;
-        line-height: 20px;
-        margin: 0;
+        line-height: 70px;
         text-align: left;
-        color: #bed600;
+        color: rgba(var(--pistachio));
       }
 
       & .section-subheader{
         font-size: 32px;
+        line-height: 40px;
       }
     }
   }
+}
+
+.sectionBar{
+  font-size: 48px;
+  background-color: rgba(var(--pistachio));
+  width: 100%;
+  text-align: center;
+  color: rgba(var(--gray));
 }
 
 .container{

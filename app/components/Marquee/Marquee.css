@@ -2,15 +2,36 @@
 
 .marquee{
   display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 300px;
-  background-color: white;
-  color: rgba(var(--pistachio));
+  height: calc(100vh - 200px);
   align-items: center;
   justify-content: center;
-  margin-bottom: -50px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.container{
+  composes: container from "../../styles/layout.css";
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .header{
-  font-size: 220px;
+  color: rgba(var(--pistachio));
+  font-size: 100px;
+  line-height: 90px;
+  margin: 0;
+  text-align: left;
+}
+
+.intro{
+  font-size: 50px;
+  line-height: 50px;
+  color: white;
+  margin: 0;
 }

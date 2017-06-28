@@ -1,0 +1,87 @@
+@import "../../styles/variables.css";
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.overlay,
+.container{
+  opacity: 0.5;
+  transition: opacity 0.2s, margin-top 0.2s;
+}
+
+.container{
+  position: fixed;
+  background-color: white;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  margin-top: -50px;
+}
+
+.afterOpen{
+  margin-top: 0;
+}
+
+.afterOpen,
+.overlayAfterOpen{
+  opacity: 1;
+}
+
+.beforeClose{
+  margin-top: -50px;
+}
+
+.overlayBeforeClose{
+  opacity: 0;
+}
+
+.closeModal{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: rgba(var(--pistachio));
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Specific modal styles */
+.aboutModal{
+  display: flex;
+  width: 1000px;
+  max-width: 80vw;
+
+  & .aboutImage{
+    height: 400px;
+    width: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 20px;
+  }
+
+  & .aboutInfo{
+    color: rgba(var(--spruce));
+    & .aboutName{
+
+    }
+    & .aboutTitle{
+      font-weight: 400;
+      font-size: 24px;
+    }
+    & .aboutBio{
+      font-size: 18px;
+      margin-top: 15px;
+    }
+  }
+}

@@ -1,13 +1,11 @@
 import * as redux from 'redux';
 import thunk from 'redux-thunk';
 
-import {navReducer, invoiceReducer, scrollReducer} from 'reducers';
+import {modalReducer} from 'reducers';
 
 export let configure = (initialState = {}) => {
   var reducer = redux.combineReducers({
-    nav: navReducer,
-    invoice: invoiceReducer,
-    scrollPosition: scrollReducer
+    modal: modalReducer
   });
 
   var store = redux.createStore(reducer, initialState, redux.compose(
