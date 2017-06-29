@@ -85,3 +85,9 @@
     }
   }
 }
+
+.defaultModal{
+  width: 500px;
+  max-width: 80vw;
+  font-size: 18px;
+}

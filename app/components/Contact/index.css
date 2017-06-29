@@ -2,118 +2,104 @@
 
 .container{
   composes: container from "../../styles/layout.css";
-  font-size: 32px;
-  line-height: 32px;
-  font-weight: normal;
-  color: rgba(var(--spruce));
-  padding: 20px;
 }
 
 .sectionBar{
   composes: sectionBar from "../../styles/layout.css";
 }
 
-.teamMembers{
-  composes: container from "../../styles/layout.css";
-  display: flex;
-  flex-wrap: wrap;
-  margin: 20px;
-}
-
-.teamMember{
-  text-align: center;
-  width: 25%;
-  color: rgba(var(--gray));
-  margin-bottom: 10px;
-
-  & .teamMemberPhoto{
-    width: 200px;
-    height: 200px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer;
-    filter: grayscale(100%);
-    &:hover{
-      filter: grayscale(0);
-    }
-  }
-  & .teamMemberName{
-    font-size: 24px;
-    font-weight: normal;
-    margin-top: 5px;
-  }
-  & .teamMemberTitle{
+.map{
+  height: 350px;
+  width: 100%;
+  & .marker{
     font-size: 20px;
-    font-weight: normal;
+    line-height: 20px;
+    text-align: center;
+    width: 150px;
+    & i{
+      display: block;
+      color: rgba(var(--pistachio));
+      font-size: 50px;
+    }
   }
 }
 
+.bar{
+  height: 10px;
+  width: 100%;
+  background-color: rgba(var(--pistachio));
+}
 
-.quotes{
+.contactMethods{
   display: flex;
-  margin-bottom: 30px;
-  & .quote{
-    display: flex;
-    align-items: center;
-    width: 33.33%;
-    & .quoteAuthorImage{
-      height: 110px;
-      width: 110px;
-      margin-right: 10px;
-      border-radius: 50%;
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    & .quoteContent{
-      & quote,
-      & author{
-        display: block;
-        font-size: 14px;
-        line-height: 14px;
-        font-style: italic;
+  width: 100%;
+  & .contacts,
+  & .formContainer{
+    width: 50%;
+    padding: 20px 30px 40px;
+  }
+
+  & h2{
+    font-size: 48px;
+    text-align: center;
+  }
+
+  & .contacts{
+    background-color: gray(96%);
+    font-weight: normal;
+    font-size: 18px;
+    color:  rgba(var(--gray));
+    & .row{
+      display: flex;
+      & .col{
+        width: 50%;
       }
-      & author{
-        &:before{
-          content: '- ';
+    }
+    & a{
+      color: rgba(var(--gray));
+    }
+    & h4{
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    & address{
+      display: block;
+      padding-bottom: 15px;
+      font-style: normal;
+    }
+  }
+
+  & .formContainer{
+    & .form{
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 18px;
+      & .input{
+        width: calc(50% - 30px);
+        margin: 0 15px;
+      }
+      & .textarea{
+        width: calc(100% - 30px);
+        margin: 0 15px;
+      }
+      & .submit{
+        background-color: rgba(var(--pistachio));
+        margin: 0 auto;
+        width: 250px;
+        font-size: 30px;
+        & .disabled{
+          background-color: gray(90%);
         }
       }
     }
   }
 }
 
-.jobsHeader{
-  font-size: 48px;
-  text-align: center;
-  padding-top: 20px;
-}
-
-.jobs{
-  margin-top: 20px;
-  & .job{
-    padding: 25px;
-    margin-bottom: 20px;
-    background-color: gray(90%);
-    color: rgba(var(--gray));
-    & .jobTitle{
-      font-size: 36px;
-      line-height: 36px;
-    }
-    & .jobDescription{
-      font-size: 18px;
-      line-height: 18px;
-      margin: 15px 0;
-    }
-    & .jobCtas{
-      display: flex;
-      justify-content: space-between;
-      text-transform: uppercase;
-      font-weight: bold;
-      font-size: 24px;
-      & .jobLocation{
-
-      }
-    }
-  }
+.sentContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  height: 100%;
 }

@@ -13,107 +13,65 @@
   composes: sectionBar from "../../styles/layout.css";
 }
 
-.teamMembers{
-  composes: container from "../../styles/layout.css";
-  display: flex;
-  flex-wrap: wrap;
-  margin: 20px;
-}
+.services{
+  background-color: rgba(var(--gray));
+  padding: 20px;
+  width: 100%;
 
-.teamMember{
-  text-align: center;
-  width: 25%;
-  color: rgba(var(--gray));
-  margin-bottom: 10px;
-
-  & .teamMemberPhoto{
-    width: 200px;
-    height: 200px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer;
-    filter: grayscale(100%);
-    &:hover{
-      filter: grayscale(0);
-    }
+  & .serviceGroupTitle{
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    text-transform: uppercase;
   }
-  & .teamMemberName{
-    font-size: 24px;
-    font-weight: normal;
-    margin-top: 5px;
-  }
-  & .teamMemberTitle{
-    font-size: 20px;
-    font-weight: normal;
-  }
-}
 
-
-.quotes{
-  display: flex;
-  margin-bottom: 30px;
-  & .quote{
+  & .serviceGroup{
     display: flex;
-    align-items: center;
-    width: 33.33%;
-    & .quoteAuthorImage{
-      height: 110px;
-      width: 110px;
-      margin-right: 10px;
-      border-radius: 50%;
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    & .quoteContent{
-      & quote,
-      & author{
-        display: block;
-        font-size: 14px;
-        line-height: 14px;
-        font-style: italic;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    & .service{
+      width: 350px;
+      background-color: rgba(var(--spruce));
+      margin-right: 30px;
+      padding: 15px 25px;
+      &:last-child{
+        margin-right: 0;
       }
-      & author{
-        &:before{
-          content: '- ';
-        }
+      & .serviceTitle{
+        color: rgba(var(--pistachio));
+        text-align: center;
+        font-size: 32px;
+      }
+      & .serviceDescription{
+        color: white;
+        font-size: 20px;
+        line-height: 20px;
       }
     }
   }
 }
 
-.jobsHeader{
-  font-size: 48px;
-  text-align: center;
-  padding-top: 20px;
-}
-
-.jobs{
-  margin-top: 20px;
-  & .job{
-    padding: 25px;
-    margin-bottom: 20px;
-    background-color: gray(90%);
-    color: rgba(var(--gray));
-    & .jobTitle{
-      font-size: 36px;
-      line-height: 36px;
+.mediaChannels{
+  display: flex;
+  margin: 30px 0 20px;
+  & .channel{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    & .icon{
+      width: 125px;
+      height: 125px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
-    & .jobDescription{
-      font-size: 18px;
-      line-height: 18px;
-      margin: 15px 0;
-    }
-    & .jobCtas{
-      display: flex;
-      justify-content: space-between;
+    & .title{
+      font-size: 28px;
       text-transform: uppercase;
-      font-weight: bold;
-      font-size: 24px;
-      & .jobLocation{
-
-      }
+      margin-top: 10px;
     }
   }
 }

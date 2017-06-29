@@ -31,9 +31,9 @@ class Modal extends React.Component{
         )
       }else{
         return (
-          <div>
-            <h2>Title here</h2>
-            <p>body here..</p>
+          <div className={styles.defaultModal}>
+            <h2>{modal.title}</h2>
+            <p>{modal.body}</p>
           </div>
         )
       }

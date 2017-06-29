@@ -13,6 +13,31 @@
   background-position: center center;
 }
 
+.split{
+  flex-direction: row;
+  height: 400px;
+  & .leftArea,
+  & .rightArea{
+    height: 100%;
+    width: 50%;
+  }
+  & .rightArea{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  & .leftArea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(var(--pistachio));
+    & .header{
+      color: rgba(var(--gray));
+      font-size: 60px;
+    }
+  }
+}
+
 .container{
   composes: container from "../../styles/layout.css";
   display: flex;

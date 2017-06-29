@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+  tr
+    td.alert(class='alert-primary')  #{alertText}
+  tr
+    td.content-wrap
+      meta(itemprop='name', content='#{emailSummary}')
+      table(width='100%', cellpadding='0', cellspacing='0')
+        tr
+          td.content-block  We've received following message from #{name}:
+        tr
+          td.content-block  Message: #{message}
+        tr
+          td.content-block His contact details are:
+        tr
+          td.content-block Email: #{email}<br />Phone: #{phone}<br />Company: #{company}

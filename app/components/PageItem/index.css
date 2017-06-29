@@ -1,0 +1,8 @@
+@import "../../styles/variables.css";
+
+.container{
+  composes: container from "../../styles/layout.css";
+  padding: 40px 0;
+  font-size: 24px;
+  color: rgba(var(--gray));
+}

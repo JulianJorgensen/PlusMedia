@@ -17,6 +17,10 @@
   & :--headings{
     color: rgba(var(--gray));
   }
+
+  & a{
+    color: rgba(var(--pistachio));
+  }
 }
 
 :global button{
