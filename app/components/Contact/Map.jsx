@@ -16,6 +16,7 @@ export default class Map extends React.Component {
     return (
       <div className={styles.map}>
         <GoogleMapReact
+          apiKey="AIzaSyDEccfIWFDQgRElTJ4rzw14Bifz_s5-m14"
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
