@@ -1,10 +1,8 @@
+@import "../../styles/variables.css";
+
 .item{
-  margin: 5px 0;
+  margin: 5px 0 30px;
   padding: 5px 0;
-  border-bottom: 1px solid gray(90%, 50%);
-  &:last-child{
-    border-bottom: none;
-  }
 }
 
 .title{
@@ -13,7 +11,9 @@
   cursor: pointer;
   margin-bottom: 5px;
   &:after{
-    content: '+';
+    content: '[+]';
+    font-size: 20px;
+    color: rgba(var(--pistachio));
     font-weight: bold;
     position: absolute;
     right: 0;
@@ -26,6 +26,6 @@
 
 .active{
   & .title:after{
-    transform: rotate(45deg);
+    content: '[-]';
   }
 }

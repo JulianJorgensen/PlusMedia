@@ -10,8 +10,15 @@
   & li,
   & :--headings{
     font-family: 'Teko', system-ui !important;
-    margin: 0;
     line-height: auto;
+  }
+
+  & body,
+  & div,
+  & button,
+  & li,
+  & :--headings{
+    margin: 0;
   }
 
   & :--headings{

@@ -7,7 +7,7 @@ export default class Marquee extends React.Component {
   }
 
   render() {
-    let {title, intro, bgImage, split} = this.props;
+    let {title, intro, bgImage, className, split} = this.props;
 
     if (split){
       return (
@@ -20,7 +20,7 @@ export default class Marquee extends React.Component {
       )
     }else{
       return (
-        <div className={`${styles.marquee}`} style={{backgroundImage: `url(${bgImage})`}}>
+        <div className={`${styles.marquee} ${className}`} style={{backgroundImage: `url(${bgImage})`}}>
           <div className={styles.container}>
             <h1 className={styles.header}>{title}</h1>
             <h2 className={styles.intro}>{intro}</h2>

@@ -29,7 +29,7 @@ class About extends React.Component{
                 bio: 'some bio here'
               }));
             }}>
-              <div className={styles.teamMemberPhoto} style={{backgroundImage: `url(/images/team/Untitled-1.jpg)`}} />
+              <div className={styles.teamMemberPhoto} style={{backgroundImage: `url(/images/team/Untitled-${teamMember}.jpg)`}} />
               <h4 className={styles.teamMemberName}>Firstname Lastname</h4>
               <h5 className={styles.teamMemberTitle}>Title here</h5>
             </div>
@@ -67,13 +67,15 @@ class About extends React.Component{
       <div>
         <Marquee
           title="About"
-          intro="PlusMedia is an independent, full-service media agency specializing in omnichannel direct response marketing."
+          intro="PlusMedia is a dynamic, full-service media agency specializing in omnichannel direct response marketing that delivers measurable results."
           bgImage="/images/about-marquee.jpg"
         />
         <div className="page-content">
-          <div className={styles.sectionBar}>Our Approach</div>
+          <div className={styles.sectionBar}>Our Mission</div>
           <div className={styles.container}>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in in velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>PlusMedia’s mission is to grow your business profitably through strategic media, marketing and management services. We treat your business as if it’s our own and have a proven track record of helping our clients successfully expand their market presence, acquire more customers and increase revenue.</p>
+            <p>As industry veterans, our knowledge of direct response best practices and our strong relationships with key media partners allow us to cultivate new and exclusive opportunities that give you competitive advantage.</p>
+            <p>With a seasoned executive team offering top-level strategy and support on every account, we become a seamless extension of your staff, working collaboratively to achieve your marketing goals.</p>
           </div>
 
           <div className={styles.sectionBar}>Executive Team</div>

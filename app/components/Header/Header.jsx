@@ -5,7 +5,9 @@ import Headroom from 'react-headroom';
 import AppBar from 'react-toolbox/lib/app_bar';
 import Navigation from 'react-toolbox/lib/navigation';
 import Drawer from 'react-toolbox/lib/drawer';
+import DataCardIcon from 'assets/icons/datacardIcon';
 import styles from './Header.css';
+
 
 @withRouter
 class Header extends React.Component {
@@ -57,6 +59,7 @@ class Header extends React.Component {
             <li><Link to='/capabilities'>Capabilities</Link></li>
             <li><Link to='/clients'>Clients</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
+            <li><Link to='/data-cards'><DataCardIcon /></Link></li>
           </nav>
         </Drawer>
       </Headroom>

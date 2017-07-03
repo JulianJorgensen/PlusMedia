@@ -6,6 +6,7 @@ import Index from 'Index/Index';
 import About from 'About/About';
 import Capabilities from 'Capabilities';
 import Clients from 'Clients';
+import DataCards from 'DataCards';
 import Contact from 'Contact';
 import PageItem from 'PageItem';
 import Header from 'Header/Header';
@@ -81,6 +82,7 @@ export default class Main extends React.Component {
           <Route path="/case-study/:title" component={PageItem} />
           <Route path="/clients" component={Clients} />
           <Route path="/contact" component={Contact} />
+          <Route path="/data-cards" component={DataCards} />
           <Footer />
         </Layout>
         <Modal />

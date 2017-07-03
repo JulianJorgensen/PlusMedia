@@ -27,13 +27,13 @@ class Index extends React.Component {
       <div className="page-content">
         <section className={styles.landing}>
           <img src="/images/logo-big.png" />
-          <h1 className={styles.header}>a dynamic media agency that anticipates your<br />changing needs and evolves to meet them.</h1>
+          <h1 className={styles.header}>Leveraging the power of paid media to connect brands with customers.</h1>
         </section>
 
         <section className="double-col">
           <div onClick={() => history.push('/about')}>
             <h2 className="section-header">About</h2>
-            <p className="section-subheader">PlusMedia is an independent, full-service media agency specializing in omnichannel direct response marketing.</p>
+            <p className="section-subheader">PlusMedia is a dynamic, full-service media agency specializing in omnichannel direct response marketing that delivers measurable results.</p>
           </div>
           <div style={{backgroundImage: 'url(/images/about-bg.jpg)'}}>
           </div>
@@ -44,14 +44,14 @@ class Index extends React.Component {
           </div>
           <div onClick={() => history.push('/capabilities')}>
             <h2 className="section-header">Capabilities</h2>
-            <p className="section-subheader">PlusMedia offers a comprehensive array of services to help you achieve your marketing goals, serving as a single source for all of your media buying and management.</p>
+            <p className="section-subheader">PlusMedia provides strategic thought leadership and customized marketing solutions to optimize media spend, maximize ROI and increase bottom line profitability.</p>
           </div>
         </section>
 
         <section className="double-col">
           <div onClick={() => history.push('/clients')}>
             <h2 className="section-header">Clients</h2>
-            <p className="section-subheader">PlusMedia has experience across many industries, driving client strategies that are deeply rooted in proven direct response principles.</p>
+            <p className="section-subheader">PlusMedia has experience across a wide variety of industries, markets and business models, serving clients throughout the U.S. and internationally.</p>
           </div>
           <div style={{backgroundImage: 'url(/images/clients-bg.jpg)'}}>
           </div>
