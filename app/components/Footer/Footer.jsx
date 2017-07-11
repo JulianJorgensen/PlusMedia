@@ -19,7 +19,7 @@ class Footer extends React.Component {
         <div className={styles.logos}>
           <div><img src="/images/logo-woman-owned.png" /></div>
           <div><img width={200} src="/images/logo-big.png" /></div>
-          <div className={styles.linkedin}>Find us on <i className="fa fa-linkedin-square" /></div>
+          <div className={styles.linkedin}>Find us on <a href="https://www.linkedin.com/company-beta/119805/" target="new"><i className="fa fa-linkedin-square" /></a></div>
         </div>
       </footer>
     )

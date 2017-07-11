@@ -25,6 +25,7 @@
     text-align: center;
     color: white;
     font-size: 36px;
+    font-weight: 500;
     text-transform: uppercase;
   }
 
@@ -48,11 +49,13 @@
         color: rgba(var(--pistachio));
         text-align: center;
         font-size: 32px;
+        font-weight: 500;
         line-height: 32px;
       }
       & .serviceDescription{
         color: white;
         font-size: 20px;
+        font-weight: 300;
         line-height: 20px;
       }
     }
@@ -62,6 +65,7 @@
 .mediaChannels{
   display: flex;
   margin: 30px 0 20px;
+  font-weight: 400;
   & .channel{
     width: 25%;
     display: flex;
@@ -77,6 +81,7 @@
     }
     & .title{
       font-size: 28px;
+      font-weight: 500;
       text-transform: uppercase;
       margin-top: 10px;
     }

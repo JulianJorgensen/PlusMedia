@@ -23,6 +23,7 @@
 
   & :--headings{
     color: rgba(var(--gray));
+    font-weight: 500;
   }
 
   & a{

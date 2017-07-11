@@ -36,9 +36,11 @@
   display: flex;
   width: 100%;
   margin-top: 20px;
+  margin-bottom: 15px;
   & .testimonial{
     width: 33.33%;
     font-size: 24px;
+    font-weight: 300;
     padding-right: 20px;
     font-weight: light;
     &:last-child{
@@ -46,7 +48,7 @@
     }
     & author{
       display: block;
-      font-weight: normal;
+      font-weight: 300;
     }
   }
 }

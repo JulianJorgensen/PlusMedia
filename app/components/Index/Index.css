@@ -1,3 +1,5 @@
+@import "../../styles/variables.css";
+
 .landing{
   height: 100vh;
   width: 100%;
@@ -9,12 +11,13 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 
   & .header{
     color: white;
     font-size: 40px;
     line-height: 40px;
-    margin-top: 15px;
+    margin-top: 25px;
     text-align: center;
     font-weight: 400;
   }
@@ -39,6 +42,26 @@
     background-image: url('/images/plus.png');
     background-repeat: no-repeat;
     background-position: center center;
+  }
+}
+
+.videoWrapper{
+  & video{
+    display: none;
+  }
+  @media (--large-and-up) {
+    position: relative;
+    height: 620px;
+    padding: 0;
+    overflow: hidden;
+
+    & video{
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+    }
   }
 }
 

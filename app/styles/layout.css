@@ -24,17 +24,31 @@
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
+      transition: all 0.3s ease;
+      background-image: linear-gradient(to bottom right, white, white);
+      &:hover{
+        background-image: linear-gradient(to bottom right, color(rgba(var(--pistachio)) blackness(30%)), rgba(var(--pistachio), 1));
+        & .section-header,
+        & .section-subheader{
+          color: white;
+        }
+      }
 
       & .section-header{
         font-size: 100px;
+        font-weight: 500;
         line-height: 70px;
         text-align: left;
         color: rgba(var(--pistachio));
+        transition: all 0.3s ease;
       }
 
       & .section-subheader{
         font-size: 32px;
+        font-weight: 300;
         line-height: 40px;
+        margin-top: 0;
+        transition: all 0.3s ease;
       }
     }
   }
@@ -42,8 +56,10 @@
 
 .sectionBar{
   font-size: 48px;
+  font-weight: 500;
   background-color: rgba(var(--pistachio));
   width: 100%;
+  padding-top: 8px;
   text-align: center;
   color: rgba(var(--gray));
 }
@@ -52,6 +68,7 @@
   align-self: center;
   width: 900px;
   max-width: 100%;
+  font-weight: 300;
 }
 
 .loader{

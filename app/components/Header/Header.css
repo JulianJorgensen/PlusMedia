@@ -18,9 +18,13 @@
 .bar,
 .drawer{
   background-color: rgba(var(--spruce), 0.9);
+  font-weight: 400;
 
   & .navIcon{
     font-size: 35px;
+    &.active{
+      color: rgba(var(--pistachio));
+    }
   }
 }
 
@@ -49,6 +53,10 @@
     color: white;
     text-decoration: none;
     text-transform: uppercase;
+    transition: all 0.2s ease;
+    &:hover{
+      color: rgba(var(--pistachio));
+    }
   }
 }
 

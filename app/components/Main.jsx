@@ -12,6 +12,9 @@ import PageItem from 'PageItem';
 import Header from 'Header/Header';
 import Footer from 'Footer/Footer';
 import Modal from 'components/Modal';
+import styles from './Main.css';
+
+import Scroll from 'Scroll';
 
 import { Layout } from 'react-toolbox/lib/layout';
 import ReactGA from 'react-ga';
@@ -40,7 +43,8 @@ export default class Main extends React.Component {
     super();
 
     this.state = {
-      navActive: false
+      navActive: false,
+      loaded: false
     };
   }
 
@@ -48,6 +52,12 @@ export default class Main extends React.Component {
     if (this.props.location !== prevProps.location) {
       this.onRouteChanged();
     }
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({loaded: true});
+    }, 200);
   }
 
   onRouteChanged() {
@@ -59,6 +69,12 @@ export default class Main extends React.Component {
 
     // close navigation drawer
     this.handleNavClose();
+
+    // animate the loader
+    this.setState({loaded: false});
+    setTimeout(() => {
+      this.setState({loaded: true});
+    }, 200);
   }
 
   handleNavToggle = () => {
@@ -74,15 +90,18 @@ export default class Main extends React.Component {
       <div id="main" className={`page-name-here`}>
         <DocumentMeta {...meta} />
         <Header handleNavToggle={this.handleNavToggle.bind(this)} navActive={this.state.navActive} />
-
+        <Scroll />
         <Layout>
-          <Route exact path="/" component={Index} />
-          <Route path="/about" component={About} />
-          <Route path="/capabilities" component={Capabilities} />
-          <Route path="/case-study/:title" component={PageItem} />
-          <Route path="/clients" component={Clients} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/data-cards" component={DataCards} />
+          <div className={`${styles.loader} ${this.state.loaded ? styles.loaded : ''}`}></div>
+          <div className={styles.page}>
+            <Route exact path="/" component={Index} />
+            <Route path="/about" component={About} />
+            <Route path="/capabilities" component={Capabilities} />
+            <Route path="/case-study/:title" component={PageItem} />
+            <Route path="/clients" component={Clients} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/data-cards" component={DataCards} />
+          </div>
           <Footer />
         </Layout>
         <Modal />

@@ -6,6 +6,18 @@ import styles from './index.css';
 
 const Marker = () => <div className={styles.marker}><i className="fa fa-map-marker" /> PlusMedia LLC</div>;
 
+const mapOptions = {
+  styles: [
+      {
+        featureType: "all",
+        elementType: "all",
+        stylers: [
+          { saturation: -100 }
+        ]
+      }
+  ]
+}
+
 export default class Map extends React.Component {
   static defaultProps = {
     center: {lat: 41.3937627, lng: -73.5139165},
@@ -19,6 +31,7 @@ export default class Map extends React.Component {
           apiKey="AIzaSyDEccfIWFDQgRElTJ4rzw14Bifz_s5-m14"
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
+          options={mapOptions}
         >
           <Marker
             lat={41.394354}

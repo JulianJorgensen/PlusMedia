@@ -1,3 +1,11 @@
+/* Teko light */
+@font-face {
+  font-family: 'Teko';
+  src: url('Teko-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
 /* Teko regular */
 @font-face {
   font-family: 'Teko';
@@ -6,10 +14,26 @@
   font-style: normal;
 }
 
-/* Teko bold */
+/* Teko Medium */
 @font-face {
   font-family: 'Teko';
-  src: url('Teko-Bold.woff') format('woff');
+  src: url('Teko-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Teko semi bold */
+@font-face {
+  font-family: 'Teko';
+  src: url('Teko-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 }
+
+/* Teko bold */
+/*@font-face {
+  font-family: 'Teko';
+  src: url('Teko-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}*/

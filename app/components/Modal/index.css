@@ -75,12 +75,16 @@
     & .aboutName{
 
     }
-    & .aboutTitle{
+    & .aboutName{
       font-weight: 400;
+    }
+    & .aboutTitle{
+      font-weight: 300;
       font-size: 24px;
     }
     & .aboutBio{
       font-size: 18px;
+      font-weight: 300;
       margin-top: 15px;
     }
   }
@@ -90,4 +94,5 @@
   width: 500px;
   max-width: 80vw;
   font-size: 18px;
+  font-weight: 300;
 }

@@ -22,7 +22,7 @@ class Modal extends React.Component{
           <div className={styles.aboutModal}>
             <div className={styles.aboutImage} style={{backgroundImage: `url(${modal.image})`}}></div>
             <div className={styles.aboutInfo}>
-              <h2>{modal.name}</h2>
+              <h2 className={styles.aboutName}>{modal.name}</h2>
               <h3 className={styles.aboutTitle}>{modal.title}</h3>
               {modal.title2 ? <h3 className={styles.aboutTitle}>{modal.title2}</h3> : ''}
               <p className={styles.aboutBio}>{modal.bio}</p>

@@ -66,40 +66,45 @@ class Contact extends React.Component{
               <Input
                 type='text'
                 value={this.state.name}
-                label='Name'
+                placeholder='Name'
                 required
+                theme={styles}
                 className={styles.input}
                 onChange={this.handleChange.bind(this, 'name')} />
 
               <Input
                 type='text'
                 value={this.state.phone}
-                label='Phone number'
+                placeholder='Phone number'
                 required
+                theme={styles}
                 className={styles.input}
                 onChange={this.handleChange.bind(this, 'phone')} />
 
               <Input
                 type='text'
                 value={this.state.company}
-                label='Company'
+                placeholder='Company'
                 required
+                theme={styles}
                 className={styles.input}
                 onChange={this.handleChange.bind(this, 'company')} />
 
               <Input
                 type='email'
                 value={this.state.email}
-                label='Email'
+                placeholder='Email'
+                theme={styles}
                 required
                 className={styles.input}
                 onChange={this.handleChange.bind(this, 'email')} />
 
               <Input
                 type='textarea'
-                label='Message'
+                placeholder='Message'
                 multiline={true}
                 rows={5}
+                theme={styles}
                 className={styles.textarea}
                 onChange={this.handleChange.bind(this, 'message')} />
 
@@ -120,7 +125,7 @@ class Contact extends React.Component{
       <div>
         <Map />
         <div className="page-content">
-          <div className={styles.bar}></div>
+          <div className={styles.topBar}></div>
           <div className={styles.contactMethods}>
             <div className={styles.contacts}>
               <h2>Contact</h2>

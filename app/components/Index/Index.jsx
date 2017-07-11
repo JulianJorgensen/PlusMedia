@@ -27,7 +27,7 @@ class Index extends React.Component {
       <div className="page-content">
         <section className={styles.landing}>
           <img src="/images/logo-big.png" />
-          <h1 className={styles.header}>Leveraging the power of paid media to connect brands with customers.</h1>
+          <h1 className={styles.header}>Leveraging the power of paid media<br />to connect brands with customers.</h1>
         </section>
 
         <section className="double-col">
@@ -35,12 +35,14 @@ class Index extends React.Component {
             <h2 className="section-header">About</h2>
             <p className="section-subheader">PlusMedia is a dynamic, full-service media agency specializing in omnichannel direct response marketing that delivers measurable results.</p>
           </div>
-          <div style={{backgroundImage: 'url(/images/about-bg.jpg)'}}>
+          <div className={styles.videoWrapper} style={{backgroundImage: 'url(/images/about-bg.jpg)'}}>
+            <video src="/videos/placeholder.mov" autoPlay loop />
           </div>
         </section>
 
         <section className="double-col">
-          <div style={{backgroundImage: 'url(/images/capabilities-bg.jpg)'}}>
+          <div className={styles.videoWrapper} style={{backgroundImage: 'url(/images/capabilities-bg.jpg)'}}>
+            <video src="/videos/placeholder2.mov" autoPlay loop />
           </div>
           <div onClick={() => history.push('/capabilities')}>
             <h2 className="section-header">Capabilities</h2>
@@ -53,7 +55,8 @@ class Index extends React.Component {
             <h2 className="section-header">Clients</h2>
             <p className="section-subheader">PlusMedia has experience across a wide variety of industries, markets and business models, serving clients throughout the U.S. and internationally.</p>
           </div>
-          <div style={{backgroundImage: 'url(/images/clients-bg.jpg)'}}>
+          <div className={styles.videoWrapper} style={{backgroundImage: 'url(/images/clients-bg.jpg)'}}>
+            <video src="/videos/placeholder3.mov" autoPlay loop />
           </div>
         </section>
 

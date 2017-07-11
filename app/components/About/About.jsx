@@ -89,22 +89,22 @@ class About extends React.Component{
               <div className={styles.quote}>
                 <div className={styles.quoteAuthorImage} style={{backgroundImage: `url(/images/author-image.jpg)`}}></div>
                 <div className={styles.quoteContent}>
-                  <quote>"Lorem ipsum dolar et lama."</quote>
-                  <author>Johnny</author>
+                  <quote>"PlusMedia’s team-oriented culture creates a collaborative atmosphere where employees feel empowered to contribute meaningfully"</quote>
+                  <author>Fariya Naz, Account Coordinator</author>
                 </div>
               </div>
               <div className={styles.quote}>
                 <div className={styles.quoteAuthorImage} style={{backgroundImage: `url(/images/author-image.jpg)`}}></div>
                 <div className={styles.quoteContent}>
-                  <quote>"Lorem ipsum dolar et lama."</quote>
-                  <author>Johnny</author>
+                  <quote>"With a leadership team dedicated to ensuring each employee has the tools they need to be successful, the growth opportunities at PlusMedia are limitless."</quote>
+                  <author>Christine Isgro, Senior Account Executive</author>
                 </div>
               </div>
               <div className={styles.quote}>
                 <div className={styles.quoteAuthorImage} style={{backgroundImage: `url(/images/author-image.jpg)`}}></div>
                 <div className={styles.quoteContent}>
-                  <quote>"Lorem ipsum dolar et lama."</quote>
-                  <author>Johnny</author>
+                  <quote>"PlusMedia upholds impeccable standards in every aspect of business – treatment of our employees, service to our clients and relationships with industry partners."</quote>
+                  <author>Jessica Carnrick, Marketing Communications Specialist</author>
                 </div>
               </div>
             </div>
@@ -114,10 +114,10 @@ class About extends React.Component{
             {renderJobs()}
           </div>
 
-          <div className={styles.sectionBar}>News</div>
+          {/* <div className={styles.sectionBar}>News</div>
           <div className={styles.container}>
             <PageItems />
-          </div>
+          </div> */}
         </div>
       </div>
     )

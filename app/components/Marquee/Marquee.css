@@ -1,6 +1,7 @@
 @import "../../styles/variables.css";
 
 .marquee{
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -11,6 +12,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  background-attachment: fixed;
 }
 
 .split{
@@ -49,6 +51,7 @@
 .header{
   color: rgba(var(--pistachio));
   font-size: 100px;
+  font-weight: 500;
   line-height: 90px;
   margin: 0;
   text-align: left;
@@ -56,6 +59,7 @@
 
 .intro{
   font-size: 50px;
+  font-weight: 300;
   line-height: 50px;
   color: white;
   margin: 0;
