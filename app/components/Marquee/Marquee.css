@@ -14,7 +14,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
   padding: 20px;
   @media (--only-small) {
     padding-top: 60px;
@@ -25,6 +24,7 @@
   @media (--large-and-up) {
     max-height: 600px;
     text-align: left;
+    background-attachment: fixed;
   }
 }
 
