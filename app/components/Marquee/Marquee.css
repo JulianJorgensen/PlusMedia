@@ -6,6 +6,7 @@
   flex-direction: column;
   width: 100%;
   height: calc(100vh - 200px);
+  max-height: 600px;
   align-items: center;
   justify-content: center;
   background-color: white;

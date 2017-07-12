@@ -32,9 +32,8 @@ class Header extends React.Component {
   }
 
   render() {
-    let {dispatch, pageName, scroll, navActive, handleNavToggle, history, location} = this.props;
+    let {dispatch, pageName, scroll, navActive, handleNavToggle, history} = this.props;
 
-    console.log(location);
     return (
       <Headroom
         onUnpin={this.handleNavUnpin.bind(this)}
@@ -42,7 +41,7 @@ class Header extends React.Component {
         wrapperStyle={{backgroundColor: 'transparent', position: 'absolute', width: '100%'}}
       >
         <AppBar
-          className={`${styles.bar} ${this.state.navStatic && location.pathname !== '/data-cards' ? styles.navStatic : ''}`}
+          className={`${styles.bar} ${this.state.navStatic ? styles.navStatic : ''}`}
           leftIcon={<img src="/images/logo.png" />}
           rightIcon={<i className={`fa fa-bars ${styles.navIcon} ${navActive ? styles.active : ''}`} />}
           onLeftIconClick={() => history.push('/')}

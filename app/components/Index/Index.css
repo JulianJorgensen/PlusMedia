@@ -2,17 +2,23 @@
 
 .landing{
   height: 100vh;
+  max-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url('/images/home-bg.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
+  & .logo{
+    width: 100%;
+    text-align: center;
+    & img{
+      max-width: 100%;
+    }
+  }
   & .header{
     color: white;
     font-size: 40px;
@@ -20,7 +26,64 @@
     margin-top: 25px;
     text-align: center;
     font-weight: 400;
+    width: 100%;
   }
+}
+
+.doubleCol{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  & div{
+    text-align: left;
+    width: 100%;
+    min-height: 400px;
+    padding: 50px;
+    background-color: white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.4s ease;
+    background-color: rgba(var(--pistachio), 0);
+    cursor: pointer;
+
+    @media (--large-and-up) {
+      width: 50%;
+      padding: 200px 100px;
+    }
+
+    &:hover{
+      background-color: rgba(var(--pistachio), 1);
+      & .sectionHeader,
+      & .sectionSubheader{
+        color: white;
+      }
+    }
+
+    & .sectionHeader{
+      font-size: 70px;
+      font-weight: 500;
+      line-height: 70px;
+      text-align: left;
+      color: rgba(var(--pistachio));
+      transition: all 0.3s ease;
+      @media (--large-and-up) {
+        font-size: 100px;
+      }
+    }
+
+    & .sectionSubheader{
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 40px;
+      margin: 0;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.capabilities{
+  flex-direction: column-reverse;
 }
 
 .pmGrid{
@@ -51,7 +114,7 @@
   }
   @media (--large-and-up) {
     position: relative;
-    height: 620px;
+    height: 625px;
     padding: 0;
     overflow: hidden;
 

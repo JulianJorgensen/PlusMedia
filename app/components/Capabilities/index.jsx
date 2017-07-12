@@ -4,6 +4,7 @@ import Marquee from '../Marquee/Marquee';
 import PageItems from '../PageItems';
 import styles from './index.css';
 let modalActions = require('actions/modalActions');
+import Isvg from 'react-inlinesvg';
 
 class Capabilities extends React.Component{
   constructor(){
@@ -77,40 +78,154 @@ class Capabilities extends React.Component{
                   body: 'Place highly impactful insert placements into third-party mailings and merchandise shipments.'
                 }));
               }}>
-                <div className={styles.icon} style={{backgroundImage: `url(/images/media-channels/insert-icon.png)`}}></div>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Affiliate_Icon.svg" /></div>
                 <h2 className={styles.title}>Inserts</h2>
               </div>
+
+              <div className={styles.channel} onClick={() => {
+                dispatch(modalActions.openModal({
+                  template: 'media',
+                  title: 'Magazines',
+                  body: 'Run on-page, bind-in, tip-on and onsert placements in editorially relevant publications that reach consumers at home, at the newsstand, at their doctor’s office or anywhere.'
+                }));
+              }}>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Magazines_Icon.svg" /></div>
+                <h2 className={styles.title}>Magazine</h2>
+              </div>
+
+              <div className={styles.channel} onClick={() => {
+                dispatch(modalActions.openModal({
+                  template: 'media',
+                  title: 'Newspapers',
+                  body: 'Reach consumers locally, regionally and nationally with run of press, solo and free standing insert placements in traditional newspapers.'
+                }));
+              }}>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Newspapers_Icon.svg" /></div>
+                <h2 className={styles.title}>Newspapers</h2>
+              </div>
+
+              <div className={styles.channel} onClick={() => {
+                dispatch(modalActions.openModal({
+                  template: 'media',
+                  title: 'Mass',
+                  body: 'Include targeted inserts in mass-distributed mailings to consumers seeking out savings.'
+                }));
+              }}>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Mass_Icon.svg" /></div>
+                <h2 className={styles.title}>Mass</h2>
+              </div>
+
               <div className={styles.channel} onClick={() => {
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Direct Mail',
-                  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla partur. Tempor incididunt ut et dolore magna aliqua.'
+                  body: 'Send dedicated mail pieces that reach highly engaged consumers right in their mailbox.'
                 }));
               }}>
-                <div className={styles.icon} style={{backgroundImage: `url(/images/media-channels/direct-icon.png)`}}></div>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_DirectMail_Icon.svg" /></div>
                 <h2 className={styles.title}>Direct Mail</h2>
               </div>
+
               <div className={styles.channel} onClick={() => {
                 dispatch(modalActions.openModal({
                   template: 'media',
-                  title: 'Social Media',
-                  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla partur. Tempor incididunt ut et dolore magna aliqua.'
+                  title: 'Out-of-Home',
+                  body: 'Advertise in strategically placed out-of-home locations that reach consumers on the go – while shopping, socializing, commuting or running errands.'
                 }));
               }}>
-                <div className={styles.icon} style={{backgroundImage: `url(/images/media-channels/social-icon.png)`}}></div>
-                <h2 className={styles.title}>Social Media</h2>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_OutOfHome_Icon.svg" /></div>
+                <h2 className={styles.title}>Out-of-Home</h2>
               </div>
+
               <div className={styles.channel} onClick={() => {
                 dispatch(modalActions.openModal({
                   template: 'media',
-                  title: 'Mobile Marketing',
-                  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla partur. Tempor incididunt ut et dolore magna aliqua.'
+                  title: 'Search',
+                  body: 'Drive traffic and brand awareness with expert search engine marketing tactics that reach consumers organically or via sponsored content.'
                 }));
               }}>
-                <div className={styles.icon} style={{backgroundImage: `url(/images/media-channels/mobile-icon.png)`}}></div>
-                <h2 className={styles.title}>Mobile Marketing</h2>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Search_Icon.svg" /></div>
+                <h2 className={styles.title}>Search</h2>
+              </div>
+
+              <div className={styles.channel} onClick={() => {
+                dispatch(modalActions.openModal({
+                  template: 'media',
+                  title: 'Display',
+                  body: 'Prospect or remarket to consumers with contextually relevant ads as they browse content and shop online.'
+                }));
+              }}>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Display_Icon.svg" /></div>
+                <h2 className={styles.title}>Display</h2>
+              </div>
+
+              <div className={styles.channel} onClick={() => {
+                dispatch(modalActions.openModal({
+                  template: 'media',
+                  title: 'Social',
+                  body: 'Leverage the sophisticated targeting and reach capabilities of social networks including Facebook, LinkedIn, Twitter, Instagram and Pinterest.'
+                }));
+              }}>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Social_Icon.svg" /></div>
+                <h2 className={styles.title}>Social</h2>
+              </div>
+
+              <div className={styles.channel} onClick={() => {
+                dispatch(modalActions.openModal({
+                  template: 'media',
+                  title: 'Mobile',
+                  body: 'Serve messages to consumers anytime, anywhere with relevant, immediate and contextual mobile ads.'
+                }));
+              }}>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Social_Icon.svg" /></div>
+                <h2 className={styles.title}>Mobile</h2>
+              </div>
+
+              <div className={styles.channel} onClick={() => {
+                dispatch(modalActions.openModal({
+                  template: 'media',
+                  title: 'Mobile',
+                  body: 'Serve messages to consumers anytime, anywhere with relevant, immediate and contextual mobile ads.'
+                }));
+              }}>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Mobile_Icon.svg" /></div>
+                <h2 className={styles.title}>Mobile</h2>
+              </div>
+
+              <div className={styles.channel} onClick={() => {
+                dispatch(modalActions.openModal({
+                  template: 'media',
+                  title: 'Email',
+                  body: 'Partner with brand-relevant publishers to reach consumers in their email inbox.'
+                }));
+              }}>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Mobile_Icon.svg" /></div>
+                <h2 className={styles.title}>Email</h2>
+              </div>
+
+              <div className={styles.channel} onClick={() => {
+                dispatch(modalActions.openModal({
+                  template: 'media',
+                  title: 'Affiliate',
+                  body: 'Leverage strategic partners by accessing their consumer base to drive qualified referrals.'
+                }));
+              }}>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Affiliate_Icon.svg" /></div>
+                <h2 className={styles.title}>Affiliate</h2>
+              </div>
+
+              <div className={styles.channel} onClick={() => {
+                dispatch(modalActions.openModal({
+                  template: 'media',
+                  title: 'Online Video/Radio',
+                  body: 'Tap into streaming video and radio networks to serve relevant ads to highly engaged consumers.'
+                }));
+              }}>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_OnlineVideoRadio_Icon.svg" /></div>
+                <h2 className={styles.title}>Online Video/Radio</h2>
               </div>
             </div>
+            <p>Contact us to learn more or to arrange for a complimentary evaluation of your current media efforts.</p>
           </div>
 
           {/* <div className={styles.sectionBar}>Featured Case Studies</div>

@@ -13,7 +13,64 @@ class About extends React.Component{
   render() {
     let {dispatch} = this.props;
 
-    let teamMembers = ['1', '2', '3', '4', '5', '6', '7', '8'];
+    let teamMembers = [
+      {
+        name: 'Sherry Scapperotti',
+        title: 'Title here',
+        title2: 'Title 2 here',
+        image: 'Sherry-Scapperotti.jpg',
+        bio: 'Some bio here...'
+      },
+      {
+        name: 'Kate McGee',
+        title: 'Title here',
+        title2: 'Title 2 here',
+        image: '',
+        bio: 'Some bio here...'
+      },
+      {
+        name: 'Elise Nathan',
+        title: 'Title here',
+        title2: 'Title 2 here',
+        image: 'Elise-Nathan.jpg',
+        bio: 'Some bio here...'
+      },
+      {
+        name: 'Darryl Daoust',
+        title: 'Title here',
+        title2: 'Title 2 here',
+        image: 'Darryl-Daoust.jpg',
+        bio: 'Some bio here...'
+      },
+      {
+        name: 'Michelle Syme',
+        title: 'Title here',
+        title2: 'Title 2 here',
+        image: 'Michelle-Syme.jpg',
+        bio: 'Some bio here...'
+      },
+      {
+        name: 'Sandra Roscoe',
+        title: 'Title here',
+        title2: 'Title 2 here',
+        image: 'Sandra-Roscoe.jpg',
+        bio: 'Some bio here...'
+      },
+      {
+        name: 'Dolores Babcock',
+        title: 'Title here',
+        title2: 'Title 2 here',
+        image: 'Dolores-for-website.jpg',
+        bio: 'Some bio here...'
+      },
+      {
+        name: 'Julie Lebeau',
+        title: 'Title here',
+        title2: 'Title 2 here',
+        image: 'Julie-LeBeau.jpg',
+        bio: 'Some bio here...'
+      }
+    ];
 
     let renderTeamMembers = () => {
       return (
@@ -22,16 +79,16 @@ class About extends React.Component{
             <div className={styles.teamMember} onClick={() => {
               dispatch(modalActions.openModal({
                 template: 'about',
-                image: '/images/team/Untitled-1.jpg',
-                name: 'Sherry Somebody',
-                title: 'President, PlusMedia',
-                title2: 'CEO, PlusMedia Digital',
-                bio: 'some bio here'
+                image: `/images/team/${teamMember.image}`,
+                name: teamMember.name,
+                title: teamMember.title,
+                title2: teamMember.title2,
+                bio: teamMember.bio
               }));
             }}>
-              <div className={styles.teamMemberPhoto} style={{backgroundImage: `url(/images/team/Untitled-${teamMember}.jpg)`}} />
-              <h4 className={styles.teamMemberName}>Firstname Lastname</h4>
-              <h5 className={styles.teamMemberTitle}>Title here</h5>
+              <div className={styles.teamMemberPhoto} style={{backgroundImage: `url(/images/team/${teamMember.image})`}} />
+              <h4 className={styles.teamMemberName}>{teamMember.name}</h4>
+              <h5 className={styles.teamMemberTitle}>{teamMember.title}</h5>
             </div>
           )
         })

@@ -32,13 +32,16 @@
 
 .contactMethods{
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   & .contacts,
   & .formContainer{
-    width: 50%;
+    width: 100%;
     padding: 20px 30px 40px;
+    @media (--medium-and-up) {
+      width: 50%;
+    }
   }
-
   & h2{
     font-size: 48px;
     text-align: center;

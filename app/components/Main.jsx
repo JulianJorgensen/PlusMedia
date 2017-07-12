@@ -92,7 +92,7 @@ export default class Main extends React.Component {
         <Header handleNavToggle={this.handleNavToggle.bind(this)} navActive={this.state.navActive} />
         <Scroll />
         <Layout>
-          <div className={`${styles.loader} ${this.state.loaded ? styles.loaded : ''}`}></div>
+          <div className={`${styles.loader} ${this.state.loaded ? styles.loaded : ''}`}><div className={styles.loaderInner}></div></div>
           <div className={styles.page}>
             <Route exact path="/" component={Index} />
             <Route path="/about" component={About} />

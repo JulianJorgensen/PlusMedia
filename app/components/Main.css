@@ -10,16 +10,28 @@
   pointer-events: none;
   left: 0;
   top: 0;
-  border-color: rgba(var(--gray));
-  border-style: solid;
-  border-width: 50vh;
-  width: calc(100vw - 100vh);
-  height: calc(100vh - 100vh);
-  box-sizing: content-box !important;
-  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  & .loaderInner{
+    box-sizing: content-box !important;
+    border-color: rgba(var(--gray));
+    border-style: solid;
+    border-width: 50vw;
+    transition: all 0.3s;
+    transition-timing-function: cubic-bezier(0,0,0,1);
+    width: 300px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
   &.loaded{
-    border-width: 0;
-    width: 100vw;
-    height: 100vh;
+    & .loaderInner{
+      border-width: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0);
+    }
   }
 }
