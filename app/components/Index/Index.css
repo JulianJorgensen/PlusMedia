@@ -31,7 +31,7 @@
   }
   @media (--large-and-up) {
     & > div {
-      align-items: center;      
+      align-items: center;
     }
   }
 }
@@ -137,12 +137,15 @@
 }
 
 .clientLogos{
+  display: none;
   background-color: white;
   width: 100%;
-  display: flex;
   justify-content: center;
   padding: 30px 0;
   & .slider{
     width: 800px;
+  }
+  @media (--large-and-up) {
+    display: flex;
   }
 }
