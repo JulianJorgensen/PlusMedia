@@ -36,7 +36,7 @@ class Index extends React.Component {
       <div className="page-content">
         <Marquee
           header={<div className={styles.logo}><img src="/images/logo-big.png" /></div>}
-          subheader={<h1 className={styles.header}>Leveraging the power of paid media<br />to connect brands with customers.</h1>}
+          subheader={<h1 className={styles.header}>Leveraging the power of paid media to connect brands with customers.</h1>}
           className={styles.landing}
           bgImage="/images/home-bg.jpg"
           transitionSpeed={800}
