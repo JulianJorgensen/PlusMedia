@@ -10,13 +10,15 @@
 }
 
 .marquee{
-  background-color: rgba(var(--pistachio));
-  height: 400px;
+  background-color: rgba(var(--grey));
+  height: 300px;
   justify-content: center;
   text-align: center;
-  & h1,
+  & h1{
+    color: rgba(var(--pistachio));
+  }
   & h2{
-    color: rgba(var(--spruce));
+    color: white;
   }
   & div{
     align-items: center;

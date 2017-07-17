@@ -25,21 +25,21 @@ class Clients extends React.Component{
           <div className={styles.container}>
             <p>Our clients predominantly come to us through word-of-mouth referrals. Our very first client still works with us after nearly 20 years, and many others have been with us for more than a decade.</p>
             <div className={styles.partners}>
-              <div className={styles.partner}><img src="/images/client-logos/barnesnnoble.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/dowjones.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/gerber.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/rodale.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/barnesnnoble.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/dowjones.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/gerber.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/rodale.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/barnesnnoble.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/dowjones.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/gerber.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/rodale.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/dowjones.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/gerber.png" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/rodale.png" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-Barnes-&-Noble.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-Charles-Tyrwhitt.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-Colonial-Penn.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-Discover.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-Feeding-America.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-Gerber-Life-Insurance.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-Hayneedle.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-HelloFresh.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-Jet.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-Omaha-Steaks.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-Shutterfly.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-Staples.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-The-Economist.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-USO.jpg" /></div>
+              <div className={styles.partner}><img src="/images/client-logos/Logo-WSJwine.jpg" /></div>
             </div>
           </div>
 

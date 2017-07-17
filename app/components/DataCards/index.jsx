@@ -19,12 +19,13 @@ class DataCards extends React.Component{
       <div>
         <Marquee
           title="Data Cards"
-          intro="Click here to download our complete List & Program Overview"
+          intro=""
           className={styles.marquee}
         />
         <div className="page-content">
           <div className={styles.container}>
-            PlusMedia’s Management division offers a wide range of media buying opportunities for advertisers looking to market to third party customer bases via lists, package inserts, billing statements, product samples and more. Please click on the links below to view data cards or contact Sandra Roscoe for more information on our managed properties.
+            <p>PlusMedia’s Management division offers a wide range of media buying opportunities for advertisers looking to market to third party customer bases via lists, package inserts, billing statements, product samples and more. Please click on the links below to view data cards or contact <a href="mailto:tina.cavallo@plusme.com">Tina Cavallo</a> for more information on our managed properties.</p>
+            <p>Click here to download our complete List & Program Overview</p>
             <div className={styles.datacards}>
               <Accordion className={styles.accordion}>
                 <Accordion.Item>

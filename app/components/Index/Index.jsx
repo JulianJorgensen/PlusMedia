@@ -63,9 +63,7 @@ class Index extends React.Component {
             <h2 className={styles.sectionHeader}>About</h2>
             <p className={styles.sectionSubheader}>PlusMedia is a dynamic, full-service media agency specializing in omnichannel direct response marketing that delivers measurable results.</p>
           </div>
-          <div className={styles.videoWrapper} style={{backgroundImage: 'url(/images/about-bg.jpg)'}}>
-            <video src="/videos/placeholder.mov" autoPlay loop />
-          </div>
+          <div style={{backgroundImage: 'url(/images/about-bg.jpg)'}}></div>
         </section>
 
         <section className={`${styles.doubleCol} ${styles.capabilities}`}>
@@ -81,18 +79,27 @@ class Index extends React.Component {
             <h2 className={styles.sectionHeader}>Clients</h2>
             <p className={styles.sectionSubheader}>PlusMedia has experience across a wide variety of industries, markets and business models, serving clients throughout the U.S. and internationally.</p>
           </div>
-          <div className={styles.videoWrapper} style={{backgroundImage: 'url(/images/clients-bg.jpg)'}}>
-            <video src="/videos/placeholder2.mov" autoPlay loop />
-          </div>
+          <div style={{backgroundImage: 'url(/images/clients-bg.jpg)'}}></div>
         </section>
 
         <div className={styles.pmGrid}></div>
         <div className={styles.clientLogos}>
           <Slider className={styles.slider} {...settings}>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/gerber.png" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/rodale.png" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/dowjones.png" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/barnesnnoble.png" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Barnes-&-Noble.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Charles-Tyrwhitt.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Colonial-Penn.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Discover.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Feeding-America.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Gerber-Life-Insurance.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Hayneedle.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-HelloFresh.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Jet.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Omaha-Steaks.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Shutterfly.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Staples.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-The-Economist.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-USO.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-WSJwine.jpg" /></div>
           </Slider>
         </div>
       </div>

@@ -12,6 +12,17 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 2;
+  }
   & .logo{
     width: 100%;
     text-align: center;
@@ -43,7 +54,6 @@
   & div{
     text-align: left;
     width: 100%;
-    min-height: 400px;
     padding: 50px;
     background-color: white;
     background-position: center center;
@@ -53,9 +63,13 @@
     background-color: rgba(var(--pistachio), 0);
     cursor: pointer;
 
+    @media (--only-small) {
+      min-height: 350px;
+    }
+
     @media (--large-and-up) {
       width: 50%;
-      padding: 200px 100px;
+      padding: 180px 100px;
     }
 
     &:hover{
@@ -79,9 +93,9 @@
     }
 
     & .sectionSubheader{
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 300;
-      line-height: 40px;
+      line-height: 32px;
       margin: 0;
       transition: all 0.3s ease;
     }
@@ -116,26 +130,6 @@
   }
 }
 
-.videoWrapper{
-  & video{
-    display: none;
-  }
-  @media (--large-and-up) {
-    position: relative;
-    height: 625px;
-    padding: 0;
-    overflow: hidden;
-
-    & video{
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-    }
-  }
-}
-
 .clientLogos{
   display: none;
   background-color: white;
@@ -144,6 +138,9 @@
   padding: 30px 0;
   & .slider{
     width: 800px;
+    & img{
+      max-width: 160px;
+    }
   }
   @media (--large-and-up) {
     display: flex;
