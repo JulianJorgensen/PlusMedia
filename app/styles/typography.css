@@ -4,9 +4,7 @@
 
 :global{
   & body,
-  & div,
   & button,
-  & p,
   & li,
   & :--headings{
     font-family: 'Teko', system-ui !important;
@@ -28,6 +26,10 @@
 
   & a{
     color: rgba(var(--pistachio));
+  }
+
+  & p{
+    margin-top: 0;
   }
 }
 

@@ -51,19 +51,28 @@
     background-color: gray(96%);
     font-weight: normal;
     font-size: 18px;
+    line-height: 22px;
     color:  rgba(var(--gray));
     & .row{
       display: flex;
+      flex-direction: column;
       & .col{
-        width: 50%;
+        width: 100%;
+      }
+      @media (--medium-and-up) {
+        flex-direction: row;
+        & .col{
+          width: 50%;
+        }
       }
     }
     & a{
       color: rgba(var(--gray));
     }
     & h4{
-      margin-top: 15px;
-      font-size: 18px;
+      margin-top: 25px;
+      font-size: 24px;
+      line-height: 24px;
       font-weight: bold;
     }
     & address{
@@ -78,9 +87,16 @@
       display: flex;
       flex-wrap: wrap;
       font-size: 18px;
+      & .input input,
+      & .textarea textarea{
+        font-family: 'Open-Sans';
+      }
       & .input{
-        width: calc(50% - 30px);
+        width: calc(100% - 30px);
         margin: 0 15px;
+        @media (--medium-and-up) {
+          width: calc(50% - 30px);
+        }
       }
       & .textarea{
         width: calc(100% - 30px);

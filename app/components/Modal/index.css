@@ -83,16 +83,29 @@
       font-size: 24px;
     }
     & .aboutBio{
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 300;
       margin-top: 15px;
+      font-family: Open-Sans;
     }
   }
 }
 
 .defaultModal{
+  display: flex;
+  align-items: center;
   width: 500px;
   max-width: 80vw;
   font-size: 18px;
   font-weight: 300;
+  font-family: 'Open-Sans';
+  & .icon{
+    width: 200px;
+    height: 100px;
+    margin-right: 30px;
+    & svg{
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
 }

@@ -38,7 +38,7 @@ class Header extends React.Component {
       <Headroom
         onUnpin={this.handleNavUnpin.bind(this)}
         onUnfix={this.handleNavUnfix.bind(this)}
-        wrapperStyle={{backgroundColor: 'transparent', position: 'absolute', width: '100%'}}
+        wrapperStyle={{backgroundColor: 'transparent', position: 'absolute', width: '100%', zIndex: 3}}
       >
         <AppBar
           className={`${styles.bar} ${this.state.navStatic ? styles.navStatic : ''}`}

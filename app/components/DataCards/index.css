@@ -2,8 +2,8 @@
 
 .container{
   composes: container from "../../styles/layout.css";
-  font-size: 32px;
-  line-height: 32px;
+  font-size: 26px;
+  line-height: 30px;
   font-weight: normal;
   color: rgba(var(--spruce));
   padding: 20px;

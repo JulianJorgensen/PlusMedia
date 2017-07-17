@@ -61,7 +61,7 @@ class Contact extends React.Component{
       if (!this.state.sent){
         return (
           <div>
-            <h2>How can we Help?</h2>
+            <h2>Contact</h2>
             <form onSubmit={this.handleSubmit.bind(this)} className={styles.form}>
               <Input
                 type='text'
@@ -128,7 +128,6 @@ class Contact extends React.Component{
           <div className={styles.topBar}></div>
           <div className={styles.contactMethods}>
             <div className={styles.contacts}>
-              <h2>Contact</h2>
               <div className={styles.row}>
                 <div className={styles.col}>
                   <h4>PlusMedia, LLC</h4>
@@ -137,23 +136,19 @@ class Contact extends React.Component{
                     Danbury, CT 06811<br />
                     203.748.6500
                   </address>
-                  <address>
-                    4 West Red Oak Lane, Suite 104<br />
-                    White Plains, NY 10604
-                  </address>
                 </div>
                 <div className={styles.col}>
-                  <h4>Business Development:</h4>
+                  <h4>Business Development</h4>
                   Sandra Roscoe<br />
                   EVP, Strategy & Development<br />
                   <a href="mailto:sandra.roscoe@plusme.com">sandra.roscoe@plusme.com</a>
 
-                  <h4>Career Opportunities:</h4>
+                  <h4>Career Opportunities</h4>
                   Nicole Daoust<br />
-                  Human Resource Manager<br />
+                  Human Resources Manager<br />
                   <a href="mailto:nicole.daoust@plusme.com">nicole.daoust@plusme.com</a>
 
-                  <h4>Media Inquiries:</h4>
+                  <h4>Media Inquiries</h4>
                   Jessica Carnrick<br />
                   Marketing Communications Specialist<br />
                   <a href="mailto:jessica.carnrick@plusme.com">jessica.carnrick@plusme.com</a>

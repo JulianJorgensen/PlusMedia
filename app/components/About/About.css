@@ -2,8 +2,8 @@
 
 .container{
   composes: container from "../../styles/layout.css";
-  font-size: 32px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 24px;
   color: rgba(var(--spruce));
   padding: 20px;
 }
@@ -24,25 +24,19 @@
   width: 50%;
   color: rgba(var(--gray));
   margin-bottom: 10px;
+  padding-right: 20px;
   @media (--large-and-up) {
     width: 25%;
   }
 
   & .teamMemberPhoto{
-    width: 200px;
     height: 200px;
-    max-width: 100%;
-    max-height: 100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgba(var(--gray));
     cursor: pointer;
-    filter: grayscale(100%);
     transition: all 0.3s ease;
-    &:hover{
-      filter: grayscale(0);
-    }
   }
   & .teamMemberName{
     font-size: 24px;
@@ -51,6 +45,7 @@
   }
   & .teamMemberTitle{
     font-size: 20px;
+    line-height: 20px;
     font-weight: 300;
   }
 }
@@ -69,12 +64,13 @@
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
+    font-family: 'Open-Sans';
     @media (--large-and-up) {
       width: 33.33%;
     }
     & .quoteAuthorImage{
-      min-height: 60px;
-      min-width: 60px;
+      min-height: 80px;
+      min-width: 80px;
       margin-right: 10px;
       border-radius: 50%;
       background-position: center center;
@@ -85,11 +81,11 @@
       & quote,
       & author{
         display: block;
-        font-size: 14px;
-        line-height: 14px;
-        font-style: italic;
+        font-size: 16px;
+        line-height: 16px;
       }
       & author{
+        font-style: italic;
         &:before{
           content: '- ';
         }
@@ -119,7 +115,7 @@
     }
     & .jobDescription{
       font-size: 18px;
-      line-height: 18px;
+      line-height: 20px;
       margin: 15px 0;
     }
     & .jobCtas{
@@ -131,6 +127,7 @@
       text-align: center;
       font-weight: 600;
       font-size: 24px;
+      font-family: 'Teko';
       @media (--large-and-up) {
         justify-content: space-between;
         flex-direction: row;

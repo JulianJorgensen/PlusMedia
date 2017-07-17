@@ -11,6 +11,21 @@ import styles from './Index.css';
 class Index extends React.Component {
   constructor() {
     super();
+
+    this.state = {
+      marqueeVideo: null
+    }
+  }
+
+  componentWillReceiveProps(){
+    let marqueeVideos = [
+      '/videos/placeholder.mov',
+      '/videos/placeholder2.mov',
+      '/videos/placeholder3.mov'
+    ];
+    this.setState({
+      marqueeVideo: marqueeVideos[Math.floor(Math.random()*marqueeVideos.length)]
+    });
   }
 
   render() {
@@ -39,6 +54,7 @@ class Index extends React.Component {
           subheader={<h1 className={styles.header}>Leveraging the power of paid media to connect brands with customers.</h1>}
           className={styles.landing}
           bgImage="/images/home-bg.jpg"
+          bgVideo={this.state.marqueeVideo}
           transitionSpeed={800}
         />
 

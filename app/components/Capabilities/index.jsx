@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 let {connect} = require('react-redux');
 import Marquee from '../Marquee/Marquee';
 import PageItems from '../PageItems';
@@ -24,7 +25,9 @@ class Capabilities extends React.Component{
         <div className="page-content">
           <div className={styles.sectionBar}>Our Services</div>
           <div className={styles.services}>
-            <p>We offer a comprehensive array of services to help you achieve your marketing goals, providing a single source for all your media buying and management.</p>
+            <div className={styles.container}>
+              <p>We offer a comprehensive array of services to help you achieve your marketing goals, providing a single source for all your media buying and management.</p>
+            </div>
             <h2 className={styles.serviceGroupTitle}>Media Services</h2>
             <div className={styles.serviceGroup}>
               <div className={styles.service}>
@@ -64,7 +67,9 @@ class Capabilities extends React.Component{
                 <p className={styles.serviceDescription}>A dedicated outreach team to identify, forge and nurture strategic marketing partnerships that yield mutually beneficial results for all parties.</p>
               </div>
             </div>
-            <p>Contact us to learn more or to arrange for a complimentary evaluation of your current media, marketing and management services efforts.</p>
+            <div className={styles.container}>
+              <p><Link to="/contact">Contact us</Link> to learn more or to arrange for a complimentary evaluation of your current media, marketing and management services efforts.</p>
+            </div>
           </div>
 
           <div className={styles.sectionBar}>Media Channels</div>
@@ -75,7 +80,8 @@ class Capabilities extends React.Component{
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Inserts',
-                  body: 'Place highly impactful insert placements into third-party mailings and merchandise shipments.'
+                  body: 'Place highly impactful insert placements into third-party mailings and merchandise shipments.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Affiliate_Icon.svg" />
                 }));
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Affiliate_Icon.svg" /></div>
@@ -86,7 +92,8 @@ class Capabilities extends React.Component{
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Magazines',
-                  body: 'Run on-page, bind-in, tip-on and onsert placements in editorially relevant publications that reach consumers at home, at the newsstand, at their doctor’s office or anywhere.'
+                  body: 'Run on-page, bind-in, tip-on and onsert placements in editorially relevant publications that reach consumers at home, at the newsstand, at their doctor’s office or anywhere.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Magazines_Icon.svg" />
                 }));
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Magazines_Icon.svg" /></div>
@@ -97,7 +104,8 @@ class Capabilities extends React.Component{
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Newspapers',
-                  body: 'Reach consumers locally, regionally and nationally with run of press, solo and free standing insert placements in traditional newspapers.'
+                  body: 'Reach consumers locally, regionally and nationally with run of press, solo and free standing insert placements in traditional newspapers.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Newspapers_Icon.svg" />
                 }));
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Newspapers_Icon.svg" /></div>
@@ -108,7 +116,8 @@ class Capabilities extends React.Component{
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Mass',
-                  body: 'Include targeted inserts in mass-distributed mailings to consumers seeking out savings.'
+                  body: 'Include targeted inserts in mass-distributed mailings to consumers seeking out savings.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Mass_Icon.svg" />
                 }));
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Mass_Icon.svg" /></div>
@@ -119,7 +128,8 @@ class Capabilities extends React.Component{
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Direct Mail',
-                  body: 'Send dedicated mail pieces that reach highly engaged consumers right in their mailbox.'
+                  body: 'Send dedicated mail pieces that reach highly engaged consumers right in their mailbox.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_DirectMail_Icon.svg" />
                 }));
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_DirectMail_Icon.svg" /></div>
@@ -130,7 +140,8 @@ class Capabilities extends React.Component{
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Out-of-Home',
-                  body: 'Advertise in strategically placed out-of-home locations that reach consumers on the go – while shopping, socializing, commuting or running errands.'
+                  body: 'Advertise in strategically placed out-of-home locations that reach consumers on the go – while shopping, socializing, commuting or running errands.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_OutOfHome_Icon.svg" />
                 }));
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_OutOfHome_Icon.svg" /></div>
@@ -141,7 +152,8 @@ class Capabilities extends React.Component{
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Search',
-                  body: 'Drive traffic and brand awareness with expert search engine marketing tactics that reach consumers organically or via sponsored content.'
+                  body: 'Drive traffic and brand awareness with expert search engine marketing tactics that reach consumers organically or via sponsored content.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Search_Icon.svg" />
                 }));
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Search_Icon.svg" /></div>
@@ -152,7 +164,8 @@ class Capabilities extends React.Component{
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Display',
-                  body: 'Prospect or remarket to consumers with contextually relevant ads as they browse content and shop online.'
+                  body: 'Prospect or remarket to consumers with contextually relevant ads as they browse content and shop online.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Display_Icon.svg" />
                 }));
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Display_Icon.svg" /></div>
@@ -163,7 +176,8 @@ class Capabilities extends React.Component{
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Social',
-                  body: 'Leverage the sophisticated targeting and reach capabilities of social networks including Facebook, LinkedIn, Twitter, Instagram and Pinterest.'
+                  body: 'Leverage the sophisticated targeting and reach capabilities of social networks including Facebook, LinkedIn, Twitter, Instagram and Pinterest.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Social_Icon.svg" />
                 }));
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Social_Icon.svg" /></div>
@@ -174,18 +188,8 @@ class Capabilities extends React.Component{
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Mobile',
-                  body: 'Serve messages to consumers anytime, anywhere with relevant, immediate and contextual mobile ads.'
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Social_Icon.svg" /></div>
-                <h2 className={styles.title}>Mobile</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Mobile',
-                  body: 'Serve messages to consumers anytime, anywhere with relevant, immediate and contextual mobile ads.'
+                  body: 'Serve messages to consumers anytime, anywhere with relevant, immediate and contextual mobile ads.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Mobile_Icon.svg" />
                 }));
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Mobile_Icon.svg" /></div>
@@ -196,10 +200,11 @@ class Capabilities extends React.Component{
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Email',
-                  body: 'Partner with brand-relevant publishers to reach consumers in their email inbox.'
+                  body: 'Partner with brand-relevant publishers to reach consumers in their email inbox.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Email_Icon.svg" />
                 }));
               }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Mobile_Icon.svg" /></div>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Email_Icon.svg" /></div>
                 <h2 className={styles.title}>Email</h2>
               </div>
 
@@ -207,7 +212,8 @@ class Capabilities extends React.Component{
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Affiliate',
-                  body: 'Leverage strategic partners by accessing their consumer base to drive qualified referrals.'
+                  body: 'Leverage strategic partners by accessing their consumer base to drive qualified referrals.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Affiliate_Icon.svg" />
                 }));
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Affiliate_Icon.svg" /></div>
@@ -218,14 +224,15 @@ class Capabilities extends React.Component{
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Online Video/Radio',
-                  body: 'Tap into streaming video and radio networks to serve relevant ads to highly engaged consumers.'
+                  body: 'Tap into streaming video and radio networks to serve relevant ads to highly engaged consumers.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_OnlineVideoRadio_Icon.svg" />
                 }));
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_OnlineVideoRadio_Icon.svg" /></div>
                 <h2 className={styles.title}>Online Video/Radio</h2>
               </div>
             </div>
-            <p>Contact us to learn more or to arrange for a complimentary evaluation of your current media efforts.</p>
+            <p><Link to='/contact'>Contact us</Link> to learn more or to arrange for a complimentary evaluation of your current media efforts.</p>
           </div>
 
           {/* <div className={styles.sectionBar}>Featured Case Studies</div>

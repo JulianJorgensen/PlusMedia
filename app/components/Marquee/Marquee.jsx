@@ -8,7 +8,7 @@ class Marquee extends React.Component {
   }
 
   render() {
-    let {title, intro, header, subheader, transitionSpeed, bgImage, className, split, scroll} = this.props;
+    let {title, intro, header, subheader, transitionSpeed, bgImage, bgVideo, className, split, scroll} = this.props;
 
     if (!transitionSpeed){
       transitionSpeed = 400;
@@ -35,6 +35,7 @@ class Marquee extends React.Component {
             {title ? <h1 className={styles.header}>{title}</h1> : header}
             {intro ? <h2 className={styles.intro}>{intro}</h2> : subheader}
           </div>
+          {bgVideo ? <video src={bgVideo} autoPlay loop /> : ''}
         </div>
       )
     }
