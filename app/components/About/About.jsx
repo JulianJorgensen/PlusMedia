@@ -99,6 +99,15 @@ class About extends React.Component{
       return (
         <div className={styles.jobs}>
           <div className={styles.job}>
+            <h2 className={styles.jobTitle}>Account Coordinator</h2>
+            <div className={styles.jobDescription}>The Account Coordinator is the engine that drives PlusMedia’s business.  Serving as the key support for the execution of high-impact media channels on behalf of our clients, the ideal Account Coordinator is organized, precise and communicative, and possesses a strong desire to learn and grow within a best-in-class media agency.  The Account Coordinator’s objectives are to ensure smooth execution across internal teams and external vendors and client contacts to drive top-notch service and results for PlusMedia’s clients.</div>
+            <div className={styles.jobCtas}>
+              <div className={styles.jobLocation}>Location</div>
+              <div className={styles.jobApply}>Apply Now</div>
+              <div className={styles.jobType}>Full time</div>
+            </div>
+          </div>
+          {/* <div className={styles.job}>
             <h2 className={styles.jobTitle}>Job title #1</h2>
             <div className={styles.jobDescription}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
             <div className={styles.jobCtas}>
@@ -106,16 +115,7 @@ class About extends React.Component{
               <div className={styles.jobApply}>Apply Now</div>
               <div className={styles.jobType}>Full time</div>
             </div>
-          </div>
-          <div className={styles.job}>
-            <h2 className={styles.jobTitle}>Job title #1</h2>
-            <div className={styles.jobDescription}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
-            <div className={styles.jobCtas}>
-              <div className={styles.jobLocation}>Location</div>
-              <div className={styles.jobApply}>Apply Now</div>
-              <div className={styles.jobType}>Full time</div>
-            </div>
-          </div>
+          </div> */}
         </div>
       )
     };
@@ -144,21 +144,21 @@ class About extends React.Component{
           <div className={styles.container}>
             <div className={styles.quotes}>
               <div className={styles.quote}>
-                <div className={styles.quoteAuthorImage} style={{backgroundImage: `url(/images/author-image.jpg)`}}></div>
+                <div className={styles.quoteAuthorImage} style={{backgroundImage: `url(/images/employees/Headshot-Fariya-Naz.jpg)`}}></div>
                 <div className={styles.quoteContent}>
                   <quote>"PlusMedia’s team-oriented culture creates a collaborative atmosphere where employees feel empowered to contribute meaningfully"</quote>
                   <author>Fariya Naz, Account Coordinator</author>
                 </div>
               </div>
               <div className={styles.quote}>
-                <div className={styles.quoteAuthorImage} style={{backgroundImage: `url(/images/author-image.jpg)`}}></div>
+                <div className={styles.quoteAuthorImage} style={{backgroundImage: `url(/images/employees/Headshot-Christine-Isgro.jpg)`}}></div>
                 <div className={styles.quoteContent}>
                   <quote>"With a leadership team dedicated to ensuring each employee has the tools they need to be successful, the growth opportunities at PlusMedia are limitless."</quote>
                   <author>Christine Isgro, Senior Account Executive</author>
                 </div>
               </div>
               <div className={styles.quote}>
-                <div className={styles.quoteAuthorImage} style={{backgroundImage: `url(/images/author-image.jpg)`}}></div>
+                <div className={styles.quoteAuthorImage} style={{backgroundImage: `url(/images/employees/Headshot-Jessica-Carnrick.jpg)`}}></div>
                 <div className={styles.quoteContent}>
                   <quote>"PlusMedia upholds impeccable standards in every aspect of business – treatment of our employees, service to our clients and relationships with industry partners."</quote>
                   <author>Jessica Carnrick, Marketing Communications Specialist</author>

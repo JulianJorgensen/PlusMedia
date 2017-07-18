@@ -2,8 +2,6 @@
 
 .container{
   composes: container from "../../styles/layout.css";
-  font-size: 26px;
-  line-height: 30px;
   font-weight: normal;
   color: rgba(var(--spruce));
   padding: 20px;
@@ -67,6 +65,7 @@
         font-size: 18px;
         line-height: 22px;
         font-weight: 300;
+        font-family: Open-Sans;
       }
     }
   }
