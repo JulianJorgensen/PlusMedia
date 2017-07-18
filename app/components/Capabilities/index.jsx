@@ -81,10 +81,10 @@ class Capabilities extends React.Component{
                   template: 'media',
                   title: 'Inserts',
                   body: 'Place highly impactful insert placements into third-party mailings and merchandise shipments.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Affiliate_Icon.svg" />
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Inserts_Icon.svg" />
                 }));
               }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Affiliate_Icon.svg" /></div>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Inserts_Icon.svg" /></div>
                 <h2 className={styles.title}>Inserts</h2>
               </div>
 
