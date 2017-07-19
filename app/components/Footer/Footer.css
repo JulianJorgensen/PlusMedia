@@ -25,7 +25,9 @@
   }
 
   & .contact{
+    order: -1;
     @media (--large-and-up) {
+      order: 0;
       text-align: right;
     }
   }

@@ -61,7 +61,7 @@ class Contact extends React.Component{
       if (!this.state.sent){
         return (
           <div>
-            <h2>Contact</h2>
+            <h2>Contact us</h2>
             <form onSubmit={this.handleSubmit.bind(this)} className={styles.form}>
               <Input
                 type='text'

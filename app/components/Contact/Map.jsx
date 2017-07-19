@@ -4,7 +4,7 @@ import GoogleMapReact from 'google-map-react';
 import Loader from 'components/Loader';
 import styles from './index.css';
 
-const Marker = () => <div className={styles.marker}><i className="fa fa-map-marker" /> PlusMedia LLC</div>;
+const Marker = () => <div className={styles.marker}><i className="fa fa-map-marker" /></div>;
 
 const mapOptions = {
   styles: [

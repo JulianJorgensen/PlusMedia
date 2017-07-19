@@ -40,7 +40,7 @@ class Capabilities extends React.Component{
               </div>
               <div className={styles.service}>
                 <h3 className={styles.serviceTitle}>Analytics & Optimization</h3>
-                <p className={styles.serviceDescription}>Data-driven campaign insights and customized reporting to help you make strategic business decisions.</p>
+                <p className={styles.serviceDescription}>Data-driven campaign insights and fully-customized reporting to help you make strategic business decisions.</p>
               </div>
             </div>
 
@@ -48,11 +48,11 @@ class Capabilities extends React.Component{
             <div className={styles.serviceGroup}>
               <div className={styles.service}>
                 <h3 className={styles.serviceTitle}>Creative Development</h3>
-                <p className={styles.serviceDescription}>Creative resources and expert direct response insight to help you design highly impactful ads.</p>
+                <p className={styles.serviceDescription}>Expert design resources, copywriting and direct response insight to help you create and test highly impactful ads.</p>
               </div>
               <div className={styles.service}>
                 <h3 className={styles.serviceTitle}>Print Production</h3>
-                <p className={styles.serviceDescription}>Full-spectrum production management to help you achieve the highest quality reproduction at the lowest possible material, printing, postage and freight costs.</p>
+                <p className={styles.serviceDescription}>Full spectrum production management to help you achieve the highest quality reproduction at the lowest possible costs.</p>
               </div>
             </div>
 
@@ -60,11 +60,11 @@ class Capabilities extends React.Component{
             <div className={styles.serviceGroup}>
               <div className={styles.service}>
                 <h3 className={styles.serviceTitle}>Media Management</h3>
-                <p className={styles.serviceDescription}>A dedicated sales team to help you identify and monetize your customer touch-points, generating incremental revenue on your behalf.</p>
+                <p className={styles.serviceDescription}>A dedicated sales team to help you identify and monetize your customer touch-points to generate incremental revenue.</p>
               </div>
               <div className={styles.service}>
                 <h3 className={styles.serviceTitle}>Partnership Management</h3>
-                <p className={styles.serviceDescription}>A dedicated outreach team to identify, forge and nurture strategic marketing partnerships that yield mutually beneficial results for all parties.</p>
+                <p className={styles.serviceDescription}>A dedicated outreach team to identify, forge and nurture marketing partnerships that yield mutually beneficial results for all parties.</p>
               </div>
             </div>
             <div className={styles.container}>
@@ -97,7 +97,7 @@ class Capabilities extends React.Component{
                 }));
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Magazines_Icon.svg" /></div>
-                <h2 className={styles.title}>Magazine</h2>
+                <h2 className={styles.title}>Magazines</h2>
               </div>
 
               <div className={styles.channel} onClick={() => {

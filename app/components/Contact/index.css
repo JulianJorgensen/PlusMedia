@@ -53,6 +53,7 @@
     font-size: 18px;
     line-height: 22px;
     color:  rgba(var(--gray));
+    font-family: Open-Sans;
     & .row{
       display: flex;
       flex-direction: column;
@@ -122,6 +123,8 @@
   justify-content: center;
   font-size: 24px;
   height: 100%;
+  font-family: Open-Sans;
+  color: rgba(var(--gray));
 }
 
 .bar {
