@@ -6,8 +6,8 @@ let send = function(body) {
     let {name, email, company, message} = body;
 
     let mailOptions = {
-      from: {name: 'PlusMedia Robot', address: 'no-reply@PlusMedia.com'},
-      to: {name: 'PlusMedia Admin', address: 'me@julianjorgensen.com'},
+      from: {name: 'PlusMedia Robot', address: email},
+      to: {name: 'PlusMedia Admin', address: 'contact@plusme.com'},
       subject: `Email from ${name}`,
       template: {
         name: `./emails/templates/contact.pug`,

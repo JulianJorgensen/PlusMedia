@@ -40,6 +40,11 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  & .image {
+    @media (--only-small) {
+      min-height: 250px;
+    }
+  }
   & div{
     text-align: left;
     width: 100%;
@@ -51,10 +56,6 @@
     transition: all 0.4s ease;
     background-color: rgba(var(--pistachio), 0);
     cursor: pointer;
-
-    @media (--only-small) {
-      min-height: 350px;
-    }
 
     @media (--large-and-up) {
       width: 50%;
@@ -83,11 +84,16 @@
     }
 
     & .sectionSubheader{
-      font-size: 28px;
+      font-family: 'Teko';
       font-weight: 300;
-      line-height: 32px;
       margin: 0;
       transition: all 0.3s ease;
+      font-size: 28px;
+      line-height: 30px;
+      @media (--large-and-up) {
+        font-size: 32px;
+        line-height: 36px;
+      }
     }
   }
 }

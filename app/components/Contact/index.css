@@ -95,6 +95,9 @@
       & .input{
         width: calc(100% - 30px);
         margin: 0 15px;
+        & input:invalid{
+          box-shadow: none !important;
+        }
         @media (--medium-and-up) {
           width: calc(50% - 30px);
         }

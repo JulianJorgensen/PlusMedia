@@ -12,6 +12,14 @@
     align-items: center;
     background-color: white;
   }
+
+  & .ReactModal__Body--open{
+    @media (--only-small) {
+      & #app{
+        display: none;
+      }
+    }
+  }
 }
 
 .sectionBar{

@@ -61,11 +61,11 @@ class Index extends React.Component {
             <h2 className={styles.sectionHeader}>About</h2>
             <p className={styles.sectionSubheader}>PlusMedia is a dynamic, full-service media agency specializing in omnichannel direct response marketing that delivers measurable results.</p>
           </div>
-          <div style={{backgroundImage: 'url(/images/about-bg.jpg)'}}></div>
+          <div className={styles.image} style={{backgroundImage: 'url(/images/about-marquee.jpg)'}}></div>
         </section>
 
         <section className={`${styles.doubleCol} ${styles.capabilities}`}>
-          <div style={{backgroundImage: 'url(/images/capabilities-bg.jpg)'}}></div>
+          <div className={styles.image} style={{backgroundImage: 'url(/images/capabilities-marquee-bg.jpg)'}}></div>
           <div onClick={() => history.push('/capabilities')}>
             <h2 className={styles.sectionHeader}>Capabilities</h2>
             <p className={styles.sectionSubheader}>PlusMedia provides strategic thought leadership and customized marketing solutions to optimize media spend, maximize ROI and increase bottom line profitability.</p>
@@ -77,7 +77,7 @@ class Index extends React.Component {
             <h2 className={styles.sectionHeader}>Clients</h2>
             <p className={styles.sectionSubheader}>PlusMedia has experience across a wide variety of industries, markets and business models, serving clients throughout the U.S. and internationally.</p>
           </div>
-          <div style={{backgroundImage: 'url(/images/clients-bg.jpg)'}}></div>
+          <div className={styles.image} style={{backgroundImage: 'url(/images/clients-marquee-bg.jpg)'}}></div>
         </section>
 
         <div className={styles.pmGrid}></div>

@@ -7,6 +7,109 @@ import PageItems from '../PageItems';
 import styles from './index.css';
 let modalActions = require('actions/modalActions');
 
+let dataCards = [
+  {
+    logo: 'BN-logo.jpg',
+    description: 'Reach loyal online customers who shop for books, DVDs, consumer electronics, kids\' toys and more at the Internet\'s largest bookstore, Barnes & Noble.com.',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'Bluestem-Brands-logo-for-website.jpg',
+    description: 'Reach a well-educated and active 50+ market of men and women who enjoy shopping for apparel, accessories, home and consumer goods and more. Tap into Bluestem Brands’ database of 28 million mature adults.',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'bookspan.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'bradford-exchange-logo.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'columbiahouse.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'Country-Curtains-logo-for-website.png',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'CP-logo-for-website.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'crutchfield.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'directwines.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'disney.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'Famous-Smoke-Shop-logo-for-website.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'firstSTREET-logo-for-website.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'gatehousemedia.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'Keurig-logo.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'petflow.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'puritanspride.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'Santander-logo-for-website.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'Staples-logo-for-website.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'welcomewagon.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  },
+  {
+    logo: 'yvesrocher.jpg',
+    description: '',
+    content: 'Lorem ipsum dolar sit amit...'
+  }
+];
+
 class DataCards extends React.Component{
   constructor(){
     super();
@@ -28,96 +131,28 @@ class DataCards extends React.Component{
             <p>Click here to download our complete List & Program Overview</p>
             <div className={styles.datacards}>
               <Accordion className={styles.accordion}>
-                <Accordion.Item>
-                  <Accordion.Title>
-                    <div className={styles.datacard}>
-                      <div className={styles.logo}>
-                        <img src="/images/data-cards/Layer34.png" />
-                      </div>
-                      <div className={styles.description}>
-                        Reach a well-educated and active 50+ market of men and women who enjoy shopping for apparel, accessories, home and consumer goods and more. Tap into Bluestem Brands’ database of 28 million mature adults.
-                        <Link to="">VIEW DATA CARDS</Link>
-                      </div>
-                    </div>
-                  </Accordion.Title>
-                  <Accordion.Content>
-                    <div className={styles.accordionContent}>
-                      More content...
-                    </div>
-                  </Accordion.Content>
-                </Accordion.Item>
-                <Accordion.Item>
-                  <Accordion.Title>
-                    <div className={styles.datacard}>
-                      <div className={styles.logo}>
-                        <img src="/images/data-cards/Layer35.png" />
-                      </div>
-                      <div className={styles.description}>
-                        Reach a well-educated and active 50+ market of men and women who enjoy shopping for apparel, accessories, home and consumer goods and more. Tap into Bluestem Brands’ database of 28 million mature adults.
-                        <Link to="">VIEW DATA CARDS</Link>
-                      </div>
-                    </div>
-                  </Accordion.Title>
-                  <Accordion.Content>
-                    <div className={styles.accordionContent}>
-                      More content...
-                    </div>
-                  </Accordion.Content>
-                </Accordion.Item>
-                <Accordion.Item>
-                  <Accordion.Title>
-                    <div className={styles.datacard}>
-                      <div className={styles.logo}>
-                        <img src="/images/data-cards/Layer36.png" />
-                      </div>
-                      <div className={styles.description}>
-                        Reach a well-educated and active 50+ market of men and women who enjoy shopping for apparel, accessories, home and consumer goods and more. Tap into Bluestem Brands’ database of 28 million mature adults.
-                        <Link to="">VIEW DATA CARDS</Link>
-                      </div>
-                    </div>
-                  </Accordion.Title>
-                  <Accordion.Content>
-                    <div className={styles.accordionContent}>
-                      More content...
-                    </div>
-                  </Accordion.Content>
-                </Accordion.Item>
-                <Accordion.Item>
-                  <Accordion.Title>
-                    <div className={styles.datacard}>
-                      <div className={styles.logo}>
-                        <img src="/images/data-cards/Layer37.png" />
-                      </div>
-                      <div className={styles.description}>
-                        Reach a well-educated and active 50+ market of men and women who enjoy shopping for apparel, accessories, home and consumer goods and more. Tap into Bluestem Brands’ database of 28 million mature adults.
-                        <Link to="">VIEW DATA CARDS</Link>
-                      </div>
-                    </div>
-                  </Accordion.Title>
-                  <Accordion.Content>
-                    <div className={styles.accordionContent}>
-                      More content...
-                    </div>
-                  </Accordion.Content>
-                </Accordion.Item>
-                <Accordion.Item>
-                  <Accordion.Title>
-                    <div className={styles.datacard}>
-                      <div className={styles.logo}>
-                        <img src="/images/data-cards/Layer38.png" />
-                      </div>
-                      <div className={styles.description}>
-                        Reach a well-educated and active 50+ market of men and women who enjoy shopping for apparel, accessories, home and consumer goods and more. Tap into Bluestem Brands’ database of 28 million mature adults.
-                        <Link to="">VIEW DATA CARDS</Link>
-                      </div>
-                    </div>
-                  </Accordion.Title>
-                  <Accordion.Content>
-                    <div className={styles.accordionContent}>
-                      More content...
-                    </div>
-                  </Accordion.Content>
-                </Accordion.Item>
+                {dataCards.map((dataCard) => {
+                  return (
+                    <Accordion.Item>
+                      <Accordion.Title>
+                        <div className={styles.datacard}>
+                          <div className={styles.logo}>
+                            <img src={`/images/data-cards/${dataCard.logo}`} />
+                          </div>
+                          <div className={styles.description}>
+                            {dataCard.description}
+                            <Link to="">VIEW DATA CARDS</Link>
+                          </div>
+                        </div>
+                      </Accordion.Title>
+                      <Accordion.Content>
+                        <div className={styles.accordionContent}>
+                          {dataCard.content}
+                        </div>
+                      </Accordion.Content>
+                    </Accordion.Item>
+                  )
+                })}
               </Accordion>
             </div>
           </div>
