@@ -41,24 +41,16 @@
   width: 100%;
   margin-top: 20px;
   margin-bottom: 15px;
-  @media (--large-and-up) {
-    flex-direction: row;
-  }
 
   & .testimonial{
     width: 100%;
     font-size: 20px;
     line-height: 24px;
-    font-weight: 300;
-    padding-right: 20px;
-    font-weight: light;
-    margin-bottom: 30px;
-    @media (--large-and-up) {
-      width: 33.33%;
-    }
-    &:last-child{
-      padding-right: 0;
-    }
+    padding: 25px;
+    margin-bottom: 20px;
+    background-color: gray(90%);
+    color: rgba(var(--gray));
+
     & author{
       display: block;
       font-weight: 300;
