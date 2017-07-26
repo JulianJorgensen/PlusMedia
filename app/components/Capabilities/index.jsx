@@ -77,9 +77,11 @@ class Capabilities extends React.Component{
             <p>We develop and execute integrated media campaigns that effectively reach your target audience, incorporating a mix of traditional, alternate and digital channels for maximum impact.</p>
             <div className={styles.mediaChannels}>
               <div className={styles.channel} onClick={() => {
+                let topPosition = window.pageYOffset;
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Inserts',
+                  lastScrollPosition: topPosition,
                   body: 'Place highly impactful insert placements into third-party mailings and merchandise shipments.',
                   icon: <Isvg src="/images/media-channels/PM_MediaChannel_Inserts_Icon.svg" />
                 }));
@@ -89,9 +91,11 @@ class Capabilities extends React.Component{
               </div>
 
               <div className={styles.channel} onClick={() => {
+                let topPosition = window.pageYOffset;
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Direct Mail',
+                  lastScrollPosition: topPosition,
                   body: 'Send dedicated mail pieces that reach highly engaged consumers right in their mailbox.',
                   icon: <Isvg src="/images/media-channels/PM_MediaChannel_DirectMail_Icon.svg" />
                 }));
@@ -101,9 +105,11 @@ class Capabilities extends React.Component{
               </div>
 
               <div className={styles.channel} onClick={() => {
+                let topPosition = window.pageYOffset;
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Magazines',
+                  lastScrollPosition: topPosition,
                   body: 'Run on-page, bind-in, tip-on and onsert placements in editorially relevant publications that reach consumers at home, at the newsstand, at their doctor’s office or anywhere.',
                   icon: <Isvg src="/images/media-channels/PM_MediaChannel_Magazines_Icon.svg" />
                 }));
@@ -113,9 +119,11 @@ class Capabilities extends React.Component{
               </div>
 
               <div className={styles.channel} onClick={() => {
+                let topPosition = window.pageYOffset;
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Newspapers',
+                  lastScrollPosition: topPosition,
                   body: 'Reach consumers locally, regionally and nationally with run of press, solo and free standing insert placements in traditional newspapers.',
                   icon: <Isvg src="/images/media-channels/PM_MediaChannel_Newspapers_Icon.svg" />
                 }));
@@ -125,9 +133,11 @@ class Capabilities extends React.Component{
               </div>
 
               <div className={styles.channel} onClick={() => {
+                let topPosition = window.pageYOffset;
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Mass',
+                  lastScrollPosition: topPosition,
                   body: 'Include targeted inserts in mass-distributed mailings to consumers seeking out savings.',
                   icon: <Isvg src="/images/media-channels/PM_MediaChannel_Mass_Icon.svg" />
                 }));
@@ -137,9 +147,11 @@ class Capabilities extends React.Component{
               </div>
 
               <div className={styles.channel} onClick={() => {
+                let topPosition = window.pageYOffset;
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Out-of-Home',
+                  lastScrollPosition: topPosition,
                   body: 'Advertise in strategically placed out-of-home locations that reach consumers on the go – while shopping, socializing, commuting or running errands.',
                   icon: <Isvg src="/images/media-channels/PM_MediaChannel_OutOfHome_Icon.svg" />
                 }));
@@ -149,9 +161,11 @@ class Capabilities extends React.Component{
               </div>
 
               <div className={styles.channel} onClick={() => {
+                let topPosition = window.pageYOffset;
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Search',
+                  lastScrollPosition: topPosition,
                   body: 'Drive traffic and brand awareness with expert search engine marketing tactics that reach consumers organically or via sponsored content.',
                   icon: <Isvg src="/images/media-channels/PM_MediaChannel_Search_Icon.svg" />
                 }));
@@ -161,9 +175,11 @@ class Capabilities extends React.Component{
               </div>
 
               <div className={styles.channel} onClick={() => {
+                let topPosition = window.pageYOffset;
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Display',
+                  lastScrollPosition: topPosition,
                   body: 'Prospect or remarket to consumers with contextually relevant ads as they browse content and shop online.',
                   icon: <Isvg src="/images/media-channels/PM_MediaChannel_Display_Icon.svg" />
                 }));
@@ -173,9 +189,11 @@ class Capabilities extends React.Component{
               </div>
 
               <div className={styles.channel} onClick={() => {
+                let topPosition = window.pageYOffset;
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Social',
+                  lastScrollPosition: topPosition,
                   body: 'Leverage the sophisticated targeting and reach capabilities of social networks including Facebook, LinkedIn, Twitter, Instagram and Pinterest.',
                   icon: <Isvg src="/images/media-channels/PM_MediaChannel_Social_Icon.svg" />
                 }));
@@ -185,9 +203,11 @@ class Capabilities extends React.Component{
               </div>
 
               <div className={styles.channel} onClick={() => {
+                let topPosition = window.pageYOffset;
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Mobile',
+                  lastScrollPosition: topPosition,
                   body: 'Serve messages to consumers anytime, anywhere with relevant, immediate and contextual mobile ads.',
                   icon: <Isvg src="/images/media-channels/PM_MediaChannel_Mobile_Icon.svg" />
                 }));
@@ -197,9 +217,11 @@ class Capabilities extends React.Component{
               </div>
 
               <div className={styles.channel} onClick={() => {
+                let topPosition = window.pageYOffset;
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Email',
+                  lastScrollPosition: topPosition,
                   body: 'Partner with brand-relevant publishers to reach consumers in their email inbox.',
                   icon: <Isvg src="/images/media-channels/PM_MediaChannel_Email_Icon.svg" />
                 }));
@@ -209,9 +231,11 @@ class Capabilities extends React.Component{
               </div>
 
               <div className={styles.channel} onClick={() => {
+                let topPosition = window.pageYOffset;
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Affiliate',
+                  lastScrollPosition: topPosition,
                   body: 'Leverage strategic partners by accessing their consumer base to drive qualified referrals.',
                   icon: <Isvg src="/images/media-channels/PM_MediaChannel_Affiliate_Icon.svg" />
                 }));
@@ -221,9 +245,11 @@ class Capabilities extends React.Component{
               </div>
 
               <div className={styles.channel} onClick={() => {
+                let topPosition = window.pageYOffset;
                 dispatch(modalActions.openModal({
                   template: 'media',
                   title: 'Online Video/Radio',
+                  lastScrollPosition: topPosition,
                   body: 'Tap into streaming video and radio networks to serve relevant ads to highly engaged consumers.',
                   icon: <Isvg src="/images/media-channels/PM_MediaChannel_OnlineVideoRadio_Icon.svg" />
                 }));
