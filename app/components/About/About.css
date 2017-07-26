@@ -88,8 +88,8 @@
       & author{
         font-style: italic;
         font-size: 14px;
-        line-height: 14px;
-        margin-top: 5px;
+        line-height: 16px;
+        margin-top: 10px;
         &:before{
           content: '- ';
         }

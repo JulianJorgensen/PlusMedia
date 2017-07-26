@@ -77,14 +77,17 @@ class About extends React.Component{
         teamMembers.map((teamMember) => {
           return (
             <div className={styles.teamMember} onClick={() => {
+              let topPosition = window.pageYOffset;
               dispatch(modalActions.openModal({
                 template: 'about',
                 image: `/images/team/${teamMember.image}`,
                 name: teamMember.name,
                 title: teamMember.title,
                 title2: teamMember.title2,
-                bio: teamMember.bio
+                bio: teamMember.bio,
+                lastScrollPosition: topPosition
               }));
+              window.scrollTo(0, 0);
             }}>
               <div className={styles.teamMemberPhoto} style={{backgroundImage: `url(/images/team/${teamMember.image})`}} />
               <h4 className={styles.teamMemberName}>{teamMember.name}</h4>
@@ -103,7 +106,7 @@ class About extends React.Component{
             <div className={styles.jobDescription}>The Account Coordinator is the engine that drives PlusMedia’s business.  Serving as the key support for the execution of high-impact media channels on behalf of our clients, the ideal Account Coordinator is organized, precise and communicative, and possesses a strong desire to learn and grow within a best-in-class media agency.  The Account Coordinator’s objectives are to ensure smooth execution across internal teams and external vendors and client contacts to drive top-notch service and results for PlusMedia’s clients.</div>
             <div className={styles.jobCtas}>
               {/* <div className={styles.jobLocation}>Location</div> */}
-              <div className={styles.jobApply}><a href="mailto:nicole.daoust@plusme.com">Apply Now</a></div>
+              <div className={styles.jobApply}><a href="mailto:contact@plusme.com">Apply Now</a></div>
               {/* <div className={styles.jobType}>Full time</div> */}
             </div>
           </div>

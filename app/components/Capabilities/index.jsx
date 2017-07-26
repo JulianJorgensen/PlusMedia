@@ -59,12 +59,12 @@ class Capabilities extends React.Component{
             <h2 className={styles.serviceGroupTitle}>Management Services</h2>
             <div className={styles.serviceGroup}>
               <div className={styles.service}>
-                <h3 className={styles.serviceTitle}>Media Management</h3>
+                <h3 className={styles.serviceTitle}><Link to='/data-cards'>Media Management</Link></h3>
                 <p className={styles.serviceDescription}>A dedicated sales team to help you identify and monetize your customer touch-points to generate incremental revenue.</p>
               </div>
               <div className={styles.service}>
                 <h3 className={styles.serviceTitle}>Partnership Management</h3>
-                <p className={styles.serviceDescription}>A dedicated outreach team to identify, forge and nurture marketing partnerships that yield mutually beneficial results for all parties.</p>
+                <p className={styles.serviceDescription}>A dedicated outreach team to identify, forge and nurture marketing partnerships that yield mutually beneficial results for all.</p>
               </div>
             </div>
             <div className={styles.container}>
@@ -86,6 +86,18 @@ class Capabilities extends React.Component{
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Inserts_Icon.svg" /></div>
                 <h2 className={styles.title}>Inserts</h2>
+              </div>
+
+              <div className={styles.channel} onClick={() => {
+                dispatch(modalActions.openModal({
+                  template: 'media',
+                  title: 'Direct Mail',
+                  body: 'Send dedicated mail pieces that reach highly engaged consumers right in their mailbox.',
+                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_DirectMail_Icon.svg" />
+                }));
+              }}>
+                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_DirectMail_Icon.svg" /></div>
+                <h2 className={styles.title}>Direct Mail</h2>
               </div>
 
               <div className={styles.channel} onClick={() => {
@@ -122,18 +134,6 @@ class Capabilities extends React.Component{
               }}>
                 <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Mass_Icon.svg" /></div>
                 <h2 className={styles.title}>Mass</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Direct Mail',
-                  body: 'Send dedicated mail pieces that reach highly engaged consumers right in their mailbox.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_DirectMail_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_DirectMail_Icon.svg" /></div>
-                <h2 className={styles.title}>Direct Mail</h2>
               </div>
 
               <div className={styles.channel} onClick={() => {

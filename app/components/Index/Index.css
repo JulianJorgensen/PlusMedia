@@ -27,7 +27,7 @@
     text-align: center;
     font-weight: 400;
     width: 100%;
-    max-width: 500px;
+    max-width: 430px;
   }
   @media (--large-and-up) {
     & > div {
@@ -135,7 +135,7 @@
   & .slider{
     width: 800px;
     & img{
-      max-width: 160px;
+      max-width: 100%;
     }
   }
   @media (--large-and-up) {

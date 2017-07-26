@@ -8,40 +8,29 @@ import Drawer from 'react-toolbox/lib/drawer';
 import DataCardIcon from 'assets/icons/datacardIcon';
 import styles from './Header.css';
 
-
 @withRouter
 class Header extends React.Component {
   constructor(){
     super();
 
     this.state = {
-      navStatic: true
+      navTransparent: true
     }
-  }
-
-  handleNavUnpin() {
-    this.setState({
-      navStatic: false
-    })
-  }
-
-  handleNavUnfix() {
-    this.setState({
-      navStatic: true
-    })
   }
 
   render() {
     let {dispatch, pageName, scroll, navActive, handleNavToggle, history} = this.props;
 
+    if (scroll > 100) {
+      this.state.navTransparent ? this.setState({navTransparent: false}) : '';
+    }else{
+      !this.state.navTransparent ? this.setState({navTransparent: true}) : '';
+    }
+
     return (
-      <Headroom
-        onUnpin={this.handleNavUnpin.bind(this)}
-        onUnfix={this.handleNavUnfix.bind(this)}
-        wrapperStyle={{backgroundColor: 'transparent', position: 'absolute', width: '100%', zIndex: 3}}
-      >
+      <div>
         <AppBar
-          className={`${styles.bar} ${this.state.navStatic ? styles.navStatic : ''}`}
+          className={`${styles.bar} ${this.state.navTransparent ? styles.navTransparent : ''}`}
           leftIcon={<img src="/images/logo.png" />}
           rightIcon={<i className={`fa fa-bars ${styles.navIcon} ${navActive ? styles.active : ''}`} />}
           onLeftIconClick={() => history.push('/')}
@@ -61,8 +50,9 @@ class Header extends React.Component {
             <li><Link to='/contact'>Contact</Link></li>
             <li><Link to='/data-cards'><DataCardIcon /></Link></li>
           </nav>
+          <div className={styles.close} onClick={handleNavToggle}>[&mdash;]</div>
         </Drawer>
-      </Headroom>
+      </div>
     )
   }
 }
@@ -70,7 +60,8 @@ class Header extends React.Component {
 export default connect(
   (state) => {
     return {
-      modal: state.modal
+      modal: state.modal,
+      scroll: state.scrollPosition.y
     }
   }
 )(Header);

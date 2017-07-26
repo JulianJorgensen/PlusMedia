@@ -12,5 +12,8 @@ export var openModal = (data) => {
 export var closeModal = () => {
   return (dispatch, getState) => {
     dispatch({ type: 'CLOSE_MODAL'});
+    setTimeout(() => {
+      window.scrollTo(0, getState().modal.lastScrollPosition);
+    },10);
   }
 };

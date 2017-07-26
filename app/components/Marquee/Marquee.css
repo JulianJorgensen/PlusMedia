@@ -51,7 +51,6 @@
   }
   @media (--large-and-up) {
     max-height: 600px;
-    text-align: left;
     background-attachment: fixed;
   }
 }
@@ -87,9 +86,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media (--large-and-up) {
-    align-items: flex-start;
-  }
 }
 
 .header{
@@ -101,7 +97,6 @@
   @media (--large-and-up) {
     font-size: 100px;
     line-height: 90px;
-    text-align: left;
   }
 }
 

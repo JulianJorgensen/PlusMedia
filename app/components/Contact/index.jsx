@@ -115,7 +115,7 @@ class Contact extends React.Component{
       }else{
         return (
           <div className={styles.sentContainer}>
-            Thank you {this.state.name.split(' ')[0]}. We will get back to you as soon as possible.
+            Thank you for contacting PlusMedia. A member of our team will be in touch soon.
           </div>
         )
       }
@@ -134,7 +134,7 @@ class Contact extends React.Component{
                   <address>
                     100 Mill Plain Road, 4th Floor<br />
                     Danbury, CT 06811<br />
-                    203.748.6500
+                    <phone>203.748.6500</phone>
                   </address>
                 </div>
                 <div className={styles.col}>

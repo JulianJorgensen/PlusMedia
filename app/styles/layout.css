@@ -29,6 +29,7 @@
   background-color: rgba(var(--pistachio));
   width: 100%;
   padding-top: 8px;
+  margin-bottom: 20px;
   text-align: center;
   color: rgba(var(--gray));
 }

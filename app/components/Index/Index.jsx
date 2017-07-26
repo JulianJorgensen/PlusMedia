@@ -31,15 +31,15 @@ class Index extends React.Component {
     var settings = {
       dots: false,
       infinite: true,
-      variableWidth: true,
+      variableWidth: false,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 4,
       slidesToScroll: 1,
       responsive: [
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 1
+            slidesToShow: 4,
           }
         }
       ]
@@ -90,7 +90,6 @@ class Index extends React.Component {
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Barnes-&-Noble.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Charles-Tyrwhitt.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Colonial-Penn.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Discover.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Feeding-America.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Hayneedle.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-HelloFresh.jpg" /></div>

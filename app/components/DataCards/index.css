@@ -8,7 +8,7 @@
 }
 
 .marquee{
-  background-color: rgba(var(--grey));
+  background-color: gray(80%);
   height: 300px;
   justify-content: center;
   text-align: center;

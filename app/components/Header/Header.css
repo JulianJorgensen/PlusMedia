@@ -10,11 +10,6 @@
   box-sizing: border-box;
 }
 
-.headroom{
-  background-color: transparent;
-  width: 100%;
-}
-
 .bar,
 .drawer{
   background-color: rgba(var(--spruce), 0.9);
@@ -30,14 +25,28 @@
 }
 
 .bar{
-  &.navStatic{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  &.navTransparent{
     background-color: transparent !important;
-    box-shadow: none;
+    box-shadow: none !important;
   }
 }
 
 .drawer{
   border-left: 0 !important;
+  & .close{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 25px;
+    color: rgba(var(--pistachio));
+    font-weight: bold;
+  }
 }
 
 .nav{

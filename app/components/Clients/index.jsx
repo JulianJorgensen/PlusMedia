@@ -21,14 +21,13 @@ class Clients extends React.Component{
           bgImage="/images/clients-marquee-bg.jpg"
         />
         <div className="page-content">
-          <div className={styles.sectionBar}>Current Partners</div>
+          <div className={styles.sectionBar}>Our Partners</div>
           <div className={styles.container}>
             <p>Our clients predominantly come to us through word-of-mouth referrals. Our very first client still works with us after nearly 20 years, and many others have been with us for more than a decade.</p>
             <div className={styles.partners}>
               <div className={styles.partner}><img src="/images/client-logos/Logo-Barnes-&-Noble.jpg" /></div>
               <div className={styles.partner}><img src="/images/client-logos/Logo-Charles-Tyrwhitt.jpg" /></div>
               <div className={styles.partner}><img src="/images/client-logos/Logo-Colonial-Penn.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-Discover.jpg" /></div>
               <div className={styles.partner}><img src="/images/client-logos/Logo-Feeding-America.jpg" /></div>
               <div className={styles.partner}><img src="/images/client-logos/Logo-Gerber-Life-Insurance.jpg" /></div>
               <div className={styles.partner}><img src="/images/client-logos/Logo-Hayneedle.jpg" /></div>

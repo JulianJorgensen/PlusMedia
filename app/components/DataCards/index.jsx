@@ -127,8 +127,8 @@ class DataCards extends React.Component{
         />
         <div className="page-content">
           <div className={styles.container}>
-            <p>PlusMedia’s Management division offers a wide range of media buying opportunities for advertisers looking to market to third party customer bases via lists, package inserts, billing statements, product samples and more. Please click on the links below to view data cards or contact <a href="mailto:tina.cavallo@plusme.com">Tina Cavallo</a> for more information on our managed properties.</p>
-            <p>Click here to download our complete List & Program Overview</p>
+            <p>PlusMedia’s Management division offers a wide range of media buying opportunities for advertisers looking to market to third party customer bases via lists, package inserts, billing statements, product samples and more. Please click on the links below to view data cards or <a href="mailto:tina.cavallo@plusme.com">contact Tina Cavallo</a> for more information on our managed properties.</p>
+            <p><a target="new" href="/pdfs/PlusMedia-List-&-Program-Overview.pdf">Click here</a> to download our complete List & Program Overview</p>
             <div className={styles.datacards}>
               <Accordion className={styles.accordion}>
                 {dataCards.map((dataCard) => {
@@ -141,7 +141,6 @@ class DataCards extends React.Component{
                           </div>
                           <div className={styles.description}>
                             {dataCard.description}
-                            <Link to="">VIEW DATA CARDS</Link>
                           </div>
                         </div>
                       </Accordion.Title>
