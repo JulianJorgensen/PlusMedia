@@ -5,7 +5,6 @@
 :global{
   & body,
   & button,
-  & li,
   & :--headings{
     font-family: 'Teko', system-ui !important;
     line-height: auto;
@@ -14,7 +13,6 @@
   & body,
   & div,
   & button,
-  & li,
   & :--headings{
     margin: 0;
   }

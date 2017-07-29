@@ -86,17 +86,22 @@ class Index extends React.Component {
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Jet.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-USO.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Gerber-Life-Insurance.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Omaha-Steaks.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Barnes-&-Noble.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Childrens-Place-logo.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/down-jones.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Haband-logo.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Harry's-logo.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Charles-Tyrwhitt.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Colonial-Penn.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Feeding-America.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Hayneedle.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-HelloFresh.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Shoes.com-logo.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Shutterfly.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Staples.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-The-Economist.jpg" /></div>
             <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-WSJwine.jpg" /></div>
+            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/ZipRecruiter-logo.jpg" /></div>
           </Slider>
         </div>
       </div>
