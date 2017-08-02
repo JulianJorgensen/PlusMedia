@@ -17,8 +17,11 @@
   margin-top: 30px;
   align-items: center;
   justify-content: space-between;
+  @media (--medium-and-up) {
+    justify-content: default;
+  }
   & .partner{
-    max-width: 40%;
+    flex-basis: 40%;
     padding-bottom: 40px;
     & img{
       max-width: 100%;
@@ -26,11 +29,8 @@
         opacity: 1;
       }
     }
-  }
-  @media (--medium-and-up) {
-    justify-content: default;
-    & .partner{
-      max-width: 20%;
+    @media (--medium-and-up) {
+      flex-basis: 20%;
       padding-right: 15px;
       padding-left: 15px;
     }
