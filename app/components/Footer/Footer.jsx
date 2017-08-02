@@ -15,7 +15,7 @@ class Footer extends React.Component {
         <div className={styles.logos}>
           <div><img src="/images/logo-woman-owned.png" /></div>
           <div className={styles.pmLogo}><img width={200} src="/images/logo-big.png" /></div>
-          <div className={styles.linkedin}>Find us on <a href="linkedin://linkedin.com/company-beta/119805/" target="new"><i className="fa fa-linkedin-square" /></a></div>
+          <div className={styles.linkedin}>Find us on <a href="http://linkedin.com/company-beta/119805/" target="new"><i className="fa fa-linkedin-square" /></a></div>
         </div>
         <div className={styles.details}>
           <div>©2017 by PlusMedia, LLC. All Rights Reserved</div>

@@ -9,8 +9,6 @@ import PostCSS from './postcss.config';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 
-const extractFonts = new ExtractTextPlugin('fonts.css');
-
 // define environment constants
 const NODE_ENV = (process.env.NODE_ENV || 'development');
 const IS_PRODUCTION = (NODE_ENV === 'production');
@@ -47,7 +45,6 @@ const BASE_CONFIG = {
       },
       {
         test: /\.css$/,
-        exclude: /fonts/,
         use: ExtractTextPlugin.extract({
           fallback: {loader: 'style-loader'},
           use: [
@@ -66,16 +63,6 @@ const BASE_CONFIG = {
             }
           ]
         })
-      },
-      {
-        test: /fonts\.css/,
-        loader: extractFonts.extract({
-          loader: 'css-loader',
-        }),
-      },
-      {
-        test: /\.(woff|woff2)$/,
-        use: 'url-loader'
       },
       {
         test: /\.json$/i,
@@ -124,8 +111,7 @@ const BASE_CONFIG = {
     new webpack.NamedModulesPlugin(),
     new webpack.LoaderOptionsPlugin({
       debug: true
-    }),
-    extractFonts
+    })
   ],
   devtool: `${IS_PRODUCTION ? 'inline' : 'cheap-eval'}-source-map`,
   resolve: {

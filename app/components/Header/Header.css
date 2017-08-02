@@ -38,9 +38,13 @@
 
 .drawer{
   border-left: 0 !important;
+  & a{
+    font-family: 'Teko', system-ui;
+  }
   & .close{
     position: fixed;
-    top: 15px;
+    bottom: 15px !important;
+    top: auto;
     right: 15px;
     cursor: pointer;
     font-size: 25px;

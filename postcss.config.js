@@ -5,6 +5,21 @@ module.exports = {
     },
     'postcss-mixins': {},
     'postcss-each': {},
-    'postcss-cssnext': {}
+    'postcss-cssnext': {},
+    'postcss-font-magician' : {
+      variants: {
+        'Teko': {
+          '300': [],
+          '400': [],
+          '500': [],
+          '600': []
+        },
+        'Open Sans': {
+          '400': [],
+          '600': []
+        }
+      },
+      foundries: ['google']
+    }
   },
 };

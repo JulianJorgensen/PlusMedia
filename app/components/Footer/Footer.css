@@ -40,18 +40,18 @@
   text-align: center;
 
   & .pmLogo{
-    order: -1;
     margin-bottom: 25px;
+    order: -1;
+    @media (--large-and-up) {
+      order: 0;
+      margin-bottom: 0;
+    }
   }
 
   @media (--large-and-up) {
     text-align: auto;
     flex-direction: row;
     justify-content: space-between;
-    & .pmLogo{
-      order: auto;
-      margin-bottom: 0;
-    }
   }
 
   & .linkedin{
@@ -59,11 +59,13 @@
     align-items: center;
     justify-content: center;
     color: rgba(var(--pistachio));
+    margin-top: 25px;
     & i{
       font-size: 30px;
       margin-left: 10px;
     }
     @media (--large-and-up) {
+      margin-top: 0;
     }
   }
 }

@@ -65,7 +65,7 @@
     align-items: flex-start;
     width: 100%;
     margin-bottom: 20px;
-    font-family: 'Open-Sans';
+    font-family: 'Open Sans';
     @media (--large-and-up) {
       width: 33.33%;
     }

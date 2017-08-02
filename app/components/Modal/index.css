@@ -125,7 +125,7 @@
       font-size: 16px;
       font-weight: 300;
       margin-top: 15px;
-      font-family: Open-Sans;
+      font-family: 'Open Sans';
     }
   }
 }
@@ -137,7 +137,7 @@
   max-width: 80vw;
   font-size: 18px;
   font-weight: 300;
-  font-family: 'Open-Sans';
+  font-family: 'Open Sans';
   & .icon{
     width: 200px;
     height: 100px;

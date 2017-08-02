@@ -19,7 +19,7 @@ class Index extends React.Component {
 
   componentWillReceiveProps(){
     let marqueeVideos = [
-      '/videos/PlusMedia_Video_v2.mp4'
+      '/videos/PlusMedia_Video_v3_HR.mp4'
     ];
     this.setState({
       marqueeVideo: marqueeVideos[Math.floor(Math.random()*marqueeVideos.length)]
