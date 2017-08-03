@@ -11,7 +11,6 @@ import Main from 'components/Main';
 // subscribe to the redux store
 store.subscribe(() => {
   let state = store.getState();
-  console.log('New state', state);
 });
 
 ReactDOM.render(

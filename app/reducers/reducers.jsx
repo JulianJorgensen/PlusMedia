@@ -22,7 +22,6 @@ export var modalReducer = (state = {show: false, title: '', body: ''}, action) =
 export var scrollReducer = (state = {y: 0}, action) => {
   switch (action.type) {
     case 'SET_SCROLL_POSITION':
-      console.log('setting scroll position in redux');
       return {
         ...state,
         y: action.scrollY

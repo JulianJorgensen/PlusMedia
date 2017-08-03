@@ -25,8 +25,8 @@ class About extends React.Component{
         name: 'Kate McGee',
         title: 'COO',
         title2: '',
-        image: '',
-        bio: 'Bio to come...'
+        image: 'Kate-McGee-square.jpg',
+        bio: 'As Chief Operating Officer at PlusMedia, Kate McGee oversees several key functional areas of the company, with a focus on achieving operational excellence and prioritizing investments in talent, technology and resources to fuel organizational growth and enhance the client experience. Prior to joining PlusMedia, Kate was Chief Marketing Officer at delivery.com where she oversaw marketing, sales, merchant development, human resources and finance. Her past experience also includes marketing, strategy and sales positions with Amazon (at its former subsidiary, Quidsi), Kellwood and Tommy Hilfiger, respectively. Kate holds an M.B.A. in Finance from Columbia Business School and a B.A. in English from Dartmouth College.'
       },
       {
         name: 'Elise Nathan',
