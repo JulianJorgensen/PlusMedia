@@ -134,7 +134,7 @@ class Contact extends React.Component{
                   <address>
                     100 Mill Plain Road, 4th Floor<br />
                     Danbury, CT 06811<br />
-                    <phone>203.748.6500</phone>
+                    <phone><a href="tel:+1-203-748-6500">203.748.6500</a></phone>
                   </address>
                 </div>
                 <div className={styles.col}>

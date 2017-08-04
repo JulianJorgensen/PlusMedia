@@ -53,6 +53,7 @@ class Index extends React.Component {
           className={styles.landing}
           bgImage="/images/home-bg.jpg"
           bgVideo={this.state.marqueeVideo}
+          poster="/images/home-bgvideo-poster.jpg"
           transitionSpeed={800}
         />
 

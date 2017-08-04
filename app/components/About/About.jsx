@@ -64,7 +64,7 @@ class About extends React.Component{
         bio: 'Dolores Ryan Babcock is Senior Vice President, List Brokerage with extensive direct mail and insert media experience, having worked in the industry for over 30 years. In this role, she leads PlusMedia’s List Brokerage division and oversees direct mail strategy for all client accounts, working closely with the integration team to ensure a holistic campaign planning approach. Prior to joining PlusMedia, Dolores held positions at Direct Media and SMS representing clients such as Easy Rest, Omaha Steaks, Publishers Clearing House and Hayneedle.'
       },
       {
-        name: 'Julie Lebeau',
+        name: 'Julie LeBeau',
         title: 'VP',
         title2: '',
         image: 'Julie-LeBeau.jpg',
