@@ -8,7 +8,12 @@ import Marquee from '../Marquee/Marquee';
 import styles from './Index.css';
 
 @withRouter
-class Index extends React.Component {
+@connect(
+  ({ content }) => ({
+    content: content.homepage
+  })
+)
+export default class Index extends React.Component {
   constructor() {
     super();
 
@@ -27,7 +32,7 @@ class Index extends React.Component {
   }
 
   render() {
-    let {history} = this.props;
+    let { history, content } = this.props;
     var settings = {
       dots: false,
       infinite: true,
@@ -48,8 +53,8 @@ class Index extends React.Component {
     return (
       <div className="page-content">
         <Marquee
-          header={<div className={styles.logo}><img src="/images/logo-big.png" /></div>}
-          subheader={<h1 className={styles.header}>Leveraging the power of paid media to connect brands with customers.</h1>}
+          header={<div className={styles.logo}><img src={content.marqueeLogo.fields.file.url} /></div>}
+          subheader={<h1 className={styles.header}>{content.marqueeIntro}</h1>}
           className={styles.landing}
           bgImage="/images/home-bg.jpg"
           bgVideo={this.state.marqueeVideo}
@@ -60,7 +65,7 @@ class Index extends React.Component {
         <section className={styles.doubleCol}>
           <div onClick={() => history.push('/about')}>
             <h2 className={styles.sectionHeader}>About</h2>
-            <p className={styles.sectionSubheader}>PlusMedia is a dynamic, full-service media agency specializing in omnichannel direct response marketing that delivers measurable results.</p>
+            <p className={styles.sectionSubheader}>{content.aboutText}</p>
           </div>
           <div className={styles.image} style={{backgroundImage: 'url(/images/about-marquee.jpg)'}}></div>
         </section>
@@ -69,14 +74,14 @@ class Index extends React.Component {
           <div className={styles.image} style={{backgroundImage: 'url(/images/capabilities-marquee-bg.jpg)'}}></div>
           <div onClick={() => history.push('/capabilities')}>
             <h2 className={styles.sectionHeader}>Capabilities</h2>
-            <p className={styles.sectionSubheader}>PlusMedia provides strategic thought leadership and customized marketing solutions to optimize media spend, maximize ROI and increase bottom line profitability.</p>
+            <p className={styles.sectionSubheader}>{content.capabilitiesText}</p>
           </div>
         </section>
 
         <section className={styles.doubleCol}>
           <div onClick={() => history.push('/clients')}>
             <h2 className={styles.sectionHeader}>Clients</h2>
-            <p className={styles.sectionSubheader}>PlusMedia has experience across a wide variety of industries, markets and business models, serving clients throughout the U.S. and internationally.</p>
+            <p className={styles.sectionSubheader}>{content.clientsText}</p>
           </div>
           <div className={styles.image} style={{backgroundImage: 'url(/images/clients-marquee-bg.jpg)'}}></div>
         </section>
@@ -109,6 +114,3 @@ class Index extends React.Component {
     )
   }
 }
-
-
-module.exports = Index;

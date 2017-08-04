@@ -1,19 +1,39 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import _ from 'lodash';
 let {connect} = require('react-redux');
+import ReactMarkdown from 'react-markdown';
 import Marquee from '../Marquee/Marquee';
 import PageItems from '../PageItems';
 import styles from './index.css';
 let modalActions = require('actions/modalActions');
 import Isvg from 'react-inlinesvg';
 
-class Capabilities extends React.Component{
+@connect(
+  ({ modal, content }) => ({
+    content: content.capabilities,
+    services: content.services,
+    modal
+  })
+)
+export default class Capabilities extends React.Component{
   constructor(){
     super();
+
+    String.prototype.toCamelCase = function() {
+      return this.valueOf()
+        .replace(/\s(.)/g, function($1) { return $1.toUpperCase(); })
+        .replace(/\s/g, '')
+        .replace(/^(.)/, function($1) { return $1.toLowerCase(); });
+    }
   }
 
   render() {
-    let {dispatch} = this.props;
+    let { dispatch, content, services } = this.props;
+    let groupedServices = [];
+    groupedServices = _.groupBy(services, function(service) {
+      return service.fields.type.toCamelCase();
+    });
 
     return (
       <div>
@@ -26,46 +46,42 @@ class Capabilities extends React.Component{
           <div className={styles.sectionBar}>Our Services</div>
           <div className={styles.services}>
             <div className={styles.container}>
-              <p>We offer a comprehensive array of services to help you achieve your marketing goals, providing a single source for all your media buying and management.</p>
-            </div>
-            <h2 className={styles.serviceGroupTitle}>Media Services</h2>
-            <div className={styles.serviceGroup}>
-              <div className={styles.service}>
-                <h3 className={styles.serviceTitle}>Strategy & Planning</h3>
-                <p className={styles.serviceDescription}>Market research, competitive tracking, and detailed media plans tailored to your business objectives and budget.</p>
-              </div>
-              <div className={styles.service}>
-                <h3 className={styles.serviceTitle}>Buying & Execution</h3>
-                <p className={styles.serviceDescription}>Rate and space negotiations, media procurement and proactive campaign monitoring to ensure best-in-class execution.</p>
-              </div>
-              <div className={styles.service}>
-                <h3 className={styles.serviceTitle}>Analytics & Optimization</h3>
-                <p className={styles.serviceDescription}>Data-driven campaign insights and fully-customized reporting to help you make strategic business decisions.</p>
-              </div>
+              <ReactMarkdown source={content.ourServicesTop} />
             </div>
 
+            <h2 className={styles.serviceGroupTitle}>Media Services</h2>
+            <div className={styles.serviceGroup}>
+              {groupedServices.mediaService.map((service) => {
+                return (
+                  <div className={styles.service}>
+                    <h3 className={styles.serviceTitle}>{service.fields.title}</h3>
+                    <p className={styles.serviceDescription}>{service.fields.description}</p>
+                  </div>
+                )
+              })}
+            </div>
             <h2 className={styles.serviceGroupTitle}>Marketing Services</h2>
             <div className={styles.serviceGroup}>
-              <div className={styles.service}>
-                <h3 className={styles.serviceTitle}>Creative Development</h3>
-                <p className={styles.serviceDescription}>Expert design resources, copywriting and direct response insight to help you create and test highly impactful ads.</p>
-              </div>
-              <div className={styles.service}>
-                <h3 className={styles.serviceTitle}>Print Production</h3>
-                <p className={styles.serviceDescription}>Full spectrum production management to help you achieve the highest quality reproduction at the lowest possible costs.</p>
-              </div>
+              {groupedServices.marketingService.map((service) => {
+                return (
+                  <div className={styles.service}>
+                    <h3 className={styles.serviceTitle}>{service.fields.title}</h3>
+                    <p className={styles.serviceDescription}>{service.fields.description}</p>
+                  </div>
+                )
+              })}
             </div>
 
             <h2 className={styles.serviceGroupTitle}>Management Services</h2>
             <div className={styles.serviceGroup}>
-              <div className={styles.service}>
-                <h3 className={styles.serviceTitle}><Link to='/data-cards'>Media Management</Link></h3>
-                <p className={styles.serviceDescription}>A dedicated sales team to help you identify and monetize your customer touch-points to generate incremental revenue.</p>
-              </div>
-              <div className={styles.service}>
-                <h3 className={styles.serviceTitle}>Partnership Management</h3>
-                <p className={styles.serviceDescription}>A dedicated outreach team to identify, forge and nurture marketing partnerships that yield mutually beneficial results for all.</p>
-              </div>
+              {groupedServices.managementService.map((service) => {
+                return (
+                  <div className={styles.service}>
+                    <h3 className={styles.serviceTitle}>{service.fields.title}</h3>
+                    <p className={styles.serviceDescription}>{service.fields.description}</p>
+                  </div>
+                )
+              })}
             </div>
             <div className={styles.container}>
               <p><Link to="/contact">Contact us</Link> to learn more or to arrange for a complimentary evaluation of your current media, marketing and management services efforts.</p>
@@ -74,7 +90,7 @@ class Capabilities extends React.Component{
 
           <div className={styles.sectionBar}>Media Channels</div>
           <div className={styles.container}>
-            <p>We develop and execute integrated media campaigns that effectively reach your target audience, incorporating a mix of traditional, alternate and digital channels for maximum impact.</p>
+            <ReactMarkdown source={content.mediaChannelsTop} />
             <div className={styles.mediaChannels}>
               <div className={styles.channel} onClick={() => {
                 let topPosition = window.pageYOffset;
@@ -270,11 +286,3 @@ class Capabilities extends React.Component{
     )
   }
 }
-
-export default connect(
-  (state) => {
-    return {
-      modal: state.modal
-    }
-  }
-)(Capabilities);

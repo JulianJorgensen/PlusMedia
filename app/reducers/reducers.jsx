@@ -30,3 +30,29 @@ export var scrollReducer = (state = {y: 0}, action) => {
       return state;
   }
 };
+
+
+let initialState = {
+  homepage: '',
+  about: '',
+  capabilities: '',
+  clientsContent: '',
+  contact: '',
+  dataCardsContent: '',
+  dataCards: [],
+  careers: [],
+  teamMembers: [],
+  services: [],
+  clients: []
+}
+export var contentReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'SET_CONTENT':
+      return {
+        ...state,
+        ...action
+      };
+    default:
+      return state;
+  }
+};

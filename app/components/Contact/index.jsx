@@ -1,6 +1,7 @@
 import React from 'react';
 let {connect} = require('react-redux');
 import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
 import Input from 'react-toolbox/lib/input';
 import {Button} from 'react-toolbox/lib/button';
 import Marquee from '../Marquee/Marquee';
@@ -9,7 +10,13 @@ import PageItems from '../PageItems';
 import styles from './index.css';
 let modalActions = require('actions/modalActions');
 
-class Contact extends React.Component{
+@connect(
+  ({ modal, content }) => ({
+    content: content.contact,
+    modal
+  })
+)
+export default class Contact extends React.Component{
   constructor(){
     super();
 
@@ -55,7 +62,7 @@ class Contact extends React.Component{
   }
 
   render() {
-    let {dispatch} = this.props;
+    let { dispatch, content } = this.props;
 
     let renderForm = () => {
       if (!this.state.sent){
@@ -130,28 +137,10 @@ class Contact extends React.Component{
             <div className={styles.contacts}>
               <div className={styles.row}>
                 <div className={styles.col}>
-                  <h4>PlusMedia, LLC</h4>
-                  <address>
-                    100 Mill Plain Road, 4th Floor<br />
-                    Danbury, CT 06811<br />
-                    <phone><a href="tel:+1-203-748-6500">203.748.6500</a></phone>
-                  </address>
+                  <ReactMarkdown source={content.leftCol} />
                 </div>
                 <div className={styles.col}>
-                  <h4>Business Development</h4>
-                  Sandra Roscoe<br />
-                  EVP, Strategy & Development<br />
-                  <a href="mailto:sandra.roscoe@plusme.com">sandra.roscoe@plusme.com</a>
-
-                  <h4>Career Opportunities</h4>
-                  Nicole Daoust<br />
-                  Human Resources Manager<br />
-                  <a href="mailto:nicole.daoust@plusme.com">nicole.daoust@plusme.com</a>
-
-                  <h4>Media Inquiries</h4>
-                  Jessica Carnrick<br />
-                  Marketing Communications Specialist<br />
-                  <a href="mailto:jessica.carnrick@plusme.com">jessica.carnrick@plusme.com</a>
+                  <ReactMarkdown source={content.rightCol} />
                 </div>
               </div>
 
@@ -165,11 +154,3 @@ class Contact extends React.Component{
     )
   }
 }
-
-export default connect(
-  (state) => {
-    return {
-      modal: state.modal
-    }
-  }
-)(Contact);

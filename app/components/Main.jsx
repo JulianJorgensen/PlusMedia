@@ -1,6 +1,8 @@
 import React from 'react';
+let {connect} = require('react-redux');
 import {Route, HashRouter, Link, withRouter} from 'react-router-dom';
-
+import _ from 'lodash';
+import axios from 'axios';
 import DocumentMeta from 'react-document-meta';
 import Index from 'Index/Index';
 import About from 'About/About';
@@ -13,6 +15,7 @@ import Header from 'Header/Header';
 import Footer from 'Footer/Footer';
 import Modal from 'components/Modal';
 import styles from './Main.css';
+import Loader from 'components/Loader';
 
 import Scroll from 'Scroll';
 
@@ -38,20 +41,69 @@ const meta = {
 };
 
 @withRouter
+@connect(
+  ({ content }) => ({
+    content
+  })
+)
 export default class Main extends React.Component {
   constructor() {
     super();
 
     this.state = {
       navActive: false,
-      loaded: false
+      loaded: false,
+      contentFetched: false
     };
+  }
+
+  getAllContent = () => {
+    let { dispatch } = this.props;
+    axios.get(`/contentful/getAllContent`)
+    .then((response) => {
+      let homepageContent = _.find(response.data, { 'sys': {'id': '7hAkjlU9LqsSMYCG4q4sGU'} }).fields;
+      let aboutContent = _.find(response.data, { 'sys': {'id': '62ZbsMs95CQAuygyw8E0UI'} }).fields;
+      let capabilitiesContent = _.find(response.data, { 'sys': {'id': '3Os9QeGbq0c6IKaIeQiyiK'} }).fields;
+      let clientsContent = _.find(response.data, { 'sys': {'id': 'ptfoS7OZAO2ygquY62osk'} }).fields;
+      let contact = _.find(response.data, { 'sys': {'id': '15DHqPnnKik6EYaiyGM2uY'} }).fields;
+      let dataCardsContent = _.find(response.data, { 'sys': {'id': '34eqgcK56Uo0ykY2akCekE'} }).fields;
+
+      let careers = _.filter(response.data, { 'sys': {'contentType': {'sys': {'id': 'careers'} } } });
+      let teamMembers = _.filter(response.data, { 'sys': {'contentType': {'sys': {'id': 'teamMember'} } } });
+      let services = _.filter(response.data, { 'sys': {'contentType': {'sys': {'id': 'service'} } } });
+      let testimonials = _.filter(response.data, { 'sys': {'contentType': {'sys': {'id': 'testimonial'} } } });
+      let dataCards = _.filter(response.data, { 'sys': {'contentType': {'sys': {'id': 'dataCard'} } } });
+
+      dispatch({
+        type: 'SET_CONTENT',
+        homepage: homepageContent,
+        about: aboutContent,
+        capabilities: capabilitiesContent,
+        clientsContent,
+        careers,
+        teamMembers,
+        dataCards,
+        services,
+        testimonials,
+        contact,
+        dataCardsContent
+      });
+
+      this.setState({contentFetched: true});
+    })
+    .catch((error) => {
+      console.log('Error getting content from contentful...', error);
+    });
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
       this.onRouteChanged();
     }
+  }
+
+  componentWillMount() {
+    this.getAllContent();
   }
 
   componentDidMount() {
@@ -86,15 +138,23 @@ export default class Main extends React.Component {
   };
 
   render() {
+    let { contentFetched, homepageContent } = this.state;
+
+    if (!contentFetched){
+      return (
+        <Loader />
+      )
+    }
+
     return (
-      <div id="main" className={`page-name-here`}>
+      <div id="main">
         <DocumentMeta {...meta} />
         <Header handleNavToggle={this.handleNavToggle.bind(this)} navActive={this.state.navActive} />
         <Scroll />
         <Layout>
           <div className={`${styles.loader} ${this.state.loaded ? styles.loaded : ''}`}><div className={styles.loaderInner}></div></div>
           <div className={styles.page}>
-            <Route exact path="/" component={Index} />
+            <Route exact path="/" component={Index} content={homepageContent} />
             <Route path="/about" component={About} />
             <Route path="/capabilities" component={Capabilities} />
             <Route path="/case-study/:title" component={PageItem} />

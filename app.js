@@ -7,6 +7,7 @@ let expressStaticGzip = require("express-static-gzip");
 
 // routes
 let email = require('./routes/email');
+let contentful = require('./routes/contentful');
 
 // Set port
 app.set('port', (process.env.PORT || 3000));
@@ -18,8 +19,11 @@ app.use(logger('dev')); // Log requests to API using morgan
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Email routes
+// Email route
 app.use('/email', email);
+
+// Contenful route
+app.use('/contentful', contentful);
 
 // Serve Gzip
 app.use("/", expressStaticGzip(__dirname + '/public'));
