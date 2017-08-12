@@ -36,7 +36,6 @@ export default class Index extends React.Component {
         }
       ]
     };
-    console.log('content: ', content);
 
     return (
       <div className="page-content">

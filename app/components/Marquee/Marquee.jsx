@@ -35,7 +35,7 @@ class Marquee extends React.Component {
             {title ? <h1 className={styles.header}>{title}</h1> : header}
             {intro ? <h2 className={styles.intro}>{intro}</h2> : subheader}
           </div>
-          {bgVideo ? <video src={bgVideo} poster={poster} autoPlay loop /> : ''}
+          {bgVideo ? <video src={bgVideo} autoPlay loop /> : ''}
         </div>
       )
     }
