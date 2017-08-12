@@ -137,7 +137,7 @@ export default class Contact extends React.Component{
             <div className={styles.contacts}>
               <div className={styles.row}>
                 <div className={styles.col}>
-                  <ReactMarkdown source={content.leftCol} />
+                  <ReactMarkdown softBreak='br' source={content.leftCol} />
                 </div>
                 <div className={styles.col}>
                   <ReactMarkdown source={content.rightCol} />

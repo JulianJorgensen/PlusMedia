@@ -16,19 +16,6 @@ import styles from './Index.css';
 export default class Index extends React.Component {
   constructor() {
     super();
-
-    this.state = {
-      marqueeVideo: null
-    }
-  }
-
-  componentWillReceiveProps(){
-    let marqueeVideos = [
-      '/videos/PlusMedia_Video_v3_HR.mp4'
-    ];
-    this.setState({
-      marqueeVideo: marqueeVideos[Math.floor(Math.random()*marqueeVideos.length)]
-    });
   }
 
   render() {
@@ -49,6 +36,7 @@ export default class Index extends React.Component {
         }
       ]
     };
+    console.log('content: ', content);
 
     return (
       <div className="page-content">
@@ -56,9 +44,9 @@ export default class Index extends React.Component {
           header={<div className={styles.logo}><img src={content.marqueeLogo.fields.file.url} /></div>}
           subheader={<h1 className={styles.header}>{content.marqueeIntro}</h1>}
           className={styles.landing}
-          bgImage="/images/home-bg.jpg"
-          bgVideo={this.state.marqueeVideo}
-          poster="/images/home-bgvideo-poster.jpg"
+          bgImage={content.marqueeBackground.fields.file.url}
+          poster={content.marqueeBackground.fields.file.url}
+          bgVideo={content.video.fields.file.url}
           transitionSpeed={800}
         />
 
