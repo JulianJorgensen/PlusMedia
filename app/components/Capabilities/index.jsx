@@ -12,7 +12,6 @@ import Isvg from 'react-inlinesvg';
 @connect(
   ({ modal, content }) => ({
     content: content.capabilities,
-    services: content.services,
     modal
   })
 )
@@ -29,18 +28,21 @@ export default class Capabilities extends React.Component{
   }
 
   render() {
-    let { dispatch, content, services } = this.props;
+    let { dispatch, content } = this.props;
     let groupedServices = [];
-    groupedServices = _.groupBy(services, function(service) {
+    groupedServices = _.groupBy(content.services, function(service) {
       return service.fields.type.toCamelCase();
     });
+
+    console.log('groupedServices', groupedServices);
+    console.log('content', content);
 
     return (
       <div>
         <Marquee
-          title="Capabilities"
-          intro="PlusMedia provides strategic thought leadership and customized marketing solutions to optimize media spend, maximize ROI and increase bottom line profitability."
-          bgImage="/images/capabilities-marquee-bg.jpg"
+          title={content.title}
+          intro={content.marqueeIntro}
+          bgImage={content.marqueeImage.fields.file.url}
         />
         <div className="page-content">
           <div className={styles.sectionBar}>Our Services</div>
@@ -92,187 +94,25 @@ export default class Capabilities extends React.Component{
           <div className={styles.container}>
             <ReactMarkdown source={content.mediaChannelsTop} />
             <div className={styles.mediaChannels}>
-              <div className={styles.channel} onClick={() => {
-                let topPosition = window.pageYOffset;
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Inserts',
-                  lastScrollPosition: topPosition,
-                  body: 'Place highly impactful insert placements into third-party mailings and merchandise shipments.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Inserts_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Inserts_Icon.svg" /></div>
-                <h2 className={styles.title}>Inserts</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                let topPosition = window.pageYOffset;
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Direct Mail',
-                  lastScrollPosition: topPosition,
-                  body: 'Send dedicated mail pieces that reach highly engaged consumers right in their mailbox.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_DirectMail_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_DirectMail_Icon.svg" /></div>
-                <h2 className={styles.title}>Direct Mail</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                let topPosition = window.pageYOffset;
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Magazines',
-                  lastScrollPosition: topPosition,
-                  body: 'Run on-page, bind-in, tip-on and onsert placements in editorially relevant publications that reach consumers at home, at the newsstand, at their doctor’s office or anywhere.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Magazines_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Magazines_Icon.svg" /></div>
-                <h2 className={styles.title}>Magazines</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                let topPosition = window.pageYOffset;
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Newspapers',
-                  lastScrollPosition: topPosition,
-                  body: 'Reach consumers locally, regionally and nationally with run of press, solo and free standing insert placements in traditional newspapers.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Newspapers_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Newspapers_Icon.svg" /></div>
-                <h2 className={styles.title}>Newspapers</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                let topPosition = window.pageYOffset;
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Mass',
-                  lastScrollPosition: topPosition,
-                  body: 'Include targeted inserts in mass-distributed mailings to consumers seeking out savings.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Mass_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Mass_Icon.svg" /></div>
-                <h2 className={styles.title}>Mass</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                let topPosition = window.pageYOffset;
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Out-of-Home',
-                  lastScrollPosition: topPosition,
-                  body: 'Advertise in strategically placed out-of-home locations that reach consumers on the go – while shopping, socializing, commuting or running errands.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_OutOfHome_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_OutOfHome_Icon.svg" /></div>
-                <h2 className={styles.title}>Out-of-Home</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                let topPosition = window.pageYOffset;
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Search',
-                  lastScrollPosition: topPosition,
-                  body: 'Drive traffic and brand awareness with expert search engine marketing tactics that reach consumers organically or via sponsored content.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Search_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Search_Icon.svg" /></div>
-                <h2 className={styles.title}>Search</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                let topPosition = window.pageYOffset;
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Display',
-                  lastScrollPosition: topPosition,
-                  body: 'Prospect or remarket to consumers with contextually relevant ads as they browse content and shop online.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Display_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Display_Icon.svg" /></div>
-                <h2 className={styles.title}>Display</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                let topPosition = window.pageYOffset;
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Social',
-                  lastScrollPosition: topPosition,
-                  body: 'Leverage the sophisticated targeting and reach capabilities of social networks including Facebook, LinkedIn, Twitter, Instagram and Pinterest.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Social_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Social_Icon.svg" /></div>
-                <h2 className={styles.title}>Social</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                let topPosition = window.pageYOffset;
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Mobile',
-                  lastScrollPosition: topPosition,
-                  body: 'Serve messages to consumers anytime, anywhere with relevant, immediate and contextual mobile ads.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Mobile_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Mobile_Icon.svg" /></div>
-                <h2 className={styles.title}>Mobile</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                let topPosition = window.pageYOffset;
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Email',
-                  lastScrollPosition: topPosition,
-                  body: 'Partner with brand-relevant publishers to reach consumers in their email inbox.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Email_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Email_Icon.svg" /></div>
-                <h2 className={styles.title}>Email</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                let topPosition = window.pageYOffset;
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Affiliate',
-                  lastScrollPosition: topPosition,
-                  body: 'Leverage strategic partners by accessing their consumer base to drive qualified referrals.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_Affiliate_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_Affiliate_Icon.svg" /></div>
-                <h2 className={styles.title}>Affiliate</h2>
-              </div>
-
-              <div className={styles.channel} onClick={() => {
-                let topPosition = window.pageYOffset;
-                dispatch(modalActions.openModal({
-                  template: 'media',
-                  title: 'Online Video/Radio',
-                  lastScrollPosition: topPosition,
-                  body: 'Tap into streaming video and radio networks to serve relevant ads to highly engaged consumers.',
-                  icon: <Isvg src="/images/media-channels/PM_MediaChannel_OnlineVideoRadio_Icon.svg" />
-                }));
-              }}>
-                <div className={styles.icon}><Isvg src="/images/media-channels/PM_MediaChannel_OnlineVideoRadio_Icon.svg" /></div>
-                <h2 className={styles.title}>Online Video/Radio</h2>
-              </div>
+              {
+                content.mediaChannels.map((mediaChannel) => {
+                  return (
+                    <div className={styles.channel} onClick={() => {
+                      let topPosition = window.pageYOffset;
+                      dispatch(modalActions.openModal({
+                        template: 'media',
+                        title: mediaChannel.fields.title,
+                        lastScrollPosition: topPosition,
+                        body: mediaChannel.fields.body,
+                        icon: <Isvg src={mediaChannel.fields.icon.fields.file.url} />
+                      }));
+                    }}>
+                      <div className={styles.icon}><Isvg src={mediaChannel.fields.icon.fields.file.url} /></div>
+                      <h2 className={styles.title}>{mediaChannel.fields.title}</h2>
+                    </div>
+                  )
+                })
+              }
             </div>
             <p><Link to='/contact'>Contact us</Link> to learn more or to arrange for a complimentary evaluation of your current media efforts.</p>
           </div>

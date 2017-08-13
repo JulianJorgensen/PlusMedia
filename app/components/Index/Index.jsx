@@ -10,7 +10,10 @@ import styles from './Index.css';
 @withRouter
 @connect(
   ({ content }) => ({
-    content: content.homepage
+    content: content.homepage,
+    aboutContent: content.about,
+    capabilitiesContent: content.capabilities,
+    clientsContent: content.clientsContent
   })
 )
 export default class Index extends React.Component {
@@ -19,8 +22,9 @@ export default class Index extends React.Component {
   }
 
   render() {
-    let { history, content } = this.props;
-    var settings = {
+    let { history, content, aboutContent, capabilitiesContent, clientsContent } = this.props;
+
+    let settings = {
       dots: false,
       infinite: true,
       variableWidth: false,
@@ -54,11 +58,11 @@ export default class Index extends React.Component {
             <h2 className={styles.sectionHeader}>About</h2>
             <p className={styles.sectionSubheader}>{content.aboutText}</p>
           </div>
-          <div className={styles.image} style={{backgroundImage: 'url(/images/about-marquee.jpg)'}}></div>
+          <div className={styles.image} style={{backgroundImage: `url(${aboutContent.marqueeImage.fields.file.url})`}}></div>
         </section>
 
         <section className={`${styles.doubleCol} ${styles.capabilities}`}>
-          <div className={styles.image} style={{backgroundImage: 'url(/images/capabilities-marquee-bg.jpg)'}}></div>
+          <div className={styles.image} style={{backgroundImage: `url(${capabilitiesContent.marqueeImage.fields.file.url})`}}></div>
           <div onClick={() => history.push('/capabilities')}>
             <h2 className={styles.sectionHeader}>Capabilities</h2>
             <p className={styles.sectionSubheader}>{content.capabilitiesText}</p>
@@ -70,31 +74,19 @@ export default class Index extends React.Component {
             <h2 className={styles.sectionHeader}>Clients</h2>
             <p className={styles.sectionSubheader}>{content.clientsText}</p>
           </div>
-          <div className={styles.image} style={{backgroundImage: 'url(/images/clients-marquee-bg.jpg)'}}></div>
+          <div className={styles.image} style={{backgroundImage: `url(${capabilitiesContent.marqueeImage.fields.file.url})`}}></div>
         </section>
 
         <div className={styles.pmGrid}></div>
         <div className={styles.clientLogos}>
           <Slider className={styles.slider} {...settings}>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Jet.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-USO.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Gerber-Life-Insurance.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Barnes-&-Noble.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Childrens-Place-logo.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/down-jones.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Haband-logo.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Harry's-logo.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Charles-Tyrwhitt.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Colonial-Penn.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Feeding-America.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Hayneedle.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-HelloFresh.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Shoes.com-logo.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Shutterfly.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-Staples.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-The-Economist.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/Logo-WSJwine.jpg" /></div>
-            <div><img onClick={() => history.push('/clients')} src="/images/client-logos/ZipRecruiter-logo.jpg" /></div>
+            {
+              content.clientLogos.map((clientLogo) => {
+                return (
+                  <div><img onClick={() => history.push('/clients')} src={clientLogo.fields.file.url} /></div>
+                )
+              })
+            }
           </Slider>
         </div>
       </div>

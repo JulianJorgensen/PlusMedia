@@ -9,8 +9,6 @@ let modalActions = require('actions/modalActions');
 @connect(
   ({ content, modal }) => ({
     content: content.about,
-    careers: content.careers,
-    teamMembers: content.teamMembers,
     modal
   })
 )
@@ -20,11 +18,12 @@ export default class About extends React.Component{
   }
 
   render() {
-    let { dispatch, content, careers, teamMembers } = this.props;
+    let { dispatch, content } = this.props;
+    console.log('content: ', content);
 
     let renderTeamMembers = () => {
       return (
-        teamMembers.map((teamMember) => {
+        content.teamMembers.map((teamMember) => {
           return (
             <div className={styles.teamMember} onClick={() => {
               let topPosition = window.pageYOffset;
@@ -68,33 +67,25 @@ export default class About extends React.Component{
           <div className={styles.sectionBar}>Join Us</div>
           <div className={styles.container}>
             <div className={styles.quotes}>
-              <div className={styles.quote}>
-                <div className={styles.quoteAuthorImage} style={{backgroundImage: `url(/images/employees/Headshot-Fariya-Naz.jpg)`}}></div>
-                <div className={styles.quoteContent}>
-                  <quote>"PlusMedia’s team-oriented culture creates a collaborative atmosphere where employees feel empowered to contribute meaningfully."</quote>
-                  <author>Fariya Naz,<br />Account Coordinator</author>
-                </div>
-              </div>
-              <div className={styles.quote}>
-                <div className={styles.quoteAuthorImage} style={{backgroundImage: `url(/images/employees/Headshot-Christine-Isgro.jpg)`}}></div>
-                <div className={styles.quoteContent}>
-                  <quote>"With a leadership team dedicated to ensuring each employee has the tools they need to be successful, the growth opportunities at PlusMedia are limitless."</quote>
-                  <author>Christine Isgro,<br />Senior Account Executive</author>
-                </div>
-              </div>
-              <div className={styles.quote}>
-                <div className={styles.quoteAuthorImage} style={{backgroundImage: `url(/images/employees/Headshot-Jessica-Carnrick.jpg)`}}></div>
-                <div className={styles.quoteContent}>
-                  <quote>"PlusMedia upholds impeccable standards in every aspect of business – treatment of our employees, service to our clients and relationships with industry partners."</quote>
-                  <author>Jessica Carnrick,<br />Marketing Specialist</author>
-                </div>
-              </div>
+              {
+                content.quotes.map((quote) => {
+                  return (
+                    <div className={styles.quote}>
+                      <div className={styles.quoteAuthorImage} style={{backgroundImage: `url(${quote.fields.image.fields.file.url})`}}></div>
+                      <div className={styles.quoteContent}>
+                        <quote>"{quote.fields.quote}"</quote>
+                        <author>{quote.fields.author}</author>
+                      </div>
+                    </div>
+                  )
+                })
+              }
             </div>
 
             <h2 className={styles.jobsHeader}>Your Career Starts Here</h2>
 
             <div className={styles.jobs}>
-              {careers.map((career) => {
+              {content.careers.map((career) => {
                 return (
                   <div className={styles.job}>
                     <h2 className={styles.jobTitle}>{career.fields.title}</h2>

@@ -9,7 +9,6 @@ let modalActions = require('actions/modalActions');
 @connect(
   ({ modal, content }) => ({
     content: content.clientsContent,
-    testimonials: content.testimonials,
     modal
   })
 )
@@ -19,7 +18,7 @@ export default class Clients extends React.Component{
   }
 
   render() {
-    let { dispatch, content, testimonials } = this.props;
+    let { dispatch, content } = this.props;
 
     return (
       <div>
@@ -33,26 +32,13 @@ export default class Clients extends React.Component{
           <div className={styles.container}>
             <ReactMarkdown source={content.partnersIntro} />
             <div className={styles.partners}>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-Barnes-&-Noble.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-Charles-Tyrwhitt.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Childrens-Place-logo.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-Colonial-Penn.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/down-jones.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-Feeding-America.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-Gerber-Life-Insurance.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Haband-logo.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Harry's-logo.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-Hayneedle.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-HelloFresh.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-Jet.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-Omaha-Steaks.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Shoes.com-logo.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-Shutterfly.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-Staples.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-The-Economist.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-USO.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/Logo-WSJwine.jpg" /></div>
-              <div className={styles.partner}><img src="/images/client-logos/ZipRecruiter-logo.jpg" /></div>
+              {
+                content.clients.map((client) => {
+                  return (
+                    <div className={styles.partner}><img src={client.fields.logo.fields.file.url} /></div>
+                  )
+                })
+              }
             </div>
           </div>
 
@@ -60,7 +46,7 @@ export default class Clients extends React.Component{
           <div className={styles.container}>
             <ReactMarkdown source={content.testimonialsIntro} />
             <div className={styles.testimonials}>
-              {testimonials.map((testimonial) => {
+              {content.testimonials.map((testimonial) => {
                 return (
                   <div className={styles.testimonial}>
                     "{testimonial.fields.testimonial}"

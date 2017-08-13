@@ -68,23 +68,12 @@ export default class Main extends React.Component {
       let contact = _.find(response.data, { 'sys': {'id': '15DHqPnnKik6EYaiyGM2uY'} }).fields;
       let dataCardsContent = _.find(response.data, { 'sys': {'id': '34eqgcK56Uo0ykY2akCekE'} }).fields;
 
-      let careers = _.filter(response.data, { 'sys': {'contentType': {'sys': {'id': 'careers'} } } });
-      let teamMembers = _.filter(response.data, { 'sys': {'contentType': {'sys': {'id': 'teamMember'} } } });
-      let services = _.filter(response.data, { 'sys': {'contentType': {'sys': {'id': 'service'} } } });
-      let testimonials = _.filter(response.data, { 'sys': {'contentType': {'sys': {'id': 'testimonial'} } } });
-      let dataCards = _.filter(response.data, { 'sys': {'contentType': {'sys': {'id': 'dataCard'} } } });
-
       dispatch({
         type: 'SET_CONTENT',
         homepage: homepageContent,
         about: aboutContent,
         capabilities: capabilitiesContent,
         clientsContent,
-        careers,
-        teamMembers,
-        dataCards,
-        services,
-        testimonials,
         contact,
         dataCardsContent
       });
