@@ -30,7 +30,7 @@ export default class Index extends React.Component {
       variableWidth: false,
       speed: 500,
       slidesToShow: 4,
-      slidesToScroll: 1,
+      slidesToScroll: 3,
       responsive: [
         {
           breakpoint: 1024,
@@ -54,7 +54,7 @@ export default class Index extends React.Component {
         />
 
         <section className={styles.doubleCol}>
-          <div onClick={() => history.push('/about')}>
+          <div onClick={() => history.push('/about')} className={styles.sectionDescription}>
             <h2 className={styles.sectionHeader}>About</h2>
             <p className={styles.sectionSubheader}>{content.aboutText}</p>
           </div>
@@ -63,18 +63,18 @@ export default class Index extends React.Component {
 
         <section className={`${styles.doubleCol} ${styles.capabilities}`}>
           <div className={styles.image} style={{backgroundImage: `url(${capabilitiesContent.marqueeImage.fields.file.url})`}}></div>
-          <div onClick={() => history.push('/capabilities')}>
+          <div onClick={() => history.push('/capabilities')} className={styles.sectionDescription}>
             <h2 className={styles.sectionHeader}>Capabilities</h2>
             <p className={styles.sectionSubheader}>{content.capabilitiesText}</p>
           </div>
         </section>
 
         <section className={styles.doubleCol}>
-          <div onClick={() => history.push('/clients')}>
+          <div onClick={() => history.push('/clients')} className={styles.sectionDescription}>
             <h2 className={styles.sectionHeader}>Clients</h2>
             <p className={styles.sectionSubheader}>{content.clientsText}</p>
           </div>
-          <div className={styles.image} style={{backgroundImage: `url(${capabilitiesContent.marqueeImage.fields.file.url})`}}></div>
+          <div className={styles.image} style={{backgroundImage: `url(${clientsContent.marqueeImage.fields.file.url})`}}></div>
         </section>
 
         <div className={styles.pmGrid}></div>

@@ -38,7 +38,7 @@
   & .formContainer{
     width: 100%;
     padding: 20px 30px 40px;
-    @media (--medium-and-up) {
+    @media (--large-and-up) {
       width: 50%;
     }
   }
@@ -60,7 +60,7 @@
       & .col{
         width: 100%;
       }
-      @media (--medium-and-up) {
+      @media (--large-and-up) {
         flex-direction: row;
         & .col{
           width: 50%;
@@ -98,7 +98,7 @@
         & input:invalid{
           box-shadow: none !important;
         }
-        @media (--medium-and-up) {
+        @media (--large-and-up) {
           width: calc(50% - 30px);
         }
       }

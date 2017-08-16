@@ -44,6 +44,9 @@
       min-height: 250px;
     }
   }
+  & .sectionDescription{
+    cursor: pointer;
+  }
   & div{
     text-align: left;
     width: 100%;
@@ -54,7 +57,6 @@
     background-size: cover;
     transition: all 0.4s ease;
     background-color: rgba(var(--pistachio), 0);
-    cursor: pointer;
 
     @media (--large-and-up) {
       width: 50%;

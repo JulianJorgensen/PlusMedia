@@ -19,7 +19,7 @@ class Footer extends React.Component {
         </div>
         <div className={styles.details}>
           <div>©2017 by PlusMedia, LLC. All Rights Reserved</div>
-          <div className={styles.contact}>100 Mill Plain Road, 4th Floor Danbury, CT 06811  |  203.748.6500  |  <a href="mailto:contact@plusme.com">contact@plusme.com</a></div>
+          <div className={styles.contact}>100 Mill Plain Road, 4th Floor Danbury, CT 06811  |  <phone><a href="tel:203-748-6500">203.748.6500</a></phone>  |  <a href="mailto:contact@plusme.com">contact@plusme.com</a></div>
         </div>
       </footer>
     )
