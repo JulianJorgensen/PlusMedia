@@ -37,7 +37,7 @@
     min-height: 100vh;
     min-width: 100vw;
     z-index: 1;
-    @media (--large-and-up) {
+    @media (--medium-and-up) {
       display: block;
     }
   }
