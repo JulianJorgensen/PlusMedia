@@ -4,11 +4,7 @@
   composes: container from "../../styles/layout.css";
   font-weight: normal;
   color: rgba(var(--spruce));
-  padding: 20px;
-
-  & a{
-    color: black;
-  }
+  padding: 40px 20px 20px;
 }
 
 .marquee{
@@ -35,6 +31,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+
     & .logo{
       width: 25%;
       padding-right: 30px;
@@ -61,6 +58,9 @@
     line-height: 22px;
     & li{
       font-family: 'Open Sans' !important;
+      & a {
+        color: black;
+      }
     }
   }
 }
