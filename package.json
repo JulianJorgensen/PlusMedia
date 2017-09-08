@@ -10,7 +10,7 @@
     "build": "yarn clean && webpack",
     "serve": "webpack-dev-server",
     "start": "node app.js",
-    "start:prod": "NODE_ENV=production node app.js",
+    "start:prod": "NODE_ENV=production forever start app.js",
     "heroku-postbuild": "webpack"
   },
   "author": "Julian Jorgensen",
