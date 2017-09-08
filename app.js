@@ -12,6 +12,8 @@ let contentful = require('./routes/contentful');
 const NODE_ENV = (process.env.NODE_ENV || 'development');
 const IS_PRODUCTION = (NODE_ENV === 'production');
 
+console.log('running node on ', NODE_ENV);
+
 const PUBLIC_PATH_DEV = 'public';
 const PUBLIC_PATH_PROD = '../var/www/html';
 const PUBLIC_PATH = IS_PRODUCTION ? PUBLIC_PATH_PROD : PUBLIC_PATH_DEV;
