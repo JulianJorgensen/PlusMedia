@@ -45,7 +45,7 @@ app.use("/", expressStaticGzip(PUBLIC_PATH));
 
 // Catch all other paths and serve the index file
 app.all('*', function(request, response) {
-  response.sendFile(path.resolve(PUBLIC_PATH, '/index.html'));
+  response.sendFile(path.resolve(PUBLIC_PATH, 'index.html'));
 });
 
 // Listen to port
