@@ -9,6 +9,13 @@ let expressStaticGzip = require("express-static-gzip");
 let email = require('./routes/email');
 let contentful = require('./routes/contentful');
 
+const NODE_ENV = (process.env.NODE_ENV || 'development');
+const IS_PRODUCTION = (NODE_ENV === 'production');
+
+const PUBLIC_PATH_DEV = 'public';
+const PUBLIC_PATH_PROD = '../var/www/html';
+const PUBLIC_PATH = IS_PRODUCTION ? PUBLIC_PATH_PROD : PUBLIC_PATH_DEV;
+
 // Set port
 app.set('port', (process.env.PORT || 3000));
 
@@ -26,11 +33,11 @@ app.use('/email', email);
 app.use('/contentful', contentful);
 
 // Serve Gzip
-app.use("/", expressStaticGzip(__dirname + '/public'));
+app.use("/", expressStaticGzip(PUBLIC_PATH));
 
 // Catch all other paths and serve the index file
 app.all('*', function(request, response) {
-  response.sendFile(__dirname + '/public/index.html');
+  response.sendFile(path.resolve(PUBLIC_PATH, '/index.html'));
 });
 
 // Listen to port
