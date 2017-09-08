@@ -34,7 +34,7 @@ const BASE_CONFIG = {
   },
   output: {
     path: path.join(__dirname, 'public'),
-    publicPath: '/'
+    publicPath: IS_PRODUCTION ? '../var/www/html' : '/'
   },
   module: {
     rules: [

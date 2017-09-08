@@ -59,7 +59,7 @@ export default class Main extends React.Component {
 
   getAllContent = () => {
     let { dispatch } = this.props;
-    axios.get(`/contentful/getAllContent`)
+    axios.get(`${ENV_CONFIG.URL}/contentful/getAllContent`)
     .then((response) => {
       let homepageContent = _.find(response.data, { 'sys': {'id': '7hAkjlU9LqsSMYCG4q4sGU'} }).fields;
       let aboutContent = _.find(response.data, { 'sys': {'id': '62ZbsMs95CQAuygyw8E0UI'} }).fields;
