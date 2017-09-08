@@ -21,6 +21,12 @@ const PUBLIC_PATH = IS_PRODUCTION ? PUBLIC_PATH_PROD : PUBLIC_PATH_DEV;
 // Set port
 app.set('port', (process.env.PORT || 3000));
 
+app.use(function (req, res, next) {
+  // Website you wish to allow to connect
+  res.setHeader('Access-Control-Allow-Origin', 'http://plusme.com');
+  next();
+});
+
 // Setting up basic middleware for all Express requests
 app.use(logger('dev')); // Log requests to API using morgan
 
