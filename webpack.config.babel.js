@@ -28,15 +28,15 @@ const VENDOR_LIBS = [
 console.log('deploying site to ', NODE_ENV);
 
 const ROOT_PATH = path.resolve(__dirname);
-const APP_PATH = path.resolve(ROOT_PATH, 'app');
-const BUILD_PATH_DEV = path.resolve(ROOT_PATH, '/public');
+const APP_PATH = path.resolve(ROOT_PATH, 'app/app');
+const BUILD_PATH_DEV = path.resolve(ROOT_PATH, 'public');
 const BUILD_PATH_PROD = path.resolve(ROOT_PATH, '../var/www/html');
 
 // Webpack config for both production and development environments
 // ====================
 const BASE_CONFIG = {
   entry: {
-    bundle: path.resolve(__dirname, 'app/app'),
+    bundle: APP_PATH,
     vendor: VENDOR_LIBS
   },
   output: {
