@@ -25,6 +25,13 @@ const VENDOR_LIBS = [
 ];
 
 
+console.log('deploying site to ', NODE_ENV);
+
+const ROOT_PATH = path.resolve(__dirname);
+const APP_PATH = path.resolve(ROOT_PATH, 'app');
+const BUILD_PATH_DEV = path.resolve(ROOT_PATH, '/public');
+const BUILD_PATH_PROD = path.resolve(ROOT_PATH, '../var/www/html');
+
 // Webpack config for both production and development environments
 // ====================
 const BASE_CONFIG = {
@@ -33,8 +40,8 @@ const BASE_CONFIG = {
     vendor: VENDOR_LIBS
   },
   output: {
-    path: path.join(__dirname, 'public'),
-    publicPath: IS_PRODUCTION ? '../var/www/html' : '/'
+    path: IS_PRODUCTION ? BUILD_PATH_PROD : BUILD_PATH_DEV,
+    publicPath: '/'
   },
   module: {
     rules: [
