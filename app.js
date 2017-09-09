@@ -30,7 +30,9 @@ app.use(logger('dev')); // Log requests to API using morgan
 
 // create application/x-www-form-urlencoded parser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 // Email route
 app.use('/email', email);
@@ -42,12 +44,12 @@ app.use('/contentful', contentful);
 app.use("/", expressStaticGzip(PUBLIC_PATH));
 
 // Catch all other paths and serve the index file
-app.all('*', function(request, response) {
-  response.sendFile(path.resolve(PUBLIC_PATH, 'index.html'));
+app.all('*', function (request, response) {
+  response.sendFile(PUBLIC_PATH + '/index.html');
 });
 
 // Listen to port
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
 });
 
