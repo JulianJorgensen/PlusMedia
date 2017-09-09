@@ -20,12 +20,6 @@ const PUBLIC_PATH = path.join(__dirname, 'public');
 // Set port
 app.set('port', (process.env.PORT || 3000));
 
-app.use(function (req, res, next) {
-  // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  next();
-});
-
 // Setting up basic middleware for all Express requests
 app.use(logger('dev')); // Log requests to API using morgan
 
