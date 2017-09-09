@@ -4,6 +4,7 @@ let app = module.exports = express();
 let bodyParser = require('body-parser');
 let logger = require('morgan');
 let expressStaticGzip = require("express-static-gzip");
+let path = require('path');
 
 // routes
 let email = require('./routes/email');
@@ -14,7 +15,7 @@ const IS_PRODUCTION = (NODE_ENV === 'production');
 
 console.log('running node on ', NODE_ENV);
 
-const PUBLIC_PATH = 'public';
+const PUBLIC_PATH = path.join(__dirname, 'public');
 
 // Set port
 app.set('port', (process.env.PORT || 3000));
@@ -45,7 +46,7 @@ app.use("/", expressStaticGzip(PUBLIC_PATH));
 
 // Catch all other paths and serve the index file
 app.all('*', function (request, response) {
-  response.sendFile(path.join(__dirname, 'public/index.html'));
+  response.sendFile(path.resolve(PUBLIC_PATH, 'index.html'));
 });
 
 // Listen to port
