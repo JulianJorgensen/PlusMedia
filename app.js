@@ -14,9 +14,7 @@ const IS_PRODUCTION = (NODE_ENV === 'production');
 
 console.log('running node on ', NODE_ENV);
 
-const PUBLIC_PATH_DEV = 'public';
-const PUBLIC_PATH_PROD = '../var/www/html';
-const PUBLIC_PATH = IS_PRODUCTION ? PUBLIC_PATH_PROD : PUBLIC_PATH_DEV;
+const PUBLIC_PATH = 'public';
 
 // Set port
 app.set('port', (process.env.PORT || 3000));
