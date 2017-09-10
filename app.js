@@ -1,10 +1,15 @@
 require('dotenv').config();
 let express = require('express');
+let cors = require('cors');
 let app = module.exports = express();
 let bodyParser = require('body-parser');
 let logger = require('morgan');
 let expressStaticGzip = require("express-static-gzip");
 let path = require('path');
+
+// cors
+app.use(cors());
+app.options('*', cors());
 
 // routes
 let email = require('./routes/email');
