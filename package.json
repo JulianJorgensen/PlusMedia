@@ -11,7 +11,8 @@
     "serve": "webpack-dev-server",
     "start": "node app.js",
     "start:prod": "NODE_ENV=production forever start app.js",
-    "heroku-postbuild": "webpack"
+    "heroku-postbuild": "webpack",
+    "ssh:prod": "ssh root@172.93.52.207"
   },
   "author": "Julian Jorgensen",
   "license": "MIT",
@@ -26,6 +27,8 @@
     "babel-core": "^6.5.1",
     "babel-loader": "^6.2.2",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-polyfill-loader": "^1.0.1",
     "babel-preset-env": "^1.1.8",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
