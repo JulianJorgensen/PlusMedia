@@ -36,9 +36,8 @@ const BUILD_PATH = path.resolve(ROOT_PATH, 'public');
 // ====================
 const BASE_CONFIG = {
   entry: {
-    'babel-polyfill': ['babel-polyfill'],
-    bundle: APP_PATH,
-    vendor: VENDOR_LIBS
+    bundle: ['babel-polyfill', APP_PATH],
+    vendor: ['babel-polyfill', VENDOR_LIBS]
   },
   output: {
     path: BUILD_PATH,
