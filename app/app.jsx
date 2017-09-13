@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import styles from './styles/app.css';
 
 let store = require('configureStore').configure();
-import Main from 'babel-polyfill-loader!components/Main';
+import Main from 'components/Main';
 
 // subscribe to the redux store
 store.subscribe(() => {
