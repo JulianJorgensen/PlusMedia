@@ -1,5 +1,5 @@
-require("babel-polyfill");
 import webpack from 'webpack';
+import "babel-polyfill";
 import path from 'path';
 import Merge from 'webpack-merge';
 import StatsPlugin from 'stats-webpack-plugin';
@@ -36,7 +36,7 @@ const BUILD_PATH = path.resolve(ROOT_PATH, 'public');
 // ====================
 const BASE_CONFIG = {
   entry: {
-    bundle: APP_PATH,
+    bundle: ['babel-polyfill', APP_PATH],
     vendor: VENDOR_LIBS
   },
   output: {
