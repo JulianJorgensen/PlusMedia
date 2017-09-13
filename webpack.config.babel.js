@@ -1,4 +1,4 @@
-// require("babel-polyfill");
+require("babel-polyfill");
 import webpack from 'webpack';
 import path from 'path';
 import Merge from 'webpack-merge';

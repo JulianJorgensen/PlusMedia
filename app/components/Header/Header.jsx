@@ -32,9 +32,9 @@ class Header extends React.Component {
         <AppBar
           className={`${styles.bar} ${this.state.navTransparent ? styles.navTransparent : ''}`}
           leftIcon={<img src="/images/logo.png" />}
-          rightIcon={<i onClick={handleNavToggle} className={`fa fa-bars ${styles.navIcon} ${navActive ? styles.active : ''}`} />}
+          rightIcon={<i className={`fa fa-bars ${styles.navIcon} ${navActive ? styles.active : ''}`} />}
           onLeftIconClick={() => history.push('/')}
-          // onRightIconClick={handleNavToggle}
+          onRightIconClick={handleNavToggle}
          />
         <Drawer
           active={navActive}
