@@ -89,6 +89,14 @@ const BASE_CONFIG = {
           'file?name=/images/[name].[ext]',
           'image-webpack-loader'
         ]
+      },
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        loader: 'svg-react-loader',
+        query: {
+          classIdPrefix: '[name]-[hash:8]__'
+        }
       }
     ]
   },

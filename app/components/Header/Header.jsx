@@ -5,7 +5,7 @@ import Headroom from 'react-headroom';
 import AppBar from 'react-toolbox/lib/app_bar';
 import Navigation from 'react-toolbox/lib/navigation';
 import Drawer from 'react-toolbox/lib/drawer';
-import DataCardIcon from 'assets/icons/datacardIcon';
+import DataCardIcon from 'assets/icons/datacardIcon.svg';
 import styles from './Header.css';
 
 @withRouter
