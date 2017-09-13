@@ -10,7 +10,7 @@
     "build": "yarn clean && webpack",
     "serve": "webpack-dev-server",
     "start": "node app.js",
-    "start:prod": "NODE_ENV=production forever start app.js",
+    "start:prod": "forever stopall && NODE_ENV=production forever start app.js",
     "heroku-postbuild": "webpack",
     "ssh:prod": "ssh root@172.93.52.207"
   },
