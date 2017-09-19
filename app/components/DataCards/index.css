@@ -56,6 +56,9 @@
     margin-left: 25%;
     font-size: 18px;
     line-height: 22px;
+    & ul{
+      margin: 0;
+    }
     & li{
       font-family: 'Open Sans' !important;
       & a {
