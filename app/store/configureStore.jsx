@@ -7,7 +7,7 @@ export let configure = (initialState = {}) => {
   var reducer = redux.combineReducers({
     modal: modalReducer,
     scrollPosition: scrollReducer,
-    content: contentReducer
+    content: contentReducer,
   });
 
   var store = redux.createStore(reducer, initialState, redux.compose(

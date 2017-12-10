@@ -1,42 +1,41 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-let {connect} = require('react-redux');
+import { Link } from 'react-router-dom';
+let { connect } = require('react-redux');
 import styles from './index.css';
 
-class PageItems extends React.Component{
-  constructor(){
-    super();
-  }
-
+@connect(({ content }) => ({
+  content: content,
+}))
+export default class PageItems extends React.Component{
   render() {
-    let {dispatch} = this.props;
+    const { content, page, items, pageItem, headline } = this.props;
+    const pageItems = content[page][items];
+
+    if (!pageItems) return false;
+    
+    pageItems.sort((a, b) => {
+      return new Date(b.sys.createdAt) - new Date(a.sys.createdAt);
+    });
 
     return (
-      <div className={styles.container}>
-        <Link to="/case-study/title" className={styles.item}>
-          <div className={styles.thumbnail} style={{backgroundImage: `url(/images/news-thumb.jpg)`}}></div>
-          <div className={styles.title}>News title #1</div>
-          <div className={styles.snippet}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</div>
-        </Link>
-        <Link to="/case-study/title2" className={styles.item}>
-          <div className={styles.thumbnail} style={{backgroundImage: `url(/images/news-thumb2.jpg)`}}></div>
-          <div className={styles.title}>News title #2</div>
-          <div className={styles.snippet}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</div>
-        </Link>
-        <Link to="/case-study/title3" className={styles.item}>
-          <div className={styles.thumbnail} style={{backgroundImage: `url(/images/news-thumb3.jpg)`}}></div>
-          <div className={styles.title}>News title #3</div>
-          <div className={styles.snippet}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</div>
-        </Link>
+      <div className={styles.wrapper}>
+        <div className={styles.sectionBar}>{headline}</div>
+        <div className={styles.container}>
+          <div className={styles.items}>
+            {
+              pageItems.slice(0,3).map((pageItem, index) => {
+                return (
+                  <Link to={`/${page}/${items}/${pageItem.sys.id}`} className={styles.item}>
+                    <div className={styles.thumbnail} style={{backgroundImage: `url(${pageItem.fields.image.fields.file.url})`}}></div>
+                    <div className={styles.title}>{pageItem.fields.title}</div>
+                    <div className={styles.snippet}>{pageItem.fields.body.substring(0, 25)}...</div>
+                  </Link>
+                )
+              })
+            }
+          </div>
+        </div>
       </div>
     )
   }
 }
-
-export default connect(
-  (state) => {
-    return {
-      modal: state.modal
-    }
-  }
-)(PageItems);

@@ -67,7 +67,7 @@ export default class Main extends React.Component {
       let clientsContent = _.find(response.data, { 'sys': {'id': 'ptfoS7OZAO2ygquY62osk'} }).fields;
       let contact = _.find(response.data, { 'sys': {'id': '15DHqPnnKik6EYaiyGM2uY'} }).fields;
       let dataCardsContent = _.find(response.data, { 'sys': {'id': '34eqgcK56Uo0ykY2akCekE'} }).fields;
-
+      
       dispatch({
         type: 'SET_CONTENT',
         homepage: homepageContent,
@@ -144,9 +144,9 @@ export default class Main extends React.Component {
           <div className={`${styles.loader} ${this.state.loaded ? styles.loaded : ''}`}><div className={styles.loaderInner}></div></div>
           <div className={styles.page}>
             <Route exact path="/" component={Index} content={homepageContent} />
-            <Route path="/about" component={About} />
-            <Route path="/capabilities" component={Capabilities} />
-            <Route path="/case-study/:title" component={PageItem} />
+            <Route path="/about" exact component={About} />
+            <Route path="/capabilities" exact component={Capabilities} />
+            <Route path="/:page/:items/:id" component={PageItem} />
             <Route path="/clients" component={Clients} />
             <Route path="/contact" component={Contact} />
             <Route path="/data-cards" component={DataCards} />

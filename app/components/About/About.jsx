@@ -101,10 +101,7 @@ export default class About extends React.Component{
             </div>
           </div>
 
-          {/* <div className={styles.sectionBar}>News</div>
-          <div className={styles.container}>
-            <PageItems />
-          </div> */}
+          <PageItems headline="News" page="about" items="news" />          
         </div>
       </div>
     )

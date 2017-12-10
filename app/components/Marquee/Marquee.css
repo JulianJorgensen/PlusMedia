@@ -15,7 +15,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  padding: 20px;
   overflow: hidden;
 
   &:after{
@@ -59,12 +58,22 @@
 }
 
 .split{
-  flex-direction: row;
+  flex-direction: column;
   height: 400px;
+  padding-top: 0;
+  @media (--medium-and-up) {
+    flex-direction: row;
+  }
+  &:after{
+    display: none;
+  }
   & .leftArea,
   & .rightArea{
     height: 100%;
-    width: 50%;
+    width: 100%;
+    @media (--medium-and-up) {
+      width: 50%;
+    }      
   }
   & .rightArea{
     background-repeat: no-repeat;

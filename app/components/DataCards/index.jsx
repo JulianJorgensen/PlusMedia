@@ -40,7 +40,7 @@ export default class DataCards extends React.Component{
                       <Accordion.Title>
                         <div className={styles.datacard}>
                           <div className={styles.logo}>
-                            <img src={dataCard.fields.logo.fields.file.url} />
+                            <img src={dataCard ? dataCard.fields.logo.fields.file.url : ''} />
                           </div>
                           <div className={styles.description}>
                             {dataCard.fields.description}

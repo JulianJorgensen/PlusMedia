@@ -34,9 +34,6 @@ export default class Capabilities extends React.Component{
       return service.fields.type.toCamelCase();
     });
 
-    console.log('groupedServices', groupedServices);
-    console.log('content', content);
-
     return (
       <div>
         <Marquee
@@ -117,10 +114,7 @@ export default class Capabilities extends React.Component{
             <p><Link to='/contact'>Contact us</Link> to learn more or to arrange for a complimentary evaluation of your current media efforts.</p>
           </div>
 
-          {/* <div className={styles.sectionBar}>Featured Case Studies</div>
-          <div className={styles.container}>
-            <PageItems />
-          </div> */}
+          <PageItems headline="Featured Case Studies" page="capabilities" items="caseStudies" />
         </div>
       </div>
     )
