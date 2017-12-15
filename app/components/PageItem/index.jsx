@@ -35,7 +35,6 @@ export default class PageItem extends React.Component{
         />
         <div className="page-content">
           <div className={styles.container}>
-            <h2>{item.title}</h2>
             <ReactMarkdown source={item.body}  />
           </div>
         </div>
