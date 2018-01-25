@@ -8,7 +8,7 @@ import styles from './index.css';
 }))
 export default class PageItems extends React.Component{
   render() {
-    const { content, page, items, pageItem, headline } = this.props;
+    const { content, page, items, pageItem, headline, snippets } = this.props;
     const pageItems = content[page][items];
 
     if (!pageItems) return false;
@@ -16,6 +16,12 @@ export default class PageItems extends React.Component{
     pageItems.sort((a, b) => {
       return new Date(b.sys.createdAt) - new Date(a.sys.createdAt);
     });
+
+    const renderSnippet = (pageItem) => (
+      <div className={styles.snippet}>{pageItem.fields.body.substring(0, 75)}...</div>
+    );
+
+    console.log('pageItems', pageItems);
 
     return (
       <div className={styles.wrapper}>
@@ -28,7 +34,7 @@ export default class PageItems extends React.Component{
                   <Link to={`/${page}/${items}/${pageItem.sys.id}`} className={styles.item}>
                     <div className={styles.thumbnail} style={{backgroundImage: `url(${pageItem.fields.image.fields.file.url})`}}></div>
                     <div className={styles.title}>{pageItem.fields.title}</div>
-                    <div className={styles.snippet}>{pageItem.fields.body.substring(0, 25)}...</div>
+                    {snippets ? renderSnippet(pageItem) : ''}
                   </Link>
                 )
               })

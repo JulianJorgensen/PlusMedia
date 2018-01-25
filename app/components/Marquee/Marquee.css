@@ -85,9 +85,15 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(var(--pistachio));
+    padding: 30px;
     & .header{
       color: rgba(var(--gray));
-      font-size: 60px;
+      font-size: 35px;
+      line-height: 35px;
+      @media (--medium-and-up) {
+        font-size: 60px;
+        line-height: 60px;
+      }
     }
   }
 }

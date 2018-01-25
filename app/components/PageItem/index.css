@@ -2,10 +2,51 @@
 
 .container{
   composes: container from "../../styles/layout.css";
+  position: relative;
   padding: 40px 20px;
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 24px;
   color: rgba(var(--gray));
+  max-width: 100%;
+  @media (--medium-and-up) {
+    max-width: 600px;
+  }
+  @media (--mediumLarge-and-up) {
+    max-width: 1000px;
+  }
   @media (--large-and-up) {
+    width: 900px;
     padding: 40px 0;
-  }    
+  }
+  & h1,
+  & h2,
+  & h3,
+  & h4{
+    margin-bottom: 15px;
+  }
+}
+
+.arrows{
+  display: none;
+  & .leftArrow,
+  & .rightArrow{
+    position: absolute;
+    top: 50%;
+    font-size: 70px;
+  }
+  & .leftArrow{
+    left: -50px;
+    @media (--large-and-up) {
+      left: -140px;
+    }
+  }
+  & .rightArrow{
+    right: -50px;
+    @media (--large-and-up) {
+      right: -140px;
+    }
+  }
+  @media (--medium-and-up) {
+    display: block;
+  }
 }

@@ -15,16 +15,42 @@ export default class PageItem extends React.Component{
   state = {};
 
   componentWillMount() {
+    this.setPageItem();
+  }
+
+  componentDidUpdate() {
+    this.setPageItem();
+  }
+
+  setPageItem() {
+    const { content } = this.props;
     const { page, items, id } = this.props.match.params;
-    const item = _.find(this.props.content[page][items], { 'sys': { 'id': id } });
+    const pageItems = content[page][items];
+    pageItems.sort((a, b) => {
+      return new Date(b.sys.createdAt) - new Date(a.sys.createdAt);
+    });
+
+    const currentItem = pageItems.find(pageItem => pageItem.sys.id === id);
+
     this.setState({
-      item: item.fields,
+      item: currentItem.fields,
     });
   }
 
   render() {
+    const { page, items, id } = this.props.match.params;
+    const { content } = this.props;
     const { item } = this.state;
     if (!item) return false;
+
+    const pageItems = content[page][items];
+    pageItems.sort((a, b) => {
+      return new Date(b.sys.createdAt) - new Date(a.sys.createdAt);
+    });
+
+    const i = pageItems.findIndex(pageItem => pageItem.sys.id === id);
+    const previous=pageItems[i==0?pageItems.length-1:i-1];
+    const next=pageItems[i==pageItems.length-1?0:i+1];
 
     return (
       <div>
@@ -36,6 +62,10 @@ export default class PageItem extends React.Component{
         <div className="page-content">
           <div className={styles.container}>
             <ReactMarkdown source={item.body}  />
+            <div className={styles.arrows}>
+              <Link to={`/${page}/${items}/${previous.sys.id}`} className={styles.leftArrow}><i className={`fa fa-angle-left`} /></Link>
+              <Link to={`/${page}/${items}/${next.sys.id}`} className={styles.rightArrow}><i className={`fa fa-angle-right`} /></Link>
+            </div>
           </div>
         </div>
       </div>

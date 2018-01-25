@@ -14,6 +14,7 @@
 
 .items{
   display: flex;
+  justify-content: center;
   & .item{
     width: 33.33%;
     cursor: pointer;
@@ -33,10 +34,14 @@
     }
     & .title{
       margin-top: 15px;
+      font-family: 'Teko';
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 30px;
     }
     & .snippet{
       font-size: 18px;
-      line-height: 18px;
+      line-height: 22px;
     }
   }
 }

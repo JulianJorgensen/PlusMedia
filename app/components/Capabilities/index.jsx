@@ -114,7 +114,7 @@ export default class Capabilities extends React.Component{
             <p><Link to='/contact'>Contact us</Link> to learn more or to arrange for a complimentary evaluation of your current media efforts.</p>
           </div>
 
-          <PageItems headline="Featured Case Studies" page="capabilities" items="caseStudies" />
+          <PageItems headline="Featured Case Studies" page="capabilities" items="caseStudies" snippets />
         </div>
       </div>
     )
