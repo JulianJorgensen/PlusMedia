@@ -3,7 +3,7 @@
 .container{
   composes: container from "../../styles/layout.css";
   position: relative;
-  padding: 40px 20px;
+  padding: 40px 20px 80px;
   font-size: 20px;
   line-height: 24px;
   color: rgba(var(--gray));
@@ -27,26 +27,30 @@
 }
 
 .arrows{
-  display: none;
   & .leftArrow,
   & .rightArrow{
     position: absolute;
-    top: 50%;
     font-size: 70px;
+    bottom: 30px;
+    @media (--medium-and-up) {
+      top: 50%;
+    }  
   }
   & .leftArrow{
-    left: -50px;
+    @media (--medium-and-up) {
+      left: -50px;
+    }
     @media (--large-and-up) {
       left: -140px;
     }
   }
   & .rightArrow{
-    right: -50px;
+    right: 20px;
+    @media (--medium-and-up) {
+      right: -50px;
+    }
     @media (--large-and-up) {
       right: -140px;
     }
-  }
-  @media (--medium-and-up) {
-    display: block;
   }
 }

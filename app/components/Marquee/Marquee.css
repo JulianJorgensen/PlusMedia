@@ -79,6 +79,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    order: -1;
   }
   & .leftArea{
     display: flex;
