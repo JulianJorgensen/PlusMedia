@@ -73,7 +73,7 @@
     width: 100%;
     @media (--medium-and-up) {
       width: 50%;
-    }      
+    }
   }
   & .rightArea{
     background-repeat: no-repeat;

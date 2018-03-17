@@ -15,10 +15,18 @@ export default class PageItem extends React.Component{
   state = {};
 
   componentWillMount() {
+    console.log('pageitem mounted');
     this.setPageItem();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      this.onRouteChanged();
+    }
+  }
+
+  onRouteChanged() {
+    console.log("ROUTE CHANGED");
     this.setPageItem();
   }
 

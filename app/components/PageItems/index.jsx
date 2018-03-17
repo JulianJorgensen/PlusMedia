@@ -21,8 +21,6 @@ export default class PageItems extends React.Component{
       <div className={styles.snippet}>{pageItem.fields.body.substring(0, 75)}...</div>
     );
 
-    console.log('pageItems', pageItems);
-
     return (
       <div className={styles.wrapper}>
         <div className={styles.sectionBar}>{headline}</div>
