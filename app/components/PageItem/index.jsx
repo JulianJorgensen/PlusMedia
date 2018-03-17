@@ -15,7 +15,6 @@ export default class PageItem extends React.Component{
   state = {};
 
   componentWillMount() {
-    console.log('pageitem mounted');
     this.setPageItem();
   }
 
@@ -26,7 +25,6 @@ export default class PageItem extends React.Component{
   }
 
   onRouteChanged() {
-    console.log("ROUTE CHANGED");
     this.setPageItem();
   }
 
